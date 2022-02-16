@@ -1,0 +1,214 @@
+fileFormatVersion: 2
+guid: a93eedf0c37aeaf4a8bb66376547f7d7
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: 1827226128182048838
+    second: Take 001
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      internalID: 1827226128182048838
+      firstFrame: 1
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: Eye_R_Increase(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Old_Lady_EyeOpen1
+      parentName: Eye_R_Increase(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CC_Base_Body1
+      parentName: Old_Lady_EyeOpen1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CC_Base_Teeth03
+      parentName: Old_Lady_EyeOpen1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CC_Base_TearLine1
+      parentName: Old_Lady_EyeOpen1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Biker_Jeans1
+      parentName: Old_Lady_EyeOpen1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_Top1
+      parentName: Old_Lady_EyeOpen1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hair1
+      parentName: Old_Lady_EyeOpen1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: eye_Left1
+      parentName: Eye_R_Increase(Clone)
+      position: {x: 0.009510647, y: 0.42519435, z: -0.13040201}
+      rotation: {x: 5.0532154e-16, y: -6.123234e-17, z: -1.6081226e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Eyeball
+      parentName: eye_Left1
+      position: {x: 0.024302896, y: 1.2436221, z: 0.17326872}
+      rotation: {x: 0, y: 0, z: -1.2320684e-32, w: 1}
+      scale: {x: 0.9966442, y: 0.9966442, z: 0.9966442}
+    - name: Iris
+      parentName: eye_Left1
+      position: {x: 0.024302896, y: 1.2577986, z: 0.18750492}
+      rotation: {x: 0, y: 0, z: 4.3469234e-33, w: 1}
+      scale: {x: 0.8569043, y: 0.8569043, z: 0.8569043}
+    - name: Pupil
+      parentName: eye_Left1
+      position: {x: 0.011838591, y: 0.74899405, z: 0.31999123}
+      rotation: {x: 0, y: -0, z: -9.039463e-33, w: 1}
+      scale: {x: 0.7, y: 0.7, z: 0.7}
+    - name: eye_Right1
+      parentName: Eye_R_Increase(Clone)
+      position: {x: -0.033388413, y: 1.6694521, z: 0.043088663}
+      rotation: {x: 9.004249e-15, y: -2.9056618e-15, z: -3.2162452e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Eyeball1
+      parentName: eye_Right1
+      position: {x: -7.9216816e-10, y: -0.00037428728, z: 0.0000000016018747}
+      rotation: {x: 1.53e-43, y: -2.9056618e-15, z: 5.23266e-29, w: 1}
+      scale: {x: 0.9966442, y: 0.9966442, z: 0.9966442}
+    - name: Iris1
+      parentName: eye_Right1
+      position: {x: -7.921682e-10, y: 0.013802271, z: 0.014236196}
+      rotation: {x: 1.53e-43, y: -2.9056618e-15, z: 5.23266e-29, w: 1}
+      scale: {x: 0.8569043, y: 0.8569043, z: 0.8569043}
+    - name: Pupil1
+      parentName: eye_Right1
+      position: {x: -0.012410669, y: -0.49331108, z: 0.1446267}
+      rotation: {x: 1.53e-43, y: -2.9056618e-15, z: 5.23266e-29, w: 1}
+      scale: {x: 0.7, y: 0.7, z: 0.7}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
