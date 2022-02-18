@@ -14,13 +14,13 @@ using UnityEngine.iOS;
 using System.Collections;
 #endif
 
-public class VoiceRecg : MonoBehaviour
+public class VoiceRecognitionClinic : MonoBehaviour
 {
 
     #region singleton
-    private static VoiceRecg _instance;
+    private static VoiceRecognitionClinic _instance;
 
-    public static VoiceRecg Instance { get { return _instance; } }
+    public static VoiceRecognitionClinic Instance { get { return _instance; } }
 
 
     private void Awake()
@@ -38,9 +38,14 @@ public class VoiceRecg : MonoBehaviour
     #endregion
 
 
-    Vector3 posA;
-    Vector3 posB;
+    public Text outputText;
+    public GameObject PatientHumanoid;
+    public PatientSpeakingController patientSpeakingController;
+    public GameObject patientHumanoid, patientExamMode;
+    public bool hasStartedAskingQuestions;
+    public Light directionalLight;
 
+    private bool hasSaidSomething = true;
     private bool micPermissionGranted = false;
     //public Button recoButton;
     SpeechRecognizer recognizer;
@@ -96,7 +101,7 @@ public class VoiceRecg : MonoBehaviour
             message = e.Result.Text;
             //outputText.text = "RecogniZED: " + e.Result.Text;
             Debug.Log("RecognizedHandler: " + message);
-            //hasSaidSomething = true;
+            hasSaidSomething = true;
         }
     }
 
@@ -219,18 +224,14 @@ public class VoiceRecg : MonoBehaviour
         lock (threadLocker)
         {
 
-            //if (recoButton != null) recoButton.interactable = micPermissionGranted;
-            /*
+
             if (outputText != null)
             {
-                outputText.text = message;
+                //outputText.text = message;
+
                 if(message.Contains("mind palace"))
                 {
                      SceneManager.LoadScene(1);
-
-                }else if (message.Contains("clinic"))
-                {
-                    SceneManager.LoadScene(0);
 
                 }else if (message.Contains("flashlight"))
                 {
@@ -238,10 +239,6 @@ public class VoiceRecg : MonoBehaviour
                     var flashlight = GameObject.Find("MedicalLight");
                     if (flashlight != null)
                     {
-                        //Rigidbody flashlightRB = flashlight.GetComponent<Rigidbody>();
-                        //flashlightRB.isKinematic = true;
-                        //flashlightRB.useGravity = false;
-
                         flashlight.transform.position = Camera.main.transform.position + Camera.main.transform.forward * 0.5f;
                     }
  
@@ -251,6 +248,7 @@ public class VoiceRecg : MonoBehaviour
                     if (light != null)
                     {
                         light.transform.GetChild(0).gameObject.SetActive(true);
+                        directionalLight.intensity = 1.2f;
                     }
 
                 }else if(message.Contains("light off"))
@@ -259,74 +257,85 @@ public class VoiceRecg : MonoBehaviour
                     if (light != null)
                     {
                         light.transform.GetChild(0).gameObject.SetActive(false);
-                    }
-
-                }
-                else if(message.Contains("brain"))
-                {
-                    if (SceneManager.GetActiveScene().buildIndex == 1)
-                    {
-                        brain.SetActive(true);
-                        brain1.SetActive(true);
-                        brain2.SetActive(true);
-                        brain3.SetActive(true);
+                        directionalLight.intensity = 0.25f;
                     }
 
                 }
                 else if (message.Contains("eric"))
                 {
                     var eric = GameObject.Find("Eric_Nurse");
-                    if (eric != null)
+                    if (eric != null) eric.GetComponent<EricNurse>().Wave();
+                    
+                }else if (message.Contains("done"))
+                {
+                    SoundManager.Instance.PlaySound(SoundManager.Instance.doctorWhatHaveYouFound);
+                    message = "";
+
+                }else if(message.Contains("that is all"))
+                {
+                    SoundManager.Instance.PlaySound(SoundManager.Instance.doctorDone);
+                    PatientHumanoid.SetActive(true);
+                    patientExamMode.SetActive(false);
+                }
+                else if(message.Contains("start exam"))
+                {
+                    PatientHumanoid.SetActive(false);
+                    patientExamMode.SetActive(true);
+                }
+
+                if (patientSpeakingController.gameObject.activeSelf)
+                {
+                    if (patientSpeakingController.isMakingEyeContact)
                     {
-                        eric.GetComponent<EricNurse>().Wave();
+                        if (!PatientHumanoid.activeSelf) return;
+
+                        if (message.Contains("what happen") || message.Contains("tell me"))
+                        {
+                            patientSpeakingController.Speak(PatientDialogueOption.WhatHappened);
+                        }
+                        else if (message.Contains("medical history"))
+                        {
+                            patientSpeakingController.Speak(PatientDialogueOption.MedicalHistory);
+                        }
+                        else if (message.Contains("medication") || message.Contains("medicine"))
+                        {
+                            patientSpeakingController.Speak(PatientDialogueOption.Medication);
+                        }
+                        else if (message.Contains("allergies") || message.Contains("allergy"))
+                        {
+                            patientSpeakingController.Speak(PatientDialogueOption.Allergies);
+                        }
+                        else if (message.Contains("drink") || message.Contains("smoke") || message.Contains("drug"))
+                        {
+                            patientSpeakingController.Speak(PatientDialogueOption.DrinkSmokeDrugs);
+                        }
+                        else if (message.Contains("family history"))
+                        {
+                            patientSpeakingController.Speak(PatientDialogueOption.FamilyHistory);
+                        }
+                        else if (message.Contains("family member") || message.Contains("live with"))
+                        {
+                            patientSpeakingController.Speak(PatientDialogueOption.FamilyMember);
+                        }
+                        else if (hasSaidSomething)
+                        {
+                            if (hasStartedAskingQuestions)
+                            {
+                                hasSaidSomething = false;
+                                if (message.Length > 0)
+                                    patientSpeakingController.Speak(PatientDialogueOption.DontKnow);
+                            }
+
+                        }
+
+                        message = "";
                     }
                 }
                 
-                if ( (Camera.main.transform.localEulerAngles.y > 165f && Camera.main.transform.localEulerAngles.y <= 185f) ||
-                    (Camera.main.transform.localEulerAngles.y < -181f && Camera.main.transform.localEulerAngles.y > -165f))
-                {
-                    if (SceneManager.GetActiveScene().buildIndex == 1) return;
-                    if (!PatientHumanoid.activeSelf) return;
-
-                    if (message.Contains("what happen") || message.Contains("tell me"))
-                    {
-                        patientSpeakingController.Speak(PatientDialogueOption.WhatHappened);
-                    }
-                    else if (message.Contains("medical history"))
-                    {
-                        patientSpeakingController.Speak(PatientDialogueOption.MedicalHistory);
-                    }
-                    else if (message.Contains("medication") || message.Contains("medicine"))
-                    {
-                        patientSpeakingController.Speak(PatientDialogueOption.Medication);
-                    }
-                    else if (message.Contains("allergies") || message.Contains("allergy"))
-                    {
-                        patientSpeakingController.Speak(PatientDialogueOption.Allergies);
-                    }
-                    else if (message.Contains("drink") || message.Contains("smoke") || message.Contains("drug"))
-                    {
-                        patientSpeakingController.Speak(PatientDialogueOption.DrinkSmokeDrugs);
-                    }
-                    else if (message.Contains("family history"))
-                    {
-                        patientSpeakingController.Speak(PatientDialogueOption.FamilyHistory);
-                    }
-                    else if (message.Contains("family member") || message.Contains("live with"))
-                    {
-                        patientSpeakingController.Speak(PatientDialogueOption.FamilyMember);
-                    }
-                    else if(hasSaidSomething)
-                    {
-                        hasSaidSomething = false;
-                        patientSpeakingController.Speak(PatientDialogueOption.DontKnow);
-                    }
-                }
-                message = "";
+                //message = "";
             }
         
-        
-            */
+            
         }
 
         if (Microphone.IsRecording(Microphone.devices[0]) && recognitionStarted == true)

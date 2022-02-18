@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PatientDialogueOption { WhatHappened, MedicalHistory, Medication, Allergies, DrinkSmokeDrugs, FamilyHistory, FamilyMember, DontKnow }
+
 public class PatientController : MonoBehaviour
 {
-
-    public Animator _animator;
-
+    Animator _animator;
 
     void Start()
     {
@@ -38,5 +38,17 @@ public class PatientController : MonoBehaviour
     {
         _animator.Play("PupilDecrease_L");
     }
+
+
+    void SpeakAnimation(float delay)
+    {
+        _animator.SetBool("isSpeaking", true);
+        Invoke("StopSpeaking", delay);
+    }
+    void StopSpeaking()
+    {
+        _animator.SetBool("isSpeaking", false);
+    }
+
 
 }
