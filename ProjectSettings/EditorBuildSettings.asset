@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_SimbrainVR/Scenes/Main.unity
+    path: Assets/_SimbrainVR/Scenes/Start_Reception.unity
     guid: 125a93cc61a85c741b97ba21ad9a891c
   - enabled: 1
-    path: Assets/_SimbrainVR/Scenes/TestHandInteraction.unity
-    guid: 30495839fe2d8b241961882620b28742
-  - enabled: 1
+    path: Assets/_SimbrainVR/Scenes/Clinic.unity
+    guid: ffdc6ebe0a92edc4e938c40b065d7c24
+  - enabled: 0
     path: Assets/_SimbrainVR/Scenes/MindPalace.unity
     guid: 8d78433abc300b64aba69b88d3797646
   m_configObjects:

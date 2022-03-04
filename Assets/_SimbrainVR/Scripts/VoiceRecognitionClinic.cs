@@ -39,12 +39,12 @@ public class VoiceRecognitionClinic : MonoBehaviour
 
 
     public Text outputText;
-    public GameObject PatientHumanoid;
     public PatientSpeakingController patientSpeakingController;
     public GameObject patientHumanoid, patientExamMode;
+    public LipSyncControl patientLipContro;
     public bool hasStartedAskingQuestions;
-    public Light directionalLight;
 
+    private float talkingStartTime;
     private bool hasSaidSomething = true;
     private bool micPermissionGranted = false;
     //public Button recoButton;
@@ -94,7 +94,7 @@ public class VoiceRecognitionClinic : MonoBehaviour
     }
     
     
-    private void RecognizedHandler(object sender, SpeechRecognitionEventArgs e) //for i dont know response, boolean here? only when person has talked! otherwise no.
+    private void RecognizedHandler(object sender, SpeechRecognitionEventArgs e) 
     {
         lock (threadLocker)
         {
@@ -157,8 +157,8 @@ public class VoiceRecognitionClinic : MonoBehaviour
     void Start()
     {
 
-        
-        
+        talkingStartTime = Time.time;
+
         // Continue with normal initialization, Text and Button objects are present.
 #if PLATFORM_ANDROID
         // Request to use the microphone, cf.
@@ -242,13 +242,12 @@ public class VoiceRecognitionClinic : MonoBehaviour
                         flashlight.transform.position = Camera.main.transform.position + Camera.main.transform.forward * 0.5f;
                     }
  
-                }else if(message.Contains("light on"))
+                }/*else if(message.Contains("light on"))
                 {
                     var light = GameObject.Find("MainLight");
                     if (light != null)
                     {
                         light.transform.GetChild(0).gameObject.SetActive(true);
-                        directionalLight.intensity = 1.2f;
                     }
 
                 }else if(message.Contains("light off"))
@@ -257,16 +256,26 @@ public class VoiceRecognitionClinic : MonoBehaviour
                     if (light != null)
                     {
                         light.transform.GetChild(0).gameObject.SetActive(false);
-                        directionalLight.intensity = 0.25f;
                     }
 
-                }
+                }*/
                 else if (message.Contains("eric"))
                 {
-                    var eric = GameObject.Find("Eric_Nurse");
-                    if (eric != null) eric.GetComponent<EricNurse>().Wave();
-                    
-                }else if (message.Contains("done"))
+
+                    if(message.Contains("off") && message.Contains("light"))
+                    {
+                        var eric = GameObject.Find("Eric_Nurse");
+                        if (eric != null) eric.GetComponent<EricNurse>().ToggleLight(false);
+                    }
+                    else if (message.Contains("on") && message.Contains("light"))
+                    {
+                        var eric = GameObject.Find("Eric_Nurse");
+                        if (eric != null) eric.GetComponent<EricNurse>().ToggleLight(true);
+                    }
+
+
+                }
+                else if (message.Contains("done"))
                 {
                     SoundManager.Instance.PlaySound(SoundManager.Instance.doctorWhatHaveYouFound);
                     message = "";
@@ -274,12 +283,12 @@ public class VoiceRecognitionClinic : MonoBehaviour
                 }else if(message.Contains("that is all"))
                 {
                     SoundManager.Instance.PlaySound(SoundManager.Instance.doctorDone);
-                    PatientHumanoid.SetActive(true);
+                    patientHumanoid.SetActive(true);
                     patientExamMode.SetActive(false);
                 }
                 else if(message.Contains("start exam"))
                 {
-                    PatientHumanoid.SetActive(false);
+                    patientHumanoid.SetActive(false);
                     patientExamMode.SetActive(true);
                 }
 
@@ -287,31 +296,44 @@ public class VoiceRecognitionClinic : MonoBehaviour
                 {
                     if (patientSpeakingController.isMakingEyeContact)
                     {
-                        if (!PatientHumanoid.activeSelf) return;
+                        if (!patientHumanoid.activeSelf) return;
+                        //if (!message.Contains("julia")) return;
 
-                        if (message.Contains("what happen") || message.Contains("tell me"))
+                        if (message.Contains("what happen") || message.Contains("tell me")) //this part is hardcoded
                         {
-                            patientSpeakingController.Speak(PatientDialogueOption.WhatHappened);
+                            //patientSpeakingController.Speak(PatientDialogueOption.WhatHappened);
+                            patientLipContro.PlayWhatHappened();
+                            Clipboard.Instance.ModifyClipboard(1);
                         }
                         else if (message.Contains("medical history"))
                         {
                             patientSpeakingController.Speak(PatientDialogueOption.MedicalHistory);
+                            patientLipContro.MoveLips();
+                            Clipboard.Instance.ModifyClipboard(2);
                         }
                         else if (message.Contains("medication") || message.Contains("medicine"))
                         {
                             patientSpeakingController.Speak(PatientDialogueOption.Medication);
+                            patientLipContro.MoveLips();
+                            Clipboard.Instance.ModifyClipboard(3);
                         }
                         else if (message.Contains("allergies") || message.Contains("allergy"))
                         {
                             patientSpeakingController.Speak(PatientDialogueOption.Allergies);
+                            patientLipContro.MoveLips();
+                            Clipboard.Instance.ModifyClipboard(4);
                         }
                         else if (message.Contains("drink") || message.Contains("smoke") || message.Contains("drug"))
                         {
                             patientSpeakingController.Speak(PatientDialogueOption.DrinkSmokeDrugs);
+                            patientLipContro.MoveLips();
+                            Clipboard.Instance.ModifyClipboard(5);
                         }
                         else if (message.Contains("family history"))
                         {
                             patientSpeakingController.Speak(PatientDialogueOption.FamilyHistory);
+                            patientLipContro.MoveLips();
+                            Clipboard.Instance.ModifyClipboard(6);
                         }
                         else if (message.Contains("family member") || message.Contains("live with"))
                         {
@@ -319,14 +341,17 @@ public class VoiceRecognitionClinic : MonoBehaviour
                         }
                         else if (hasSaidSomething)
                         {
-                            if (hasStartedAskingQuestions)
+                            if (hasStartedAskingQuestions && (Time.time - talkingStartTime >= 5.5f))
                             {
                                 hasSaidSomething = false;
+                                talkingStartTime = Time.time;
                                 if (message.Length > 0)
                                     patientSpeakingController.Speak(PatientDialogueOption.DontKnow);
                             }
 
                         }
+
+                        
 
                         message = "";
                     }

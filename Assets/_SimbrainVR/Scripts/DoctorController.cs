@@ -6,8 +6,9 @@ using UnityEngine.AI;
 public class DoctorController : MonoBehaviour
 {
     public Transform starting, final;
-    NavMeshAgent _agent;
+    public NavMeshAgent _agent;
     public Animator _animator;
+    public bool isSpeakingToPatient;
 
     // Start is called before the first frame update
     void Awake()
@@ -21,6 +22,8 @@ public class DoctorController : MonoBehaviour
 
     void OnAnimatorIK()
     {
+        if (isSpeakingToPatient) return;
+
         if (Camera.main != null)
         {
             _animator.SetLookAtWeight(0.8f);

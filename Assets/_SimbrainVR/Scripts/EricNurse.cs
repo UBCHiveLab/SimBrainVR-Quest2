@@ -7,8 +7,11 @@ public class EricNurse : MonoBehaviour
 {
 
     public Transform starting, final;
-    NavMeshAgent _agent;
-    Animator _animator;
+    public NavMeshAgent _agent;
+    public Animator _animator;
+
+    public Transform lightSwitch;
+    public GameObject lightSource;
     
     // Start is called before the first frame update
     void Awake()
@@ -31,8 +34,33 @@ public class EricNurse : MonoBehaviour
         SoundManager.Instance.PlaySound(SoundManager.Instance.ericHello);
     }
 
+    public void ToggleLight(bool isOn)
+    {
+        _agent.SetDestination(lightSwitch.position);
+        StartCoroutine(ToggleLightSequence(isOn));
+    }
 
-    private IEnumerator EricNurseSequence()
+    private IEnumerator ToggleLightSequence(bool isOn)
+    {
+        _animator.SetBool("isWalking", true);
+        yield return new WaitForSeconds(0.2f);
+
+        while (_agent.remainingDistance > 0.2f)
+        {
+            yield return new WaitForSeconds(0.02f);
+        }
+
+        lightSource.SetActive(isOn);
+        _agent.SetDestination(final.position);
+        yield return new WaitForSeconds(0.2f);
+        while (_agent.remainingDistance > 0.2f)
+        {
+            yield return new WaitForSeconds(0.02f);
+        }
+        _animator.SetBool("isWalking", false);
+    }
+
+    private IEnumerator EricNurseSequence()     //todo - clean up this sequence so that not the logic is here, could be issues later.
     {
         _animator.SetBool("isWalking", true);
         yield return new WaitForSeconds(0.2f);

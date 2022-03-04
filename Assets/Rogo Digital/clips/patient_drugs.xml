@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Exported from Rogo Digital LipSync Pro 1.532. Exported at 2022-02-17 1:57:43 PM-->
+<!--Note: This format cannot directly reference the linked AudioClip like a LipSyncData asset can. It is advised that you use that format instead unless you need to process the data further outside of Unity.-->
+<LipSyncData>
+	<version>1.532</version>
+	<transcript>I have smoked for twenty years, I also drink socially two times a week</transcript>
+	<length>5.198367</length>
+	<phonemes>
+		<marker time="0.05" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="AI" phonemeNumber="0" />
+		<marker time="0.19" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="CDGKNRSThYZ" phonemeNumber="4" />
+		<marker time="0.25" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="U" phonemeNumber="2" />
+		<marker time="0.32" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="CDGKNRSThYZ" phonemeNumber="4" />
+		<marker time="0.47" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="MBP" phonemeNumber="7" />
+		<marker time="0.52" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="O" phonemeNumber="3" />
+		<marker time="0.62" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="CDGKNRSThYZ" phonemeNumber="4" />
+		<marker time="0.66" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="MBP" phonemeNumber="7" />
+		<marker time="0.81" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="CDGKNRSThYZ" phonemeNumber="4" />
+		<marker time="0.88" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="CDGKNRSThYZ" phonemeNumber="4" />
+		<marker time="0.96" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="CDGKNRSThYZ" phonemeNumber="4" />
+		<marker time="1.07" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="AI" phonemeNumber="0" />
+		<marker time="1.16" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="CDGKNRSThYZ" phonemeNumber="4" />
+		<marker time="1.21" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="E" phonemeNumber="1" />
+		<marker time="1.51" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="U" phonemeNumber="2" />
+		<marker time="1.75" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="CDGKNRSThYZ" phonemeNumber="4" />
+		<marker time="1.9" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="MBP" phonemeNumber="7" />
+		<marker time="2.29" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="AI" phonemeNumber="0" />
+		<marker time="2.44" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="L" phonemeNumber="6" />
+		<marker time="2.63" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="CDGKNRSThYZ" phonemeNumber="4" />
+		<marker time="2.73" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="AI" phonemeNumber="0" />
+		<marker time="2.78" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="O" phonemeNumber="3" />
+		<marker time="2.86" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="CDGKNRSThYZ" phonemeNumber="4" />
+		<marker time="2.97" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="CDGKNRSThYZ" phonemeNumber="4" />
+		<marker time="3.02" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="AI" phonemeNumber="0" />
+		<marker time="3.11" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="CDGKNRSThYZ" phonemeNumber="4" />
+		<marker time="3.22" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="CDGKNRSThYZ" phonemeNumber="4" />
+		<marker time="3.39" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="O" phonemeNumber="3" />
+		<marker time="3.49" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="CDGKNRSThYZ" phonemeNumber="4" />
+		<marker time="3.63" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="L" phonemeNumber="6" />
+		<marker time="3.74" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="AI" phonemeNumber="0" />
+		<marker time="3.88" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="CDGKNRSThYZ" phonemeNumber="4" />
+		<marker time="4" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="O" phonemeNumber="3" />
+		<marker time="4.17" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="CDGKNRSThYZ" phonemeNumber="4" />
+		<marker time="4.27" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="U" phonemeNumber="2" />
+		<marker time="4.31" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="AI" phonemeNumber="0" />
+		<marker time="4.51" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="MBP" phonemeNumber="7" />
+		<marker time="4.6" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="CDGKNRSThYZ" phonemeNumber="4" />
+		<marker time="4.73" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="O" phonemeNumber="3" />
+		<marker time="4.85" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="WQ" phonemeNumber="8" />
+		<marker time="4.92" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="E" phonemeNumber="1" />
+		<marker time="5.07" intensity="1" sustain="False" useRandomness="False" intensityRandomness="0.1" blendableRandomness="0.3" bonePositionRandomness="0.3" boneRotationRandomness="0.3" phonemeName="CDGKNRSThYZ" phonemeNumber="4" />
+	</phonemes>
+	<emotions>
+		<marker start="0.0008632521" end="3.602268" blendFromMarker="false" blendToMarker="false" blendIn="0" blendOut="-0.3388205" customBlendIn="True" customBlendOut="True" intensity="1" continuousVariation="False" variationFrequency="0.5" intensityVariation="0.35" blendableVariation="0.1" bonePositionVariation="0.1" boneRotationVariation="0.1" emotion="Sad" />
+	</emotions>
+	<gestures />
+</LipSyncData>

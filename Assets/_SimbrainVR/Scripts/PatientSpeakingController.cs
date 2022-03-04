@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -92,7 +93,7 @@ public class PatientSpeakingController : MonoBehaviour
             _animator.SetLookAtWeight(lookAtWeight);
             _animator.SetLookAtPosition(Camera.main.transform.position);
         } 
-    } 
+    }
 
     private void Update()
     {
