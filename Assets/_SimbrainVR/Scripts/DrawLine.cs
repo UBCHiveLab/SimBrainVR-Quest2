@@ -9,8 +9,14 @@ public class DrawLine : MonoBehaviour
     public GameObject linePrefab;
     public GameObject currentLine;
 
-    public LineRenderer lineRenderer;
-    public EdgeCollider2D edgeCollider;
+    private LineRenderer lineRenderer;
+    private bool drawing = false;
+    private float width = 0.5f;
+
+    private GameObject drawPoint; 
+
+    public GameObject LineRendererParent; 
+
     public List<Vector2> fingerPositions;
 
     public Controller controller; 
@@ -31,10 +37,7 @@ public class DrawLine : MonoBehaviour
 
     public void Drawing()
     {
-        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, controller))
-            {
-
-        }
+        
     }
     void CreateLine()
     {
