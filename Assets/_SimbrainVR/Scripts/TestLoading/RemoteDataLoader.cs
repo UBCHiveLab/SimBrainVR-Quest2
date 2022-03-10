@@ -1,9 +1,6 @@
 //using MongoDB.Bson;
 //using MongoDB.Driver;
 using System.Collections;
-using UnityEngine;
-using UnityEngine.Networking;
-using UnityEngine.UI;
 
 /**
  * Extends DataLoader. For fetching a manifest located at manifestPath as an http resource.
@@ -14,7 +11,7 @@ public class RemoteDataLoader : DataLoader
 
     //MongoDB
   //  MongoClient client = new MongoClient("mongodb://hive:8afDe1K6XwY1W5cy@van-vr-shard-00-00.zr7vf.mongodb.net:27017,van-vr-shard-00-01.zr7vf.mongodb.net:27017,van-vr-shard-00-02.zr7vf.mongodb.net:27017/test?authSource=admin&replicaSet=atlas-afl4g3-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true");
- //   IMongoDatabase database;
+   // IMongoDatabase database;
 
 
     protected override IEnumerator LoadManifest()
@@ -38,13 +35,13 @@ public class RemoteDataLoader : DataLoader
 
         //Using MongoDB
 
-    //   LoadManifestFromMongoDB(); //UNCOMMENT
+    //  LoadManifestFromMongoDB(); //UNCOMMENT 
 
         manifestLoaded = true;
         yield break;
     }
 
-/*
+    /*
     private void LoadManifestFromMongoDB()
     {
         IMongoCollection<BsonDocument> specimenCollection, courseCollection, regionCollection, labsCollection;
@@ -52,7 +49,6 @@ public class RemoteDataLoader : DataLoader
         specimenCollection = database.GetCollection<BsonDocument>("specimens");
         courseCollection = database.GetCollection<BsonDocument>("courses");
         regionCollection = database.GetCollection<BsonDocument>("regions");
-        labsCollection = database.GetCollection<BsonDocument>("labs");
 
         var filter = Builders<BsonDocument>.Filter.Empty;
 
