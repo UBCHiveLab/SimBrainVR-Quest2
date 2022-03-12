@@ -30,19 +30,25 @@ public class LineScript : MonoBehaviour
             }
             mousePos = Camera.main.ScreenToWorldPoint(OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick));
             line.SetPosition(0, mousePos);
-            line.SetPosition(1, mousePos); 
+            line.SetPosition(1, mousePos);
+            Debug.Log("pressed down " + mousePos); 
         }
         else if ((OVRInput.GetUp(OVRInput.Button.One)) && line)
         {
             mousePos = Camera.main.ScreenToWorldPoint(OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick));
-            line.SetPosition(1, mousePos);
-            line = null;
-            currLines++; 
-        } else if (OVRInput.Get(OVRInput.Button.One))
+          //line.SetPosition(1, mousePos);
+           //ine = null;
+          //currLines++;
+            Debug.Log("pressed up " + mousePos);
+        }
+        /*
+        else if (OVRInput.Get(OVRInput.Button.One))
         {
-            mousePos = Camera.main.ScreenToWorldPoint(OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick)); 
+            mousePos = Camera.main.ScreenToWorldPoint(OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick));
+            Debug.Log("joystick movement" + mousePos);
 
         }
+        */
     }
 
     void CreateLine()

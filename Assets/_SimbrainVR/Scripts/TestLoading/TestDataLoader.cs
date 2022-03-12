@@ -15,8 +15,8 @@ public class TestDataLoader : MonoBehaviour
 {
 
     //public string prefabPath = "Assets/Models/Specimens/AssetBundles/Lungs_with_bronchi_656K.prefab"; 
-    public string reqUri = "https://hivemodelstorage.blob.core.windows.net/win/right_lung";
-    public string prefabPath = "Assets/Models/Specimens/AssetBundles/right_lung.prefab";
+    public string reqUri = "https://hivemodelstorage.blob.core.windows.net/win/l4_lungs_with_trachea";
+    public string prefabPath = "Assets/Models/Specimens/AssetBundles/Lungs_with_bronchi_656K.prefab";
     public Transform specimenContent;
     public Button button; 
     private IEnumerator LoadFromData()
@@ -71,8 +71,9 @@ public class TestDataLoader : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F1))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
+            Debug.Log("space pressed");
             TestLoadBundle();
         }
     }
