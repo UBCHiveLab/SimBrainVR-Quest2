@@ -29,20 +29,21 @@ public class Raycaster : MonoBehaviour
                 Debug.Log("object detected"); 
                 aboutToDraw = true;
                 startDrawingPos = hit.point;
-                line.SetPosition(0, startDrawingPos);
-                if (OVRInput.Get(OVRInput.Button.Two))
-                {
-                    Debug.Log("B is pressed at secondPos");
-                    if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength = 10))
-                    {
-                        endDrawingPos = hit.point;
-                        line.SetPosition(1, endDrawingPos);
-                        line.positionCount = 2;
-                    }
-                }
             }
-          
         }
+        if (OVRInput.Get(OVRInput.RawButton.X))
+        {
+            Debug.Log("X is pressed at secondPos");
+            if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength * 10))
+            {
+                line.gameObject.SetActive(true); 
+                endDrawingPos = hit.point;
+                line.SetPosition(0, startDrawingPos);
+                line.SetPosition(1, endDrawingPos);
+                line.positionCount = 2;
+            }
+        }
+
 
     }
 }
