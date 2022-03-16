@@ -1,64 +1,89 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Raycaster : MonoBehaviour
 {
-    public int rayLength = 100; 
-    private bool aboutToDraw = false;
-    public GameObject linePrefab; 
+    public int rayLength = 100;
+    private List<Transform> hitObjectsList; 
+    
+ //   public GameObject linePrefab;
     public LineRenderer line;
     GameObject firstHitGameObject;
-    GameObject secondHitGameObject; 
+    GameObject secondHitGameObject;
+    int layerUse = ~1;
     Transform end;
-    Transform start; 
+    Transform start;
     Vector3 startDrawingPos = new Vector3();
-    Vector3 endDrawingPos = new Vector3(); 
+    Vector3 endDrawingPos = new Vector3();
+    [Header("Lines")]
+    [SerializeField] Transform lineParent;
+    [SerializeField] private GameObject linePrefab;
+    private LineController currentLine;
+
+    [Header("Dots")]
+    [SerializeField] private GameObject dotPrefab;
+    [SerializeField] Transform dotParent; 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        hitObjectsList = new List<Transform>();
+        line.positionCount = 0; 
     }
 
     // Update is called once per frame
     void Update()
     {
+        CreateLine();
+        
+        line.gameObject.SetActive(true);
+        line.SetPosition(0, firstHitGameObject.transform.position);
+        line.SetPosition(1, secondHitGameObject.transform.position);
+        Debug.Log(firstHitGameObject.transform.position); 
+        if (line.positionCount > 1)
+        {
+            for (int i = 2; i < line.positionCount; i++)
+            {
+                line.SetPosition(i, hitObjectsList[i].position);
+                Debug.Log("hit list " + hitObjectsList[i].position);
+            }
+        }
+    //    line.SetPosition(0, firstHitGameObject.transform.position);
+      //  line.SetPosition(1, secondHitGameObject.transform.position);
+    }
+    
+    
+    void CreateLine()
+    {
         RaycastHit hit; // did the ray make contact with an object
         if (OVRInput.GetDown(OVRInput.Button.One))
         {
-            if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength*10))
+            if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength * 10, layerUse))
             {
-                Debug.Log("object detected"); 
-                aboutToDraw = true;
-                start = hit.transform;
-                startDrawingPos = hit.point;
                 firstHitGameObject = hit.transform.gameObject;
-                string firstHitFeedback = firstHitGameObject.name;
-                Debug.Log(hit.transform.gameObject.name); 
-                line = Instantiate(linePrefab, firstHitGameObject.transform).GetComponent<LineRenderer>();
-                line.gameObject.SetActive(true);
-                Debug.DrawLine(startDrawingPos, transform.forward * rayLength * 10); 
-                Debug.Log("startDrawingPos" + startDrawingPos); 
+                hitObjectsList.Add(firstHitGameObject.transform);
+                line.positionCount++;
+                Debug.Log("position count " + line.positionCount);
+                Debug.Log(firstHitGameObject.name);
+               
+                //  lines.Add(line); 
             }
         }
-        if (OVRInput.GetUp(OVRInput.RawButton.A))
+
+        if (OVRInput.GetUp(OVRInput.Button.One))
         {
-            Debug.Log("X is pressed at secondPos");
-            if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength * 10))
+            if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength * 10, layerUse))
             {
-                end = hit.transform;
-                endDrawingPos = hit.point;
                 secondHitGameObject = hit.transform.gameObject;
-                string secondHitFeedback = secondHitGameObject.name;
-                Debug.Log(hit.transform.gameObject.name);
-                line.SetPosition(0, firstHitGameObject.transform.position);
-                line.SetPosition(1, secondHitGameObject.transform.position);
-                Debug.Log("startDrawingPos after last point" + startDrawingPos);
-              //  line.positionCount = 2;
-            }
+                Debug.Log(secondHitGameObject.name);
+                hitObjectsList.Add(secondHitGameObject.transform);
+                line.positionCount++; 
+            }      
         }
-
-
     }
+    
+    
+    
 }

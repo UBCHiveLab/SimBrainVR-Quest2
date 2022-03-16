@@ -37,7 +37,6 @@ public class SpawnImageGrabbable : MonoBehaviour
     public void AddImageOne()
     {
         object1.SetActive(true); 
-        Debug.Log("adding 1st image"); 
     }
 
     public void AddImageTwo()
