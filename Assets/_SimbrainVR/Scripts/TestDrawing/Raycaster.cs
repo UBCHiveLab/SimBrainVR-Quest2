@@ -40,11 +40,11 @@ public class Raycaster : MonoBehaviour
         
         line.gameObject.SetActive(true);
         line.SetPosition(0, firstHitGameObject.transform.position);
-        line.SetPosition(1, secondHitGameObject.transform.position);
+      //  line.SetPosition(1, secondHitGameObject.transform.position);
         Debug.Log(firstHitGameObject.transform.position); 
-        if (line.positionCount > 1)
+        if (line.positionCount > 0)
         {
-            for (int i = 2; i < line.positionCount; i++)
+            for (int i = 1; i < line.positionCount; i++)
             {
                 line.SetPosition(i, hitObjectsList[i].position);
                 Debug.Log("hit list " + hitObjectsList[i].position);
@@ -71,7 +71,7 @@ public class Raycaster : MonoBehaviour
                 //  lines.Add(line); 
             }
         }
-
+        /*
         if (OVRInput.GetUp(OVRInput.Button.One))
         {
             if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength * 10, layerUse))
@@ -82,6 +82,7 @@ public class Raycaster : MonoBehaviour
                 line.positionCount++; 
             }      
         }
+        */
     }
     
     
