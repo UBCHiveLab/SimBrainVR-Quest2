@@ -28,6 +28,6 @@ public class LipSyncControl : MonoBehaviour
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Space))PlayWhatHappened();
+        if (Input.GetKeyDown(KeyCode.F1))PlayWhatHappened();
     }
 }

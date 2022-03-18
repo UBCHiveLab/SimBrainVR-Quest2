@@ -50,7 +50,9 @@ public class ClinicSceneController : MonoBehaviour
         SoundManager.Instance.PlaySound(SoundManager.Instance.doctorIntro);
         yield return new WaitForSeconds(7f);
 
+        patient.GetComponent<PatientSpeakingController>().SpeakAnimation(1.5f);
         SoundManager.Instance.PlaySound(SoundManager.Instance.patientSureGoAhead);
+
 
         VoiceRecognitionClinic.Instance.hasStartedAskingQuestions = true;
 

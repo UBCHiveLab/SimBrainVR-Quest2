@@ -41,7 +41,6 @@ public class VoiceRecognitionClinic : MonoBehaviour
     public Text outputText;
     public PatientSpeakingController patientSpeakingController;
     public GameObject patientHumanoid, patientExamMode;
-    public LipSyncControl patientLipContro;
     public bool hasStartedAskingQuestions;
 
     private float talkingStartTime;
@@ -273,7 +272,6 @@ public class VoiceRecognitionClinic : MonoBehaviour
                         if (eric != null) eric.GetComponent<EricNurse>().ToggleLight(true);
                     }
 
-
                 }
                 else if (message.Contains("done"))
                 {
@@ -301,38 +299,33 @@ public class VoiceRecognitionClinic : MonoBehaviour
 
                         if (message.Contains("what happen") || message.Contains("tell me")) //this part is hardcoded
                         {
-                            //patientSpeakingController.Speak(PatientDialogueOption.WhatHappened);
-                            patientLipContro.PlayWhatHappened();
+                            patientSpeakingController.Speak(PatientDialogueOption.WhatHappened);
+                            //patientLipContro.PlayWhatHappened();
                             Clipboard.Instance.ModifyClipboard(1);
                         }
                         else if (message.Contains("medical history"))
                         {
                             patientSpeakingController.Speak(PatientDialogueOption.MedicalHistory);
-                            patientLipContro.MoveLips();
                             Clipboard.Instance.ModifyClipboard(2);
                         }
                         else if (message.Contains("medication") || message.Contains("medicine"))
                         {
                             patientSpeakingController.Speak(PatientDialogueOption.Medication);
-                            patientLipContro.MoveLips();
                             Clipboard.Instance.ModifyClipboard(3);
                         }
                         else if (message.Contains("allergies") || message.Contains("allergy"))
                         {
                             patientSpeakingController.Speak(PatientDialogueOption.Allergies);
-                            patientLipContro.MoveLips();
                             Clipboard.Instance.ModifyClipboard(4);
                         }
                         else if (message.Contains("drink") || message.Contains("smoke") || message.Contains("drug"))
                         {
                             patientSpeakingController.Speak(PatientDialogueOption.DrinkSmokeDrugs);
-                            patientLipContro.MoveLips();
                             Clipboard.Instance.ModifyClipboard(5);
                         }
                         else if (message.Contains("family history"))
                         {
                             patientSpeakingController.Speak(PatientDialogueOption.FamilyHistory);
-                            patientLipContro.MoveLips();
                             Clipboard.Instance.ModifyClipboard(6);
                         }
                         else if (message.Contains("family member") || message.Contains("live with"))
