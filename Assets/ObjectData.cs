@@ -21,9 +21,11 @@ public class ObjectData : MonoBehaviour
 
     public void AddConnections(GameObject newObject)
     {
-        objectsConnected.Add(newObject);
-        Debug.Log(newObject.name);
-       
+        if (!objectsConnected.Contains(newObject))
+        {
+            objectsConnected.Add(newObject);
+            Debug.Log("newObject" + newObject.name);
+        }
     }
 
     public List<string> DisplayConnections()
@@ -31,8 +33,8 @@ public class ObjectData : MonoBehaviour
         
        foreach (var newObject in objectsConnected)
         {
-            Debug.Log(newObject.ToString());
-            names.Add(newObject.ToString());
+            Debug.Log(newObject.name);
+            names.Add(newObject.name);
         }
         return names;
     }

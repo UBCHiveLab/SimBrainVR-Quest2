@@ -109,8 +109,17 @@ public class Raycaster : MonoBehaviour
             if (OVRInput.GetDown(OVRInput.Button.Two))
             {
                 GameObject hitObject = hit.transform.gameObject;
-                Debug.Log(hitObject.name);
-                Debug.Log(hitObject.GetComponent<ObjectData>().DisplayConnections()); 
+              //  Debug.Log(hitObject.name);
+                Debug.Log("listofObjects " + hitObject.GetComponent<ObjectData>().DisplayConnections()); 
+            }
+
+            if (OVRInput.Get(OVRInput.RawButton.X))
+            {
+                GameObject hitObject = hit.transform.gameObject; 
+                if (hitObject.ToString() == "Line")
+                {
+                    Debug.Log("POP-up should be enabled"); 
+                }
             }
         }
     }
