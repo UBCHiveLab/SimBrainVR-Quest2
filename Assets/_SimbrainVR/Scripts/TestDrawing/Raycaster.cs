@@ -6,8 +6,11 @@ using UnityEngine;
 public class Raycaster : MonoBehaviour
 {
     public int rayLength = 100;
-    private List<Transform> hitObjectsList; 
-    
+    private List<Transform> hitObjectsList;
+    private List<Transform> firstHitObjectsList;
+    private List<Transform> secondHitObjectsList; 
+    private Transform secondHitPos;
+    private Transform firstHitPos; 
  //   public GameObject linePrefab;
     public LineRenderer line;
     GameObject firstHitGameObject;
@@ -30,26 +33,30 @@ public class Raycaster : MonoBehaviour
     void Start()
     {
         hitObjectsList = new List<Transform>();
-        line.positionCount = 0; 
+     //   line.positionCount = 0;
+        firstHitObjectsList = new List<Transform>();
+        secondHitObjectsList = new List<Transform>(); 
     }
 
     // Update is called once per frame
     void Update()
     {
         CreateLine();
-        
+        PressObject();
+       
         line.gameObject.SetActive(true);
         line.SetPosition(0, firstHitGameObject.transform.position);
-      //  line.SetPosition(1, secondHitGameObject.transform.position);
-        Debug.Log(firstHitGameObject.transform.position); 
-        if (line.positionCount > 0)
+        line.SetPosition(1, secondHitGameObject.transform.position);
+       /*
+        if (line.positionCount > 1)
         {
-            for (int i = 1; i < line.positionCount; i++)
+            for (int i = 2; i < line.positionCount; i++)
             {
                 line.SetPosition(i, hitObjectsList[i].position);
-                Debug.Log("hit list " + hitObjectsList[i].position);
+               // Debug.Log("hit list " + hitObjectsList[i].position);
             }
         }
+        */
     //    line.SetPosition(0, firstHitGameObject.transform.position);
       //  line.SetPosition(1, secondHitGameObject.transform.position);
     }
@@ -63,26 +70,49 @@ public class Raycaster : MonoBehaviour
             if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength * 10, layerUse))
             {
                 firstHitGameObject = hit.transform.gameObject;
+                firstHitObjectsList.Add(firstHitGameObject.transform);
+                line = Instantiate(linePrefab, firstHitGameObject.transform).GetComponent<LineRenderer>();
+                firstHitPos = firstHitGameObject.transform; 
                 hitObjectsList.Add(firstHitGameObject.transform);
-                line.positionCount++;
-                Debug.Log("position count " + line.positionCount);
-                Debug.Log(firstHitGameObject.name);
+              
+           //     line.positionCount++;
+           //     Debug.Log("position count " + line.positionCount);
+            //    Debug.Log(firstHitGameObject.name);
                
                 //  lines.Add(line); 
             }
         }
-        /*
+        
         if (OVRInput.GetUp(OVRInput.Button.One))
         {
             if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength * 10, layerUse))
             {
                 secondHitGameObject = hit.transform.gameObject;
-                Debug.Log(secondHitGameObject.name);
+                secondHitObjectsList.Add(secondHitGameObject.transform); 
+                firstHitGameObject.GetComponent<ObjectData>().AddConnections(secondHitGameObject);
+                secondHitGameObject.GetComponent<ObjectData>().AddConnections(firstHitGameObject); 
+                secondHitPos = secondHitGameObject.transform; 
+            //    Debug.Log(secondHitGameObject.name);
                 hitObjectsList.Add(secondHitGameObject.transform);
-                line.positionCount++; 
+            //    line.positionCount++;
+            //    hitGameObjectsList.Add(new Tuple<firstHitPos, secondHitPos>()); 
             }      
         }
-        */
+        
+    }
+
+    void PressObject()
+    {
+        RaycastHit hit; 
+        if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength * 10, layerUse))
+        {
+            if (OVRInput.GetDown(OVRInput.Button.Two))
+            {
+                GameObject hitObject = hit.transform.gameObject;
+                Debug.Log(hitObject.name);
+                Debug.Log(hitObject.GetComponent<ObjectData>().DisplayConnections()); 
+            }
+        }
     }
     
     
