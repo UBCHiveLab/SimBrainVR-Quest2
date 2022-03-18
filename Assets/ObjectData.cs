@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,18 +25,21 @@ public class ObjectData : MonoBehaviour
         if (!objectsConnected.Contains(newObject))
         {
             objectsConnected.Add(newObject);
-            Debug.Log("newObject" + newObject.name);
         }
     }
 
-    public List<string> DisplayConnections()
+    public void DisplayConnections()
     {
         
        foreach (var newObject in objectsConnected)
         {
-            Debug.Log(newObject.name);
-            names.Add(newObject.name);
+            Debug.Log("list" + newObject.name);
+            Debug.Log("list" + newObject); 
         }
-        return names;
+    }
+
+    public int DisplayCountOfConnections()
+    {
+        return objectsConnected.Count; 
     }
 }

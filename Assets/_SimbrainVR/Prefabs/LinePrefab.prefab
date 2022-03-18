@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6830432989145586495}
   - component: {fileID: 8688150220370047248}
   - component: {fileID: 2779748271679145222}
-  - component: {fileID: 2782011695740202711}
   m_Layer: 0
   m_Name: LinePrefab
   m_TagString: Untagged
@@ -161,22 +160,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.51068544, y: 0.05, z: 0.05}
   m_Center: {x: -0.42084464, y: 0.5987903, z: -0.6307874}
---- !u!114 &2782011695740202711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6830432989803824045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff70696c7c7d99746a65d2b3827d20e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rayLength: 100
-  rigidBody: {fileID: 8688150220370047248}
-  boxCollider: {fileID: 2779748271679145222}
-  hitGameObject: {fileID: 0}
-  hitGameObjectPos: {x: 0, y: 0, z: 0}
-  points: []
-  pointsCount: 0
