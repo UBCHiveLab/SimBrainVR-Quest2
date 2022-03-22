@@ -40,8 +40,10 @@ public class Raycaster : MonoBehaviour
         //Iterates through the list of lines and positions. Sets each line's posiiton every frame to ensure it stays with it
         for (int i = 0; i < lines.Count; i++)
         {
-            lines[i].SetPosition(0, firstHitObjectsList[i].position);
-            lines[i].SetPosition(1, secondHitObjectsList[i].position); 
+            
+                lines[i].SetPosition(0, firstHitObjectsList[i].position);
+                lines[i].SetPosition(1, secondHitObjectsList[i].position);
+ 
         }
         
         /*
