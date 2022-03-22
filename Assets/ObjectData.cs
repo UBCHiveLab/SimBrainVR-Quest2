@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,37 +6,58 @@ using UnityEngine;
 public class ObjectData : MonoBehaviour
 {
     private List<GameObject> objectsConnected;
-    List<string> names;
+    List<LineRenderer> connectedLines;
     // Start is called before the first frame update
     void Start()
     {
         objectsConnected = new List<GameObject>();
-        names = new List<string>(); 
+        connectedLines = new List<LineRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
 
+    }
+    //Adds the game objects that have been connected with lines
     public void AddConnections(GameObject newObject)
     {
         if (!objectsConnected.Contains(newObject))
         {
             objectsConnected.Add(newObject);
-            Debug.Log("newObject" + newObject.name);
         }
     }
 
-    public List<string> DisplayConnections()
+    public void DisplayConnections()
     {
-        
-       foreach (var newObject in objectsConnected)
+
+        foreach (var newObject in objectsConnected)
         {
-            Debug.Log(newObject.name);
-            names.Add(newObject.name);
+            Debug.Log("list" + newObject.name);
+            Debug.Log("list" + newObject);
         }
-        return names;
+    }
+
+    public int DisplayCountOfConnections()
+    {
+        return objectsConnected.Count;
+    }
+
+    //Adds each line into the list once created
+    public void AddLines(LineRenderer line)
+    {
+        connectedLines.Add(line);
+    }
+
+    public int DisplayLines()
+    {
+        return connectedLines.Count; 
+    }
+    public void EnableLines()
+    {
+        foreach (var line in connectedLines)
+        {
+            line.gameObject.SetActive(true); 
+        }
     }
 }
