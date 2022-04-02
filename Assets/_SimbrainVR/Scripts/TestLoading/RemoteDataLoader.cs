@@ -1,5 +1,5 @@
-//using MongoDB.Bson;
-//using MongoDB.Driver;
+using MongoDB.Bson;
+using MongoDB.Driver;
 using System.Collections;
 
 /**
@@ -10,8 +10,8 @@ public class RemoteDataLoader : DataLoader
 
 
     //MongoDB
-  //  MongoClient client = new MongoClient("mongodb://hive:8afDe1K6XwY1W5cy@van-vr-shard-00-00.zr7vf.mongodb.net:27017,van-vr-shard-00-01.zr7vf.mongodb.net:27017,van-vr-shard-00-02.zr7vf.mongodb.net:27017/test?authSource=admin&replicaSet=atlas-afl4g3-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true");
-   // IMongoDatabase database;
+    MongoClient client = new MongoClient("mongodb://hive:8afDe1K6XwY1W5cy@van-vr-shard-00-00.zr7vf.mongodb.net:27017,van-vr-shard-00-01.zr7vf.mongodb.net:27017,van-vr-shard-00-02.zr7vf.mongodb.net:27017/test?authSource=admin&replicaSet=atlas-afl4g3-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true");
+    IMongoDatabase database;
 
 
     protected override IEnumerator LoadManifest()
@@ -35,26 +35,22 @@ public class RemoteDataLoader : DataLoader
 
         //Using MongoDB
 
-    //  LoadManifestFromMongoDB(); //UNCOMMENT 
+      LoadManifestFromMongoDB(); 
 
         manifestLoaded = true;
         yield break;
     }
 
-    /*
+    
     private void LoadManifestFromMongoDB()
     {
-        IMongoCollection<BsonDocument> specimenCollection, courseCollection, regionCollection, labsCollection;
+        IMongoCollection<BsonDocument> specimenCollection;
         database = client.GetDatabase("vanvr");
         specimenCollection = database.GetCollection<BsonDocument>("specimens");
-        courseCollection = database.GetCollection<BsonDocument>("courses");
-        regionCollection = database.GetCollection<BsonDocument>("regions");
 
         var filter = Builders<BsonDocument>.Filter.Empty;
 
         var specimens = specimenCollection.Find(filter).ToList();
-        var courses = courseCollection.Find(filter).ToList();
-        var regions = regionCollection.Find(filter).ToList();
 
         manifest = new DataManifest();
         manifest.specimenData = new SpecimenRequestData[specimens.Count];
@@ -62,7 +58,7 @@ public class RemoteDataLoader : DataLoader
 
         for (int i = 0; i < specimens.Count; i++)
         {
-
+            /*
             //Populate all fields
             manifest.specimenData[i] = new SpecimenRequestData();
             manifest.specimenData[i].id = specimens[i].GetValue("id").AsString;
@@ -77,30 +73,32 @@ public class RemoteDataLoader : DataLoader
             if (specimens[i].Contains("scale")) manifest.specimenData[i].scale = (float)specimens[i].GetValue("scale").ToDecimal();
             if (specimens[i].Contains("yPos")) manifest.specimenData[i].yPos = (float)specimens[i].GetValue("yPos").ToDecimal();
 
-
+            */
 
 
             //Now populate SpecimenRequestData.AnnotationData[] array
-            
-
-        }
-
-        manifest.regions = new RegionData[regions.Count];
-        for (int i = 0; i < regions.Count; i++)
-        {
-            manifest.regions[i] = new RegionData();
-            manifest.regions[i].name = regions[i].GetValue("name").AsString;
-            manifest.regions[i].order = regions[i].GetValue("order").AsInt32;
-
-            var organs = regions[i].GetValue("organs").AsBsonArray;
-            manifest.regions[i].organs = new string[organs.Count];
-            for (int y = 0; y < organs.Count; y++)
+            if (specimens[i].Contains("annotations"))
             {
-                manifest.regions[i].organs[y] = organs[y].AsString;
+                var annotations = specimens[i].GetValue("annotations").AsBsonArray;
+                manifest.specimenData[i].annotations = new AnnotationData[annotations.Count];
+                for (int y = 0; y < annotations.Count; y++)
+                {
+                    manifest.specimenData[i].annotations[y] = new AnnotationData(annotations[y].AsBsonDocument.GetValue("annotationId").AsString,
+                                                                                 annotations[y].AsBsonDocument.GetValue("title").AsString,
+                                                                                 annotations[y].AsBsonDocument.GetValue("content").AsString,
+                                                                                 new AnnotationNullablePosition());
+
+                    if (annotations[y].AsBsonDocument.GetValue("position").AsBsonDocument.Contains("global")) manifest.specimenData[i].annotations[y].position.global = annotations[y].AsBsonDocument.GetValue("position").AsBsonDocument.GetValue("global").AsBoolean;
+                    if (annotations[y].AsBsonDocument.GetValue("position").AsBsonDocument.Contains("x")) manifest.specimenData[i].annotations[y].position.x = (float)annotations[y].AsBsonDocument.GetValue("position").AsBsonDocument.GetValue("x").ToDecimal(); // .AsDouble;
+                    if (annotations[y].AsBsonDocument.GetValue("position").AsBsonDocument.Contains("y")) manifest.specimenData[i].annotations[y].position.y = (float)annotations[y].AsBsonDocument.GetValue("position").AsBsonDocument.GetValue("y").ToDecimal();
+                    if (annotations[y].AsBsonDocument.GetValue("position").AsBsonDocument.Contains("z")) manifest.specimenData[i].annotations[y].position.z = (float)annotations[y].AsBsonDocument.GetValue("position").AsBsonDocument.GetValue("z").ToDecimal();
+
+                }
             }
+
         }
     }
-    */
+    
 
 }
 

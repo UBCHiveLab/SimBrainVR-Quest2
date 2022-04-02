@@ -10,8 +10,11 @@ public class Raycaster : MonoBehaviour
     private List<LineRenderer> lines; 
     private List<Transform> hitObjectsList;
     private List<Transform> firstHitObjectsList;
-    private List<Transform> secondHitObjectsList; 
-   
+    private List<Transform> secondHitObjectsList;
+
+    //Menu 
+    public RingMenu MainMenuPrefab;
+    protected RingMenu MainMenuInstance;
 
  //   public GameObject linePrefab;
     public LineRenderer line;
@@ -19,10 +22,13 @@ public class Raycaster : MonoBehaviour
     GameObject secondHitGameObject;
     int layerUse = ~1;
     public GameObject linePrefab;
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        
+       
         hitObjectsList = new List<Transform>();
         lines = new List<LineRenderer>(); 
         line.positionCount = 0;
@@ -33,38 +39,27 @@ public class Raycaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ShowRingMenu();
         CreateLine();
         PressObject();
-        OpenMenu();
+     //   OpenMenu();
         line.gameObject.SetActive(true);
         //Iterates through the list of lines and positions. Sets each line's posiiton every frame to ensure it stays with it
         for (int i = 0; i < lines.Count; i++)
         {
-            
-                lines[i].SetPosition(0, firstHitObjectsList[i].position);
-                lines[i].SetPosition(1, secondHitObjectsList[i].position);
- 
-        }
-        
-        /*
-        if (line.positionCount >= 0)
-        { 
-            for (int i = 0; i < line.positionCount; i++)
+            lines[i].SetPosition(0, firstHitObjectsList[i].position);
+            if (i >= 0 && i < secondHitObjectsList.Count)
             {
-                line.SetPosition(i,hitObjectsList[i].position); 
-               // Debug.Log("hit list " + hitObjectsList[i].position);
+                lines[i].SetPosition(1, secondHitObjectsList[i].position);
             }
-        }*/
-        
-    //    line.SetPosition(0, firstHitGameObject.transform.position);
-      //  line.SetPosition(1, secondHitGameObject.transform.position);
+        }
     }
     
     
     void CreateLine()
     {
         RaycastHit hit; // did the ray make contact with an object
-        //Sets the first position of the line
+                        //Sets the first position of the line
         if (OVRInput.GetDown(OVRInput.Button.One))
         {
             if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength * 10, layerUse))
@@ -73,31 +68,21 @@ public class Raycaster : MonoBehaviour
                 firstHitObjectsList.Add(firstHitGameObject.transform);
                 line = Instantiate(linePrefab, firstHitGameObject.transform).GetComponent<LineRenderer>();
                 lines.Add(line);
-                
-              //  hitObjectsList.Add(firstHitGameObject.transform);
-              
             }
         }
         //Sets the second position of the line
-        if (OVRInput.GetUp(OVRInput.Button.One))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength * 10, layerUse))
         {
-            if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength * 10, layerUse))
+            if (OVRInput.GetUp(OVRInput.Button.One))
             {
                 secondHitGameObject = hit.transform.gameObject;
-                secondHitObjectsList.Add(secondHitGameObject.transform); 
+                secondHitObjectsList.Add(secondHitGameObject.transform);
                 firstHitGameObject.GetComponent<ObjectData>().AddConnections(secondHitGameObject); //adding second game object to the list of objects hit 
                 firstHitGameObject.GetComponent<ObjectData>().AddLines(line);
-                secondHitGameObject.GetComponent<ObjectData>().AddLines(line); 
+                secondHitGameObject.GetComponent<ObjectData>().AddLines(line);
                 secondHitGameObject.GetComponent<ObjectData>().AddConnections(firstHitGameObject); //adding first game object to second's list of hit objects
-               
-                
-            //    Debug.Log(secondHitGameObject.name);
-            //   hitObjectsList.Add(secondHitGameObject.transform);
-             //   line.positionCount++;
-          
-            }      
-        }
-        
+            }
+        }       
     }
 
     //By pressing B on controller, you can figure out the gameobjects it's connected to, the number of them and the number of lines we've created under it 
@@ -133,8 +118,33 @@ public class Raycaster : MonoBehaviour
         {
             line.gameObject.SetActive(false); 
         }
-    }    
+    }
     
-    
-    
+    public void ShowRingMenu()
+    {
+        RaycastHit hit; 
+        if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength * 10))
+        {
+            if (OVRInput.GetDown(OVRInput.RawButton.X))
+            {
+                Debug.Log(hit.transform.gameObject.name);
+                MainMenuInstance = Instantiate(MainMenuPrefab, hit.transform);
+                MainMenuInstance.callback = MenuClick;
+                Debug.Log("ring menu pop-up");
+            }
+        }
+    }
+
+    public void MenuClick(string path)
+    {
+        Debug.Log(path);
+        var paths = path.Split('/');
+     //   GetComponent<PlaceBrick>().SetPrefab(int.Parse(paths[1]), int.Parse(paths[2])); 
+
+    }
+
+
+
+
+
 }

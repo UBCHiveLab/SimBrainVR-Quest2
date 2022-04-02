@@ -18,6 +18,6 @@ public class SpecimenRequestData
     public string prefabPath;
     public float scale;
     public float yPos;
-  //  public AnnotationData[] annotations;
+    public AnnotationData[] annotations;
 
 }

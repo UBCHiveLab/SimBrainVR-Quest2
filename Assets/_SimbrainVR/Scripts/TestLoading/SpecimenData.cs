@@ -14,7 +14,7 @@ public class SpecimenData
     public Material material;
     public float scale;
     public float yPos;
- //   public List<AnnotationData> annotations;
+    public List<AnnotationData> annotations;
     public GameObject prefab;
     public SpecimenRequestData request;
     public string imgUrl;
