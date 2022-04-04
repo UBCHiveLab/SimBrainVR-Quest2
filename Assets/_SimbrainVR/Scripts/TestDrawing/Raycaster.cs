@@ -13,8 +13,8 @@ public class Raycaster : MonoBehaviour
     private List<Transform> secondHitObjectsList;
 
     //Menu 
-    public RingMenu MainMenuPrefab;
-    protected RingMenu MainMenuInstance;
+    public GameObject RingMenu;
+   
 
  //   public GameObject linePrefab;
     public LineRenderer line;
@@ -122,29 +122,13 @@ public class Raycaster : MonoBehaviour
     
     public void ShowRingMenu()
     {
-        RaycastHit hit; 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength * 10))
+        if (OVRInput.GetDown(OVRInput.Button.Three))
         {
-            if (OVRInput.GetDown(OVRInput.RawButton.X))
-            {
-                Debug.Log(hit.transform.gameObject.name);
-                MainMenuInstance = Instantiate(MainMenuPrefab, hit.transform);
-                MainMenuInstance.callback = MenuClick;
-                Debug.Log("ring menu pop-up");
-            }
+            RingMenu.SetActive(true); 
+            Instantiate(RingMenu, transform);
+            Debug.Log("ring menu"); 
         }
     }
-
-    public void MenuClick(string path)
-    {
-        Debug.Log(path);
-        var paths = path.Split('/');
-     //   GetComponent<PlaceBrick>().SetPrefab(int.Parse(paths[1]), int.Parse(paths[2])); 
-
-    }
-
-
-
 
 
 }
