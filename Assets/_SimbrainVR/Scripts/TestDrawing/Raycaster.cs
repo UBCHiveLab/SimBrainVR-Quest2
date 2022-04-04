@@ -12,11 +12,6 @@ public class Raycaster : MonoBehaviour
     private List<Transform> firstHitObjectsList;
     private List<Transform> secondHitObjectsList;
 
-    //Menu 
-    public GameObject RingMenu;
-   
-
- //   public GameObject linePrefab;
     public LineRenderer line;
     GameObject firstHitGameObject;
     GameObject secondHitGameObject;
@@ -27,8 +22,6 @@ public class Raycaster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-       
         hitObjectsList = new List<Transform>();
         lines = new List<LineRenderer>(); 
         line.positionCount = 0;
@@ -39,10 +32,8 @@ public class Raycaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ShowRingMenu();
         CreateLine();
         PressObject();
-     //   OpenMenu();
         line.gameObject.SetActive(true);
         //Iterates through the list of lines and positions. Sets each line's posiiton every frame to ensure it stays with it
         for (int i = 0; i < lines.Count; i++)
@@ -120,15 +111,7 @@ public class Raycaster : MonoBehaviour
         }
     }
     
-    public void ShowRingMenu()
-    {
-        if (OVRInput.GetDown(OVRInput.Button.Three))
-        {
-            RingMenu.SetActive(true); 
-            Instantiate(RingMenu, transform);
-            Debug.Log("ring menu"); 
-        }
-    }
+    
 
 
 }
