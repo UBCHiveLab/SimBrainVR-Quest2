@@ -24,7 +24,10 @@ public class RadialMenu : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.Button.Three))
         {
             Menu.SetActive(true);
-            Instantiate(Menu, dummyPos);       
+            Vector3 controllerPos = OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTouch);
+            Quaternion controllerRotation = OVRInput.GetLocalControllerRotation(OVRInput.Controller.LTouch);
+          //  Menu.transform.localPosition = controllerPos;
+           // Menu.transform.localRotation = controllerRotation; 
         }
     }
 }
