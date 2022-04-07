@@ -103,7 +103,7 @@ public class Raycaster : MonoBehaviour
         }
     }
     //Set the lines to inactive 
-    void DisableLines()
+    public void DisableLines()
     {
         foreach(var line in lines)
         {
