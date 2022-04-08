@@ -1,0 +1,224 @@
+{
+  "annotationDatas": [
+    {
+      "annotationId": "1",
+      "title": "tentorium cerebelli ",
+      "content": "For more, go to [link src='http://neuroanatomy.ca/modules/Meninges/story_html5.html' title='Meningeal Layers of the brain'] (slide 2.3) ",
+      "position": {
+        "x": -49.41999816894531,
+        "y": 29.36710548400879,
+        "z": 30.559999465942384,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "2",
+      "title": "midbrain",
+      "content": "For more, go to [link src='http://neuroanatomy.ca/modules/BrainstemOverview/story_html5.html' title='Brainstem Overview']",
+      "position": {
+        "x": -10.992685317993164,
+        "y": 51.62745666503906,
+        "z": 4.440000057220459,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "3",
+      "title": "substantia nigra ",
+      "content": "For more, go to [link src='http://neuroanatomy.ca/modules/BasalGanglia/story_html5.html' title='Basal Ganglia']",
+      "position": {
+        "x": -4.215428352355957,
+        "y": 46.58346939086914,
+        "z": 4.579999923706055,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "4",
+      "title": "Pons",
+      "content": "For more, go to [link src='http://neuroanatomy.ca/modules/BrainstemOverview/story_html5.html' title='Brainstem Overview']",
+      "position": {
+        "x": -4.823464393615723,
+        "y": 31.415607452392579,
+        "z": 4.400000095367432,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "5",
+      "title": "medulla",
+      "content": "For more, go to [link src='http://neuroanatomy.ca/modules/BrainstemOverview/story_html5.html' title='Brainstem Overview']",
+      "position": {
+        "x": -13.355364799499512,
+        "y": 9.327281951904297,
+        "z": 3.9000000953674318,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "6",
+      "title": "Pharyngotympanic tube ",
+      "content": "",
+      "position": {
+        "x": 31.852554321289064,
+        "y": 6.5,
+        "z": 21.68000030517578,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "7",
+      "title": "Nasal Septum ",
+      "content": "",
+      "position": {
+        "x": 72.59049224853516,
+        "y": 30.490306854248048,
+        "z": 5.800000190734863,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "8",
+      "title": "Hard Palate",
+      "content": "For an overview of the head and neck, go to [link src='https://www.youtube.com/watch?v=BYgNTz7TZKM' title='How we Swallow and Breathe: Overview of the Head & Neck']",
+      "position": {
+        "x": 64.99449157714844,
+        "y": 3.721248149871826,
+        "z": 1.9060441255569459,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "9",
+      "title": "Soft Palate",
+      "content": "For an overview of the head and neck, go to [link src='https://www.youtube.com/watch?v=BYgNTz7TZKM' title='How we Swallow and Breathe: Overview of the Head & Neck']",
+      "position": {
+        "x": 30.270082473754884,
+        "y": -10.768113136291504,
+        "z": 2.0,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "10",
+      "title": "Uvula",
+      "content": "For an overview of the head and neck, go to [link src='https://www.youtube.com/watch?v=BYgNTz7TZKM' title='How we Swallow and Breathe: Overview of the Head & Neck']",
+      "position": {
+        "x": 25.23324203491211,
+        "y": -28.012807846069337,
+        "z": 6.400000095367432,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "11",
+      "title": "Nasopharynx   ",
+      "content": "For an overview of the head and neck, go to [link src='https://www.youtube.com/watch?v=BYgNTz7TZKM' title='How we Swallow and Breathe: Overview of the Head & Neck']",
+      "position": {
+        "x": 21.1299991607666,
+        "y": -16.645416259765626,
+        "z": 10.260000228881836,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "12",
+      "title": "Oropharynx  ",
+      "content": "For an overview of the head and neck, go to [link src='https://www.youtube.com/watch?v=BYgNTz7TZKM' title='How we Swallow and Breathe: Overview of the Head & Neck']",
+      "position": {
+        "x": 17.920000076293947,
+        "y": -43.34056854248047,
+        "z": 9.67508316040039,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "13",
+      "title": "Laryngopharynx   ",
+      "content": "For an overview of the head and neck, go to [link src='https://www.youtube.com/watch?v=BYgNTz7TZKM' title='How we Swallow and Breathe: Overview of the Head & Neck']",
+      "position": {
+        "x": -5.920000076293945,
+        "y": -103.82638549804688,
+        "z": 8.119999885559082,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "14",
+      "title": "Esophagus  ",
+      "content": "For an overview of the head and neck, go to [link src='https://www.youtube.com/watch?v=BYgNTz7TZKM' title='How we Swallow and Breathe: Overview of the Head & Neck']",
+      "position": {
+        "x": -17.270000457763673,
+        "y": -122.30982208251953,
+        "z": 6.099999904632568,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "15",
+      "title": "Palatoglossal Arch  ",
+      "content": "For an overview of the head and neck, go to [link src='https://www.youtube.com/watch?v=BYgNTz7TZKM' title='How we Swallow and Breathe: Overview of the Head & Neck']",
+      "position": {
+        "x": 35.494720458984378,
+        "y": -17.799999237060548,
+        "z": 20.700000762939454,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "16",
+      "title": "Epiglottis   ",
+      "content": "For an overview of the head and neck, go to [link src='https://www.youtube.com/watch?v=BYgNTz7TZKM' title='How we Swallow and Breathe: Overview of the Head & Neck']",
+      "position": {
+        "x": 20.389999389648439,
+        "y": -69.79000091552735,
+        "z": 2.140000104904175,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "17",
+      "title": "Vocal Fold  ",
+      "content": "For an overview of the head and neck, go to [link src='https://www.youtube.com/watch?v=BYgNTz7TZKM' title='How we Swallow and Breathe: Overview of the Head & Neck']",
+      "position": {
+        "x": 16.100000381469728,
+        "y": -113.02702331542969,
+        "z": 14.600000381469727,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "18",
+      "title": "Thyroid Cartilage   ",
+      "content": "For an overview of the head and neck, go to [link src='https://www.youtube.com/watch?v=BYgNTz7TZKM' title='How we Swallow and Breathe: Overview of the Head & Neck']",
+      "position": {
+        "x": 33.04426193237305,
+        "y": -115.75935363769531,
+        "z": 11.899999618530274,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "19",
+      "title": "Larynx  ",
+      "content": "For an overview of the head and neck, go to [link src='https://www.youtube.com/watch?v=BYgNTz7TZKM' title='How we Swallow and Breathe: Overview of the Head & Neck']",
+      "position": {
+        "x": 4.184896945953369,
+        "y": -123.38540649414063,
+        "z": 16.399999618530275,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "20",
+      "title": "Cricoid Cartilage  ",
+      "content": "For an overview of the head and neck, go to [link src='https://www.youtube.com/watch?v=BYgNTz7TZKM' title='How we Swallow and Breathe: Overview of the Head & Neck']",
+      "position": {
+        "x": 8.69846248626709,
+        "y": -133.25,
+        "z": 10.649999618530274,
+        "global": false
+      }
+    }
+  ]
+}

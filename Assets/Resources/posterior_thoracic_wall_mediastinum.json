@@ -1,0 +1,389 @@
+{
+  "annotationDatas": [
+    {
+      "annotationId": "1",
+      "title": "Aorta",
+      "content": "",
+      "position": {
+        "x": 0.12947416305541993,
+        "y": 3.737652063369751,
+        "z": 1.6550099849700928,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "2",
+      "title": "Thoracic Aorta",
+      "content": "",
+      "position": {
+        "x": 1.9500702619552613,
+        "y": 0.7489585876464844,
+        "z": -0.4859510660171509,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "3",
+      "title": "Right Common Carotid Artery",
+      "content": "",
+      "position": {
+        "x": -1.2834686040878297,
+        "y": 3.657032012939453,
+        "z": 4.983348846435547,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "4",
+      "title": "Right Subclavian Artery",
+      "content": "",
+      "position": {
+        "x": -1.5456719398498536,
+        "y": 3.395240545272827,
+        "z": 4.800471782684326,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "5",
+      "title": "Brachiocephalic Artery",
+      "content": "",
+      "position": {
+        "x": -0.8351561427116394,
+        "y": 3.5321927070617677,
+        "z": 4.22930908203125,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "6",
+      "title": "Left Common Carotid Artery",
+      "content": "",
+      "position": {
+        "x": 0.5386983752250671,
+        "y": 3.280273914337158,
+        "z": 5.456451416015625,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "7",
+      "title": "Superior Vena Cava",
+      "content": "",
+      "position": {
+        "x": -1.1952595710754395,
+        "y": 2.5885963439941408,
+        "z": 1.791480541229248,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "8",
+      "title": "Left Brachiocephalic Vein",
+      "content": "",
+      "position": {
+        "x": -0.04969543218612671,
+        "y": 3.5157127380371095,
+        "z": 3.51631498336792,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "9",
+      "title": "Left Subclavian Vein",
+      "content": "",
+      "position": {
+        "x": 1.9348782300949097,
+        "y": 2.5573689937591554,
+        "z": 4.9551849365234379,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "10",
+      "title": "Left Internal Jugular Vein (Reflected)",
+      "content": "",
+      "position": {
+        "x": 3.335707664489746,
+        "y": 2.815082311630249,
+        "z": 4.516971588134766,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "11",
+      "title": "Right Brachiocephalic Vein",
+      "content": "",
+      "position": {
+        "x": -1.3469340801239014,
+        "y": 3.2303924560546877,
+        "z": 3.7289581298828127,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "12",
+      "title": "Right Subclavian Vein",
+      "content": "",
+      "position": {
+        "x": -2.7985143661499025,
+        "y": 3.786815643310547,
+        "z": 3.7857701778411867,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "13",
+      "title": "Right Internal Jugular Vein",
+      "content": "",
+      "position": {
+        "x": -2.169187545776367,
+        "y": 3.8300135135650636,
+        "z": 5.586498260498047,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "14",
+      "title": "Pulmonary Trunk",
+      "content": "",
+      "position": {
+        "x": 1.4019967317581177,
+        "y": 2.6867408752441408,
+        "z": 1.3359217643737794,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "15",
+      "title": "Left Pulmonary Artery",
+      "content": "",
+      "position": {
+        "x": 1.473231315612793,
+        "y": 1.5264095067977906,
+        "z": 2.3317947387695314,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "16",
+      "title": "Right Pulmonary Artery",
+      "content": "",
+      "position": {
+        "x": -0.24051667749881745,
+        "y": 1.9351997375488282,
+        "z": 0.9079433679580689,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "17",
+      "title": "Trachea",
+      "content": "",
+      "position": {
+        "x": -0.1610856056213379,
+        "y": 3.2237660884857179,
+        "z": 4.499629974365234,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "18",
+      "title": "Left Primary Bronchus",
+      "content": "",
+      "position": {
+        "x": 1.630616545677185,
+        "y": 1.8057746887207032,
+        "z": 0.8971821069717407,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "19",
+      "title": "Right Primary Bronchus",
+      "content": "",
+      "position": {
+        "x": -0.6314896941184998,
+        "y": 1.3316688537597657,
+        "z": 1.793891429901123,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "20",
+      "title": "Esophagus",
+      "content": "",
+      "position": {
+        "x": 1.012071132659912,
+        "y": 1.4524650573730469,
+        "z": -0.11029481887817383,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "21",
+      "title": "Left Vagus Nerve",
+      "content": "",
+      "position": {
+        "x": 1.205769658088684,
+        "y": 1.7408026456832886,
+        "z": 3.881763458251953,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "22",
+      "title": "Left Recurrent Laryngeal Nerve",
+      "content": "",
+      "position": {
+        "x": 1.630745768547058,
+        "y": 1.7737846374511719,
+        "z": 2.8809008598327638,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "23",
+      "title": "Diaphragm",
+      "content": "",
+      "position": {
+        "x": -1.471314549446106,
+        "y": 1.5955922603607178,
+        "z": -2.952267646789551,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "24",
+      "title": "Fibrous Pericardium",
+      "content": "",
+      "position": {
+        "x": 2.452552318572998,
+        "y": 2.0959243774414064,
+        "z": -4.393471717834473,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "25",
+      "title": "Azygos Vein",
+      "content": "",
+      "position": {
+        "x": 0.10077334195375443,
+        "y": 0.8670539855957031,
+        "z": 0.45555073022842409,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "26",
+      "title": "Sympathetic Trunk",
+      "content": "",
+      "position": {
+        "x": -1.276540756225586,
+        "y": 0.1596224308013916,
+        "z": 2.9602999687194826,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "27",
+      "title": "Greater Splanchnic Nerve",
+      "content": "",
+      "position": {
+        "x": -0.38179588317871096,
+        "y": 0.6920241713523865,
+        "z": -0.5528492331504822,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "28",
+      "title": "Left Phrenic Nerve",
+      "content": "",
+      "position": {
+        "x": 2.5593013763427736,
+        "y": 0.15963751077651978,
+        "z": 1.2821003198623658,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "29",
+      "title": "Right Phrenic Nerve",
+      "content": "",
+      "position": {
+        "x": -1.600250005722046,
+        "y": 0.3271675109863281,
+        "z": 0.9258838891983032,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "30",
+      "title": "Right Vagus Nerve",
+      "content": "",
+      "position": {
+        "x": -0.9712653160095215,
+        "y": 2.718982458114624,
+        "z": 3.9071197509765627,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "31",
+      "title": "Ligamentum Arteriosum",
+      "content": "",
+      "position": {
+        "x": 1.1998512744903565,
+        "y": 2.6553726196289064,
+        "z": 2.387042760848999,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "32",
+      "title": "Posterior Intercostal Vein",
+      "content": "",
+      "position": {
+        "x": -1.9691429138183594,
+        "y": -1.7721213102340699,
+        "z": -0.34841203689575198,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "33",
+      "title": "Posterior Intercostal Artery",
+      "content": "",
+      "position": {
+        "x": -1.7752171754837037,
+        "y": -1.7120665311813355,
+        "z": -0.5177158117294312,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "34",
+      "title": "Posterior Intercostal Nerve",
+      "content": "",
+      "position": {
+        "x": -1.898767352104187,
+        "y": -1.8282432556152344,
+        "z": -0.7945599555969238,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "35",
+      "title": "Thoracic Duct",
+      "content": "",
+      "position": {
+        "x": 0.427580326795578,
+        "y": 0.7381324768066406,
+        "z": -0.5313076376914978,
+        "global": false
+      }
+    }
+  ]
+}

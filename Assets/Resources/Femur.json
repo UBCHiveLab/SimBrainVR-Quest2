@@ -1,0 +1,169 @@
+{
+    "annotationDatas": [
+        {
+            "annotationId": "0",
+            "title": "Information",
+            "content": "",
+            "position": {
+                "x": -99.58035278320313,
+                "y": -25.0,
+                "z": 63.69999694824219,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "1",
+            "title": "head",
+            "content": "",
+            "position": {
+                "x": -323.5,
+                "y": -66.69999694824219,
+                "z": -23.200000762939454,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "2",
+            "title": "Fovea capitis",
+            "content": "Attachment site of the round ligament of the femur",
+            "position": {
+                "x": -319.5,
+                "y": -79.08525085449219,
+                "z": 0.19999980926513673,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "3",
+            "title": "Greater trochanter",
+            "content": "Insertion site for the gluteus medius and gluteus minimus.",
+            "position": {
+                "x": -322.3999938964844,
+                "y": -12.400001525878907,
+                "z": -17.700000762939454,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "4",
+            "title": "Intertrochanteric crest",
+            "content": "",
+            "position": {
+                "x": -299.3999938964844,
+                "y": -20.900001525878908,
+                "z": 19.0,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "5",
+            "title": "Lesser trochanter",
+            "content": "Insertion point of the iliopsoas muscle.",
+            "position": {
+                "x": -278.70001220703127,
+                "y": -36.30000305175781,
+                "z": 22.400001525878908,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "6",
+            "title": "Linea aspera",
+            "content": "",
+            "position": {
+                "x": -129.3361053466797,
+                "y": -9.248893737792969,
+                "z": 5.200000762939453,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "7",
+            "title": "Shaft of femur",
+            "content": "",
+            "position": {
+                "x": -143.8000030517578,
+                "y": -14.289466857910157,
+                "z": -28.200000762939454,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "8",
+            "title": "Adductor tubercle",
+            "content": "Insertion site of adductor magnus.",
+            "position": {
+                "x": 84.80000305175781,
+                "y": -22.799999237060548,
+                "z": 32.451332092285159,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "9",
+            "title": "Medial condyle",
+            "content": "",
+            "position": {
+                "x": 108.30000305175781,
+                "y": 0.7000007629394531,
+                "z": 54.099998474121097,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "10",
+            "title": "Intercondylar fossa",
+            "content": "",
+            "position": {
+                "x": 98.3436279296875,
+                "y": 14.0,
+                "z": 23.700000762939454,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "11",
+            "title": "Lateral condyle",
+            "content": "",
+            "position": {
+                "x": 101.80000305175781,
+                "y": 40.418216705322269,
+                "z": 27.599998474121095,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "12",
+            "title": "Lateral epicondyle",
+            "content": "",
+            "position": {
+                "x": 95.99356079101563,
+                "y": 25.5,
+                "z": -20.899999618530275,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "13",
+            "title": "Patellar surface",
+            "content": "",
+            "position": {
+                "x": 108.0999984741211,
+                "y": -2.6596221923828127,
+                "z": -5.900000095367432,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "14",
+            "title": "Medial epicondyle",
+            "content": "",
+            "position": {
+                "x": 101.5,
+                "y": -28.299999237060548,
+                "z": 26.799999237060548,
+                "global": false
+            }
+        }
+    ]
+}

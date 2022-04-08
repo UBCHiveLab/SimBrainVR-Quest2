@@ -1,0 +1,70 @@
+{
+    "annotationDatas": [
+        {
+            "annotationId": "0",
+            "title": "Information",
+            "content": "",
+            "position": {
+                "x": 76.00006103515625,
+                "y": 28.000003814697267,
+                "z": 20.000001907348634,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "1",
+            "title": "Apex",
+            "content": "",
+            "position": {
+                "x": 33.80004119873047,
+                "y": 202.8000030517578,
+                "z": -3.6000051498413088,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "2",
+            "title": "Head",
+            "content": "",
+            "position": {
+                "x": 30.600021362304689,
+                "y": 186.6999969482422,
+                "z": -3.200002670288086,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "3",
+            "title": "Neck",
+            "content": "",
+            "position": {
+                "x": 24.100025177001954,
+                "y": 174.6999969482422,
+                "z": -4.60000467300415,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "4",
+            "title": "Shaft",
+            "content": "",
+            "position": {
+                "x": 9.00001335144043,
+                "y": 91.5,
+                "z": 5.600000381469727,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "5",
+            "title": "Lateral malleolus",
+            "content": "The attachment site of the lateral ligaments of the ankle joint.",
+            "position": {
+                "x": 3.899996519088745,
+                "y": -158.1999969482422,
+                "z": -8.500003814697266,
+                "global": false
+            }
+        }
+    ]
+}

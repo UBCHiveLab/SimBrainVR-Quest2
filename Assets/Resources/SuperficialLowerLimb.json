@@ -1,0 +1,433 @@
+{
+    "annotationDatas": [
+        {
+            "annotationId": "0",
+            "title": "Information",
+            "content": "",
+            "position": {
+                "x": 160.39999389648438,
+                "y": 122.52372741699219,
+                "z": 77.96043395996094,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "1",
+            "title": "Iliac crest",
+            "content": "",
+            "position": {
+                "x": 13.300000190734864,
+                "y": 703.2852783203125,
+                "z": 118.62646484375,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "2",
+            "title": "Iliacus",
+            "content": "",
+            "position": {
+                "x": 40.100830078125,
+                "y": 678.9046630859375,
+                "z": 129.05120849609376,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "3",
+            "title": "Psoas major",
+            "content": "",
+            "position": {
+                "x": 54.43414306640625,
+                "y": 688.2933959960938,
+                "z": 160.45867919921876,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "4",
+            "title": "Pubic symphysis",
+            "content": "",
+            "position": {
+                "x": 90.23764038085938,
+                "y": 505.4606018066406,
+                "z": 209.14984130859376,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "5",
+            "title": "Femoral vein",
+            "content": "",
+            "position": {
+                "x": 104.9000015258789,
+                "y": 530.1868896484375,
+                "z": 142.6329345703125,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "6",
+            "title": "Femoral artery",
+            "content": "",
+            "position": {
+                "x": 103.9000015258789,
+                "y": 541.2958374023438,
+                "z": 130.883544921875,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "7",
+            "title": "Inguinal ligament",
+            "content": "The base of the femoral triangle.",
+            "position": {
+                "x": 110.30000305175781,
+                "y": 544.57666015625,
+                "z": 145.677978515625,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "8",
+            "title": "Lateral border of femoral triangle",
+            "content": "The medial border of the sartorius muscle.",
+            "position": {
+                "x": 109.9000015258789,
+                "y": 528.5255737304688,
+                "z": 113.82916259765625,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "9",
+            "title": "Medial border of femoral triangle ",
+            "content": "The adductor longus muscle marks the medial border.",
+            "position": {
+                "x": 109.19999694824219,
+                "y": 520.9027099609375,
+                "z": 156.12576293945313,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "10",
+            "title": "Great saphenous vein",
+            "content": "",
+            "position": {
+                "x": 98.0999984741211,
+                "y": 448.977294921875,
+                "z": 145.37265014648438,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "11",
+            "title": "Bladder",
+            "content": "",
+            "position": {
+                "x": 77.895751953125,
+                "y": 552.9973754882813,
+                "z": 213.6732177734375,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "12",
+            "title": "Prostate",
+            "content": "",
+            "position": {
+                "x": 38.951171875,
+                "y": 502.6398620605469,
+                "z": 211.90182495117188,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "13",
+            "title": "Anus",
+            "content": "",
+            "position": {
+                "x": -37.70000076293945,
+                "y": 458.90728759765627,
+                "z": 194.44247436523438,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "14",
+            "title": "Sacrum",
+            "content": "",
+            "position": {
+                "x": -68.9000015258789,
+                "y": 569.9937133789063,
+                "z": 229.39395141601563,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "15",
+            "title": "Gluteus maximus",
+            "content": "",
+            "position": {
+                "x": -61.099998474121097,
+                "y": 577.1305541992188,
+                "z": 120.09097290039063,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "16",
+            "title": "Gluteus medius",
+            "content": "",
+            "position": {
+                "x": -5.199999809265137,
+                "y": 673.83447265625,
+                "z": 119.221435546875,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "17",
+            "title": "Patella",
+            "content": "",
+            "position": {
+                "x": 98.0,
+                "y": 110.36186218261719,
+                "z": -4.2090911865234379,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "18",
+            "title": "Great saphenous vein",
+            "content": "",
+            "position": {
+                "x": 31.775747299194337,
+                "y": -30.569229125976564,
+                "z": 50.31517791748047,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "19",
+            "title": "Saphenous nerve",
+            "content": "",
+            "position": {
+                "x": 36.05293655395508,
+                "y": -32.003997802734378,
+                "z": 35.66229248046875,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "20",
+            "title": "Medial malleolus",
+            "content": "",
+            "position": {
+                "x": 59.205810546875,
+                "y": -337.9125061035156,
+                "z": -30.643463134765626,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "21",
+            "title": "Dorsal venous arch",
+            "content": "",
+            "position": {
+                "x": 105.5999984741211,
+                "y": -420.17755126953127,
+                "z": -120.39215087890625,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "22",
+            "title": "Lateral malleolus",
+            "content": "",
+            "position": {
+                "x": -9.837738037109375,
+                "y": -333.48663330078127,
+                "z": -71.29248046875,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "23",
+            "title": "Small saphenous vein",
+            "content": "",
+            "position": {
+                "x": -18.87615966796875,
+                "y": -293.6893310546875,
+                "z": -26.72479248046875,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "24",
+            "title": "Calcaneal tendon",
+            "content": "",
+            "position": {
+                "x": -13.899999618530274,
+                "y": -329.8636779785156,
+                "z": -12.3681640625,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "25",
+            "title": "Small saphenous vein",
+            "content": "",
+            "position": {
+                "x": -36.0,
+                "y": -14.981447219848633,
+                "z": 40.050621032714847,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "26",
+            "title": "Inferior vena cava",
+            "content": "",
+            "position": {
+                "x": 60.900001525878909,
+                "y": 706.584228515625,
+                "z": 222.57861328125,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "27",
+            "title": "Right common iliac vein",
+            "content": "",
+            "position": {
+                "x": 47.0943603515625,
+                "y": 660.6329956054688,
+                "z": 205.03271484375,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "28",
+            "title": "Right common iliac artery",
+            "content": "",
+            "position": {
+                "x": 57.6455078125,
+                "y": 703.8797607421875,
+                "z": 201.95794677734376,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "29",
+            "title": "External iliac artery",
+            "content": "",
+            "position": {
+                "x": 68.21307373046875,
+                "y": 622.9007568359375,
+                "z": 180.60955810546876,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "30",
+            "title": "Internal iliac artery",
+            "content": "",
+            "position": {
+                "x": 46.1531982421875,
+                "y": 633.47509765625,
+                "z": 197.8070068359375,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "31",
+            "title": "External iliac vein",
+            "content": "",
+            "position": {
+                "x": 47.41888427734375,
+                "y": 611.94091796875,
+                "z": 181.7232666015625,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "32",
+            "title": "Internal iliac vein",
+            "content": "",
+            "position": {
+                "x": 16.0,
+                "y": 610.1924438476563,
+                "z": 189.3353271484375,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "33",
+            "title": "Anterior division of internal iliac artery",
+            "content": "",
+            "position": {
+                "x": 30.600000381469728,
+                "y": 597.9173583984375,
+                "z": 188.69403076171876,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "34",
+            "title": "Posterior division of internal iliac artery",
+            "content": "",
+            "position": {
+                "x": 20.76080322265625,
+                "y": 599.3079833984375,
+                "z": 191.1732177734375,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "35",
+            "title": "Vas deferens",
+            "content": "",
+            "position": {
+                "x": 34.56329345703125,
+                "y": 555.5242309570313,
+                "z": 180.91433715820313,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "36",
+            "title": "Deep inguinal ring",
+            "content": "",
+            "position": {
+                "x": 103.24017333984375,
+                "y": 571.52587890625,
+                "z": 152.35919189453126,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "37",
+            "title": "Iliotibial tract (IT band)",
+            "content": "",
+            "position": {
+                "x": 33.20000076293945,
+                "y": 475.7455749511719,
+                "z": 17.173309326171876,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "38",
+            "title": "Fascia lata",
+            "content": "",
+            "position": {
+                "x": 105.5,
+                "y": 421.74560546875,
+                "z": 54.88262939453125,
+                "global": false
+            }
+        }
+    ]
+}

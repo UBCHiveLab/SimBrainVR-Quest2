@@ -1,0 +1,26 @@
+{
+    "annotationDatas": [
+        {
+            "annotationId": "1",
+            "title": "",
+            "content": "",
+            "position": {
+                "x": -4.300002098083496,
+                "y": 43.20001983642578,
+                "z": 7.699993133544922,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "2",
+            "title": "",
+            "content": "",
+            "position": {
+                "x": -5.400001525878906,
+                "y": 39.70001220703125,
+                "z": 25.899993896484376,
+                "global": false
+            }
+        }
+    ]
+}

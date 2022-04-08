@@ -1,0 +1,103 @@
+{
+   "annotationDatas":[
+      {
+         "annotationId":"0",
+         "title":"Information",
+         "content":"The calvarium (skull cap) of a human skull.  For more on the head, visit: http://clinicalanatomy.ca/head.html  Produced by the HIVE at the University of British Columbia.   Credits: Dr. Claudia Krebs (Faculty Lead), Ishan Dixit, Connor Dunne, Monika Fejtek",
+         "position":{
+            "x":44.18225860595703,
+            "y":7.5879974365234379,
+            "z":-56.21468734741211,
+            "global":false
+         }
+      },
+      {
+         "annotationId":"1",
+         "title":"Frontal bone",
+         "content":"",
+         "position":{
+            "x":1.4152469635009766,
+            "y":67.02120971679688,
+            "z":-47.60434341430664,
+            "global":false
+         }
+      },
+      {
+         "annotationId":"2",
+         "title":"Right parietal bone",
+         "content":"",
+         "position":{
+            "x":28.184005737304689,
+            "y":15.352523803710938,
+            "z":-57.2767219543457,
+            "global":false
+         }
+      },
+      {
+         "annotationId":"3",
+         "title":"Left parietal bone",
+         "content":"",
+         "position":{
+            "x":-29.87490463256836,
+            "y":18.12189483642578,
+            "z":-58.139122009277347,
+            "global":false
+         }
+      },
+      {
+         "annotationId":"4",
+         "title":"Sagittal suture",
+         "content":"",
+         "position":{
+            "x":2.330188751220703,
+            "y":10.74419116973877,
+            "z":-65.60563659667969,
+            "global":false
+         }
+      },
+      {
+         "annotationId":"5",
+         "title":"Coronal suture",
+         "content":"",
+         "position":{
+            "x":10.23524284362793,
+            "y":32.8560791015625,
+            "z":-61.39738082885742,
+            "global":false
+         }
+      },
+      {
+         "annotationId":"6",
+         "title":"Lambdoid suture",
+         "content":"",
+         "position":{
+            "x":-11.971561431884766,
+            "y":-75.3807373046875,
+            "z":-12.585061073303223,
+            "global":false
+         }
+      },
+      {
+         "annotationId":"7",
+         "title":"Grooves for anterior branch of middle meningeal artery",
+         "content":"",
+         "position":{
+            "x":47.787017822265628,
+            "y":27.84691619873047,
+            "z":-6.8290815353393559,
+            "global":false
+         }
+      },
+      {
+         "annotationId":"8",
+         "title":"Grooves for posterior branch of middle meningeal artery",
+         "content":"",
+         "position":{
+            "x":48.98844909667969,
+            "y":-12.796975135803223,
+            "z":-9.421688079833985,
+            "global":false
+         }
+      }
+   ]
+}

@@ -1,0 +1,158 @@
+{
+  "annotationDatas": [
+    {
+      "annotationId": "1",
+      "title": "Lateral meniscus",
+      "content": "",
+      "position": {
+        "x": -2.936000108718872,
+        "y": -2.8000001907348635,
+        "z": -1.4200000762939454,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "2",
+      "title": "Medial meniscus",
+      "content": "",
+      "position": {
+        "x": 1.409999966621399,
+        "y": 4.450000762939453,
+        "z": -1.4200000762939454,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "3",
+      "title": "Patellar ligament",
+      "content": "",
+      "position": {
+        "x": -4.117000102996826,
+        "y": 2.883000373840332,
+        "z": -0.9370001554489136,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "4",
+      "title": "Anterior cruciate ligament",
+      "content": "",
+      "position": {
+        "x": 1.125,
+        "y": -1.2340002059936524,
+        "z": 0.6520001292228699,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "5",
+      "title": "Posterior cruciate ligament",
+      "content": "",
+      "position": {
+        "x": 2.1700000762939455,
+        "y": -0.3500000238418579,
+        "z": -0.2500000596046448,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "6",
+      "title": "Posterior meniscofemoral ligament",
+      "content": "",
+      "position": {
+        "x": 1.4500000476837159,
+        "y": -1.9500006437301636,
+        "z": -0.8400003910064697,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "7",
+      "title": "Popliteus tendon",
+      "content": "",
+      "position": {
+        "x": -0.4000000059604645,
+        "y": -4.710000991821289,
+        "z": -1.3400001525878907,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "8",
+      "title": "Popliteus",
+      "content": "",
+      "position": {
+        "x": 2.1029999256134035,
+        "y": -2.770000696182251,
+        "z": -4.027000904083252,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "9",
+      "title": "Lateral (Fibular) collateral ligament",
+      "content": "",
+      "position": {
+        "x": -1.9259999990463257,
+        "y": -4.9380011558532719,
+        "z": -0.7020001411437988,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "10",
+      "title": "Medial (Tibial) collateral ligament",
+      "content": "",
+      "position": {
+        "x": 5.125999927520752,
+        "y": 3.522001028060913,
+        "z": -0.8590002059936523,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "11",
+      "title": "Origin of medial head of gastrocnemius",
+      "content": "",
+      "position": {
+        "x": 5.357999801635742,
+        "y": 0.7480001449584961,
+        "z": 2.2850005626678469,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "12",
+      "title": "Origin of lateral head of gastrocnemius",
+      "content": "",
+      "position": {
+        "x": -0.20100000500679017,
+        "y": -4.843001365661621,
+        "z": 2.2210004329681398,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "14",
+      "title": "Medial condyle of femur",
+      "content": "",
+      "position": {
+        "x": 4.699999809265137,
+        "y": 0.2300000637769699,
+        "z": -0.17000001668930055,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "14",
+      "title": "Lateral condyle of femur",
+      "content": "",
+      "position": {
+        "x": 1.2400000095367432,
+        "y": -3.7300009727478029,
+        "z": 0.7100000381469727,
+        "global": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+    "annotationDatas": [
+        {
+            "annotationId": "0",
+            "title": "Information",
+            "content": "",
+            "position": {
+                "x": 87.26901245117188,
+                "y": -13.894424438476563,
+                "z": 51.17731857299805,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "1",
+            "title": "",
+            "content": "",
+            "position": {
+                "x": 5.250474452972412,
+                "y": -1.61273193359375,
+                "z": 46.95574951171875,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "2",
+            "title": "",
+            "content": "",
+            "position": {
+                "x": 12.855424880981446,
+                "y": 17.678571701049806,
+                "z": 45.62517166137695,
+                "global": false
+            }
+        }
+    ]
+}

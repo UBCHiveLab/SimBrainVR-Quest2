@@ -12,6 +12,9 @@ public class EricNurse : MonoBehaviour
 
     public Transform lightSwitch;
     public GameObject lightSource;
+
+    public bool updateRot = false;
+    public GameObject dialogue;
     
     // Start is called before the first frame update
     void Awake()
@@ -87,13 +90,24 @@ public class EricNurse : MonoBehaviour
         SoundManager.Instance.PlaySound(SoundManager.Instance.patientSureGoAhead);
     }
 
+    private void Update()
+    {
+        if (updateRot)
+        {
+
+            transform.LookAt(Camera.main.transform.position, -Vector3.up);
+            transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y, 0);
+        }
+    }
+
 
     void OnAnimatorIK()
     {
         if (Camera.main != null)
         {
-            _animator.SetLookAtWeight(0.8f);
+            _animator.SetLookAtWeight(0.45f);
             _animator.SetLookAtPosition(Camera.main.transform.position);
+
         }
     }
 

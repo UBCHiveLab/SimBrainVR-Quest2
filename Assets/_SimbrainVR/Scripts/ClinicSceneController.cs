@@ -30,8 +30,10 @@ public class ClinicSceneController : MonoBehaviour
         nurse.transform.LookAt(new Vector3(Camera.main.transform.position.x, transform.position.y, Camera.main.transform.position.z));
 
         nurse._animator.SetBool("isSpeaking", true);
+        nurse.dialogue.SetActive(true);
         SoundManager.Instance.PlaySound(SoundManager.Instance.ericIntroClip);
-        yield return new WaitForSeconds(17f);
+        yield return new WaitForSeconds(15.75f);
+        nurse.updateRot = true;
         nurse._animator.SetBool("isSpeaking", false);
         //Nurse end
         
@@ -43,12 +45,15 @@ public class ClinicSceneController : MonoBehaviour
         doctor._agent.updateRotation = false;
         while (doctor._agent.remainingDistance > 0.2f) yield return new WaitForSeconds(0.02f);
         doctor._animator.SetBool("isWalking", false);
-        doctor._animator.Play("IdleStand");
+        doctor._animator.SetBool("isSpeaking", true);
 
         doctor.isSpeakingToPatient = true;
         doctor.transform.LookAt(new Vector3(patient.transform.position.x, transform.position.y, patient.transform.position.z));
         SoundManager.Instance.PlaySound(SoundManager.Instance.doctorIntro);
-        yield return new WaitForSeconds(7f);
+        doctor.dialogue.SetActive(true);
+        doctor.updateRot = true;
+        yield return new WaitForSeconds(6.5f);
+        doctor._animator.SetBool("isSpeaking", false);
 
         patient.GetComponent<PatientSpeakingController>().SpeakAnimation(1.5f);
         SoundManager.Instance.PlaySound(SoundManager.Instance.patientSureGoAhead);
@@ -57,6 +62,7 @@ public class ClinicSceneController : MonoBehaviour
         VoiceRecognitionClinic.Instance.hasStartedAskingQuestions = true;
 
         doctor.isSpeakingToPatient = false;
+        doctor._agent.updateRotation = true;
         doctor._animator.Play("Walk");
         doctor._animator.SetBool("isWalking", true);
         doctor._agent.SetDestination(doctor.final.position);
@@ -64,7 +70,6 @@ public class ClinicSceneController : MonoBehaviour
 
         while (doctor._agent.remainingDistance > 0.2f) yield return new WaitForSeconds(0.01f);
         doctor._animator.SetBool("isWalking", false);
-        doctor._animator.Play("IdleStand");
 
         doctor._agent.updateRotation = false;
         doctor.transform.LookAt(new Vector3(Camera.main.transform.position.x, transform.position.y, Camera.main.transform.position.z));

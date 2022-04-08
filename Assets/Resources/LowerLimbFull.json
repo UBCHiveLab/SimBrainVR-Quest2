@@ -1,0 +1,763 @@
+{
+    "annotationDatas": [
+        {
+            "annotationId": "0",
+            "title": "Information",
+            "content": "",
+            "position": {
+                "x": 2.0858893394470217,
+                "y": 7.8004560470581059,
+                "z": 5.279484748840332,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "1",
+            "title": "Adductor longus",
+            "content": "",
+            "position": {
+                "x": -1.0017642974853516,
+                "y": 13.774862289428711,
+                "z": 7.292812347412109,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "2",
+            "title": "Pectineus",
+            "content": "",
+            "position": {
+                "x": -0.9092799425125122,
+                "y": 14.950114250183106,
+                "z": 7.693328857421875,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "3",
+            "title": "Adductor brevis",
+            "content": "",
+            "position": {
+                "x": -0.7252612113952637,
+                "y": 14.559527397155762,
+                "z": 7.301366806030273,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "4",
+            "title": "Obturator nerve",
+            "content": "",
+            "position": {
+                "x": -0.6377182006835938,
+                "y": 14.67686939239502,
+                "z": 7.25385856628418,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "5",
+            "title": "Iliopsoas muscle",
+            "content": "",
+            "position": {
+                "x": -0.32727551460266116,
+                "y": 15.420377731323243,
+                "z": 8.160566329956055,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "6",
+            "title": "Tensor Fascia Latae",
+            "content": "",
+            "position": {
+                "x": 0.6112949848175049,
+                "y": 15.32054615020752,
+                "z": 8.034666061401368,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "7",
+            "title": "Femoral vein",
+            "content": "",
+            "position": {
+                "x": -0.7016390562057495,
+                "y": 14.950539588928223,
+                "z": 7.880152702331543,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "8",
+            "title": "Femoral artery",
+            "content": "",
+            "position": {
+                "x": -0.49645745754241946,
+                "y": 15.057158470153809,
+                "z": 7.741304397583008,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "9",
+            "title": "Femoral nerve",
+            "content": "",
+            "position": {
+                "x": -0.27715909481048586,
+                "y": 14.923670768737793,
+                "z": 7.944868087768555,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "10",
+            "title": "Sartorius",
+            "content": "",
+            "position": {
+                "x": 0.026030540466308595,
+                "y": 14.365516662597657,
+                "z": 8.19444751739502,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "11",
+            "title": "Rectus femoris",
+            "content": "",
+            "position": {
+                "x": -0.12385439872741699,
+                "y": 13.43029499053955,
+                "z": 7.600014686584473,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "12",
+            "title": "Vastus medialis",
+            "content": "",
+            "position": {
+                "x": -0.6713908314704895,
+                "y": 10.36348819732666,
+                "z": 5.998979568481445,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "13",
+            "title": "Vastus lateralis",
+            "content": "",
+            "position": {
+                "x": 0.49907976388931277,
+                "y": 10.782524108886719,
+                "z": 6.706162929534912,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "14",
+            "title": "Gluteus medius (reflected)",
+            "content": "",
+            "position": {
+                "x": 1.3427045345306397,
+                "y": 17.18925666809082,
+                "z": 7.242275238037109,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "15",
+            "title": "Gluteus minimus",
+            "content": "",
+            "position": {
+                "x": 0.21066832542419434,
+                "y": 16.944076538085939,
+                "z": 7.413814544677734,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "16",
+            "title": "Piriformis",
+            "content": "",
+            "position": {
+                "x": 0.08095347881317139,
+                "y": 16.44426155090332,
+                "z": 6.296281814575195,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "17",
+            "title": "Sciatic nerve",
+            "content": "",
+            "position": {
+                "x": 0.28214704990386965,
+                "y": 15.155780792236329,
+                "z": 6.161725997924805,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "18",
+            "title": "Superior gemellus",
+            "content": "",
+            "position": {
+                "x": -0.2125558853149414,
+                "y": 15.876442909240723,
+                "z": 6.265427589416504,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "19",
+            "title": "Obturator internus",
+            "content": "",
+            "position": {
+                "x": -0.23879623413085938,
+                "y": 15.747326850891114,
+                "z": 6.168153762817383,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "20",
+            "title": "Inferior gemellus",
+            "content": "",
+            "position": {
+                "x": -0.00499570369720459,
+                "y": 15.644173622131348,
+                "z": 6.106925964355469,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "21",
+            "title": "Quadratus femoris",
+            "content": "",
+            "position": {
+                "x": 0.5148193836212158,
+                "y": 15.127873420715332,
+                "z": 6.227112770080566,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "22",
+            "title": "Superior gluteal nerve",
+            "content": "",
+            "position": {
+                "x": 0.3298783302307129,
+                "y": 16.61370277404785,
+                "z": 7.159253120422363,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "23",
+            "title": "Superior gluteal artery",
+            "content": "",
+            "position": {
+                "x": 0.265134334564209,
+                "y": 16.793771743774415,
+                "z": 6.968362808227539,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "24",
+            "title": "Inferior gluteal artery",
+            "content": "",
+            "position": {
+                "x": 0.41813844442367556,
+                "y": 15.725258827209473,
+                "z": 6.341675758361816,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "25",
+            "title": "Inferior gluteal nerve",
+            "content": "",
+            "position": {
+                "x": 0.2480710744857788,
+                "y": 15.66928768157959,
+                "z": 6.22443962097168,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "26",
+            "title": "Sacrotuberous ligament",
+            "content": "",
+            "position": {
+                "x": -0.2957649230957031,
+                "y": 15.890646934509278,
+                "z": 5.886272430419922,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "27",
+            "title": "Ischial tuberosity",
+            "content": "",
+            "position": {
+                "x": -0.24106621742248536,
+                "y": 15.281473159790039,
+                "z": 5.857729911804199,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "28",
+            "title": "Semitendinosus",
+            "content": "",
+            "position": {
+                "x": 0.17026686668395997,
+                "y": 13.824819564819336,
+                "z": 5.42521858215332,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "29",
+            "title": "Semimembranosus",
+            "content": "",
+            "position": {
+                "x": -0.2975464463233948,
+                "y": 11.942281723022461,
+                "z": 4.921828746795654,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "30",
+            "title": "Adductor magnus",
+            "content": "",
+            "position": {
+                "x": -0.8104614019393921,
+                "y": 13.520990371704102,
+                "z": 5.769505500793457,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "31",
+            "title": "Gracilis",
+            "content": "",
+            "position": {
+                "x": -1.1713366508483887,
+                "y": 12.686226844787598,
+                "z": 6.3151116371154789,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "32",
+            "title": "Pes anserinus",
+            "content": "",
+            "position": {
+                "x": -0.20998042821884156,
+                "y": 7.431854248046875,
+                "z": 4.586431980133057,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "33",
+            "title": "Plantaris muscle",
+            "content": "",
+            "position": {
+                "x": 0.49186480045318606,
+                "y": 8.619975090026856,
+                "z": 4.155606269836426,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "34",
+            "title": "Common fibular (peroneal) nerve",
+            "content": "",
+            "position": {
+                "x": 0.9116958975791931,
+                "y": 8.743773460388184,
+                "z": 3.951350212097168,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "35",
+            "title": "Sural communicating branch of common fibular (peroneal) nerve",
+            "content": "",
+            "position": {
+                "x": 0.174593985080719,
+                "y": 9.289161682128907,
+                "z": 3.80672025680542,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "36",
+            "title": "Tibial nerve",
+            "content": "",
+            "position": {
+                "x": 0.4926733076572418,
+                "y": 9.778042793273926,
+                "z": 4.594047546386719,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "37",
+            "title": "Soleus (reflected)",
+            "content": "",
+            "position": {
+                "x": 0.34230637550354006,
+                "y": 7.5479936599731449,
+                "z": 3.0035595893859865,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "38",
+            "title": "Gastrocnemius (reflected)",
+            "content": "",
+            "position": {
+                "x": 0.1626499891281128,
+                "y": 8.573723793029786,
+                "z": 2.9784674644470217,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "39",
+            "title": "Fibularis (peroneus) longus",
+            "content": "",
+            "position": {
+                "x": 1.0010281801223755,
+                "y": 7.178296089172363,
+                "z": 3.9062976837158205,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "40",
+            "title": "Fibularis (peroneus) brevis",
+            "content": "",
+            "position": {
+                "x": 0.6337443590164185,
+                "y": 4.70054292678833,
+                "z": 2.439772129058838,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "41",
+            "title": "Flexor hallucis longus",
+            "content": "",
+            "position": {
+                "x": 0.34153446555137637,
+                "y": 5.509559154510498,
+                "z": 2.7780072689056398,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "42",
+            "title": "Flexor digitorum longus",
+            "content": "",
+            "position": {
+                "x": -0.1931355893611908,
+                "y": 3.9642577171325685,
+                "z": 2.638204574584961,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "43",
+            "title": "Tendon of tibialis posterior",
+            "content": "",
+            "position": {
+                "x": -0.38894838094711306,
+                "y": 1.9398858547210694,
+                "z": 2.1970572471618654,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "44",
+            "title": "Tendon of flexor digitorum longus",
+            "content": "",
+            "position": {
+                "x": -0.3285241723060608,
+                "y": 1.9973515272140504,
+                "z": 2.027726650238037,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "45",
+            "title": "Tibial nerve",
+            "content": "",
+            "position": {
+                "x": -0.3714863955974579,
+                "y": 2.0897674560546877,
+                "z": 1.7714898586273194,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "46",
+            "title": "Posterior tibial artery",
+            "content": "",
+            "position": {
+                "x": -0.29493701457977297,
+                "y": 2.5044589042663576,
+                "z": 1.8882406949996949,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "47",
+            "title": "Calcaneal tendon",
+            "content": "",
+            "position": {
+                "x": -0.20804154872894288,
+                "y": 3.1169559955596926,
+                "z": 1.4905086755752564,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "48",
+            "title": "Tibialis anterior",
+            "content": "",
+            "position": {
+                "x": 0.749833345413208,
+                "y": 5.937509536743164,
+                "z": 3.892113208770752,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "49",
+            "title": "Extensor digitorum longus",
+            "content": "",
+            "position": {
+                "x": 0.629199206829071,
+                "y": 4.037806987762451,
+                "z": 2.7245688438415529,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "50",
+            "title": "Extensor digitorum brevis",
+            "content": "",
+            "position": {
+                "x": 0.6384098529815674,
+                "y": 1.3696959018707276,
+                "z": 1.9048235416412354,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "1",
+            "title": "Inferior extensor retinaculum",
+            "content": "",
+            "position": {
+                "x": 0.5154828429222107,
+                "y": 1.819709300994873,
+                "z": 2.1286849975585939,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "2",
+            "title": "Tendon of fibularis tertius",
+            "content": "",
+            "position": {
+                "x": 0.6799497008323669,
+                "y": 0.9786421060562134,
+                "z": 2.1579883098602297,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "3",
+            "title": "Tendons of extensor digitorum longus",
+            "content": "",
+            "position": {
+                "x": 0.6033180952072144,
+                "y": 1.4847192764282227,
+                "z": 2.369335174560547,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "4",
+            "title": "Extensor hallucis brevis",
+            "content": "",
+            "position": {
+                "x": 0.4289441704750061,
+                "y": 1.106457233428955,
+                "z": 2.6158971786499025,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "5",
+            "title": "Flexor digitorum brevis (reflected)",
+            "content": "",
+            "position": {
+                "x": -0.23015865683555604,
+                "y": -0.37342560291290285,
+                "z": 1.3823460340499879,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "6",
+            "title": "Tendon of flexor digitorum longus",
+            "content": "",
+            "position": {
+                "x": 0.06849195063114166,
+                "y": 0.8655107021331787,
+                "z": 1.9876816272735596,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "7",
+            "title": "Quadratus plantae muscle",
+            "content": "",
+            "position": {
+                "x": 0.09941013902425766,
+                "y": 1.0113755464553834,
+                "z": 1.8334729671478272,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "8",
+            "title": "Abductor digiti minimi",
+            "content": "",
+            "position": {
+                "x": 0.512629508972168,
+                "y": 0.9330913424491882,
+                "z": 1.4625544548034669,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "9",
+            "title": "Abductor hallucis",
+            "content": "",
+            "position": {
+                "x": -0.26759758591651919,
+                "y": 0.8851284980773926,
+                "z": 2.074589252471924,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "10",
+            "title": "Medial branch of deep fibular (peroneal) nerve",
+            "content": "",
+            "position": {
+                "x": 0.36576828360557558,
+                "y": 0.04217982292175293,
+                "z": 2.825411319732666,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "11",
+            "title": "Lumbrical muscles",
+            "content": "",
+            "position": {
+                "x": 0.3196026682853699,
+                "y": 0.1297842264175415,
+                "z": 2.154233932495117,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "12",
+            "title": "Lateral plantar nerve",
+            "content": "",
+            "position": {
+                "x": 0.01745912805199623,
+                "y": 1.174980878829956,
+                "z": 1.6310145854949952,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "13",
+            "title": "Lateral plantar artery",
+            "content": "",
+            "position": {
+                "x": 0.14943912625312806,
+                "y": 1.0701713562011719,
+                "z": 1.5933020114898682,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "14",
+            "title": "Medial plantar nerve",
+            "content": "",
+            "position": {
+                "x": -0.066286601126194,
+                "y": 1.020735263824463,
+                "z": 1.9578742980957032,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "15",
+            "title": "Popliteal artery",
+            "content": "",
+            "position": {
+                "x": -0.04199492931365967,
+                "y": 9.871516227722168,
+                "z": 5.122354030609131,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "16",
+            "title": "Popliteal vein",
+            "content": "",
+            "position": {
+                "x": 0.07509315013885498,
+                "y": 9.466583251953125,
+                "z": 4.8601789474487309,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "17",
+            "title": "Dorsalis pedis artery",
+            "content": "",
+            "position": {
+                "x": 0.27609556913375857,
+                "y": 1.3197638988494874,
+                "z": 2.602693557739258,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "18",
+            "title": "Deep fibular (peroneal ) nerve",
+            "content": "",
+            "position": {
+                "x": 0.37834692001342776,
+                "y": 1.4692789316177369,
+                "z": 2.550747871398926,
+                "global": false
+            }
+        }
+    ]
+}

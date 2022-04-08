@@ -1,0 +1,224 @@
+{
+    "annotationDatas": [
+        {
+            "annotationId": "0",
+            "title": "Information",
+            "content": "",
+            "position": {
+                "x": 3.178556442260742,
+                "y": 102.1548080444336,
+                "z": -35.88751220703125,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "1",
+            "title": "Optic Chiasm",
+            "content": "",
+            "position": {
+                "x": 3.0306036472320558,
+                "y": 2.6191978454589845,
+                "z": -25.646350860595704,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "2",
+            "title": "Left Optic Nerve",
+            "content": "",
+            "position": {
+                "x": 5.9322099685668949,
+                "y": 1.8514366149902344,
+                "z": -30.266006469726564,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "3",
+            "title": "Basilar artery",
+            "content": "",
+            "position": {
+                "x": 4.824038505554199,
+                "y": -14.523233413696289,
+                "z": -17.38920021057129,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "4",
+            "title": "Vertebral Artery",
+            "content": "",
+            "position": {
+                "x": 4.296062469482422,
+                "y": -38.02195739746094,
+                "z": -14.031913757324219,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "5",
+            "title": "Posterior Inferior Cerebellar Artery",
+            "content": "",
+            "position": {
+                "x": -9.55504322052002,
+                "y": -38.262977600097659,
+                "z": -7.352931976318359,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "6",
+            "title": "Anterior Inferior Cerebellar Artery",
+            "content": "",
+            "position": {
+                "x": -8.692773818969727,
+                "y": -30.530601501464845,
+                "z": -9.445011138916016,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "7",
+            "title": "Superior Cerebellar Artery",
+            "content": "",
+            "position": {
+                "x": -0.8689349293708801,
+                "y": -77.23421478271485,
+                "z": -17.90255355834961,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "8",
+            "title": "Posterior Cerebral Artery",
+            "content": "",
+            "position": {
+                "x": -9.81281566619873,
+                "y": -7.073556423187256,
+                "z": -7.804066181182861,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "9",
+            "title": "Anterior Choroidal Artery",
+            "content": "",
+            "position": {
+                "x": -12.326269149780274,
+                "y": 2.7691497802734377,
+                "z": -8.654764175415039,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "10",
+            "title": "Middle Cerebral Artery",
+            "content": "",
+            "position": {
+                "x": -15.893640518188477,
+                "y": 6.119712829589844,
+                "z": -25.36457061767578,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "11",
+            "title": "Anterior Cerebral Artery",
+            "content": "",
+            "position": {
+                "x": -5.209916114807129,
+                "y": 7.191089630126953,
+                "z": -25.538307189941408,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "12",
+            "title": "Oculomotor Nerve (CN III)",
+            "content": "",
+            "position": {
+                "x": -1.709287166595459,
+                "y": -5.081682205200195,
+                "z": -16.03542709350586,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "13",
+            "title": "Inferior Cerebellar Peduncle",
+            "content": "",
+            "position": {
+                "x": 17.09065818786621,
+                "y": -33.88694763183594,
+                "z": 10.396347045898438,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "14",
+            "title": "Middle Cerebellar Peduncle",
+            "content": "",
+            "position": {
+                "x": 20.259361267089845,
+                "y": -28.492389678955079,
+                "z": 10.0115966796875,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "15",
+            "title": "Superior Cerebellar Peduncle",
+            "content": "",
+            "position": {
+                "x": 11.261327743530274,
+                "y": -25.22171401977539,
+                "z": 17.215627670288087,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "16",
+            "title": "Inferior Colliculus",
+            "content": "",
+            "position": {
+                "x": 5.725854873657227,
+                "y": -6.575986862182617,
+                "z": 20.997880935668947,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "17",
+            "title": "Superior Colliculus",
+            "content": "",
+            "position": {
+                "x": 6.9051194190979,
+                "y": 0.20168685913085938,
+                "z": 19.618581771850587,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "18",
+            "title": "Choroid Plexus of Lateral Ventricle (Inferior Horn)",
+            "content": "",
+            "position": {
+                "x": -21.713817596435548,
+                "y": 2.300138473510742,
+                "z": 21.29576301574707,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "19",
+            "title": "4th Ventricle",
+            "content": "",
+            "position": {
+                "x": 4.868701457977295,
+                "y": -23.703968048095704,
+                "z": 13.814043045043946,
+                "global": false
+            }
+        }
+    ]
+}

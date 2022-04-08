@@ -1,0 +1,224 @@
+{
+  "annotationDatas": [
+    {
+      "annotationId": "1",
+      "title": "Pubic symphysis",
+      "content": "",
+      "position": {
+        "x": 2.8776745796203615,
+        "y": -1.6409950256347657,
+        "z": 9.736879348754883,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "2",
+      "title": "Bladder",
+      "content": "",
+      "position": {
+        "x": 3.4736380577087404,
+        "y": -2.983613967895508,
+        "z": 14.416654586791993,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "3",
+      "title": "Urethra",
+      "content": "",
+      "position": {
+        "x": 3.8086633682250978,
+        "y": -5.247782230377197,
+        "z": 12.984668731689454,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "4",
+      "title": "Anterior wall of vagina",
+      "content": "",
+      "position": {
+        "x": 5.2742719650268559,
+        "y": -6.386350154876709,
+        "z": 13.529243469238282,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "5",
+      "title": "Posterior wall of vagina",
+      "content": "",
+      "position": {
+        "x": 4.069665908813477,
+        "y": -7.148593902587891,
+        "z": 15.3228178024292,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "6",
+      "title": "Cervix of uterus",
+      "content": "",
+      "position": {
+        "x": 1.2842607498168946,
+        "y": -6.983633041381836,
+        "z": 16.187358856201173,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "7",
+      "title": "Body of uterus",
+      "content": "",
+      "position": {
+        "x": -1.858156681060791,
+        "y": -4.0613861083984379,
+        "z": 16.077404022216798,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "8",
+      "title": "Fundus of uterus",
+      "content": "",
+      "position": {
+        "x": -3.703824520111084,
+        "y": -2.065091133117676,
+        "z": 15.996675491333008,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "9",
+      "title": "Left ovary",
+      "content": "",
+      "position": {
+        "x": -3.6303653717041017,
+        "y": 2.5031185150146486,
+        "z": 18.51395034790039,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "10",
+      "title": "Rectouterine pouch",
+      "content": "",
+      "position": {
+        "x": 0.7488441467285156,
+        "y": -6.355739593505859,
+        "z": 19.239107131958009,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "11",
+      "title": "Rectum",
+      "content": "",
+      "position": {
+        "x": 2.8337860107421877,
+        "y": -8.334759712219239,
+        "z": 18.728525161743165,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "12",
+      "title": "Anal Canal",
+      "content": "",
+      "position": {
+        "x": 3.922362804412842,
+        "y": -10.058452606201172,
+        "z": 14.353995323181153,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "13",
+      "title": "Round ligament of uterus",
+      "content": "",
+      "position": {
+        "x": 0.5896363258361816,
+        "y": 5.542453765869141,
+        "z": 15.506136894226075,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "14",
+      "title": "Common iliac vein",
+      "content": "",
+      "position": {
+        "x": -7.701066493988037,
+        "y": 5.597678184509277,
+        "z": 24.87378692626953,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "15",
+      "title": "Common iliac artery",
+      "content": "",
+      "position": {
+        "x": -7.259220600128174,
+        "y": 6.947731971740723,
+        "z": 25.900733947753908,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "16",
+      "title": "Femoral nerve",
+      "content": "",
+      "position": {
+        "x": -4.986785888671875,
+        "y": 6.548162460327148,
+        "z": 27.472551345825197,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "17",
+      "title": "Obturator externus",
+      "content": "",
+      "position": {
+        "x": 7.894040584564209,
+        "y": -0.10828256607055664,
+        "z": 13.949832916259766,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "18",
+      "title": "Gluteus minimus",
+      "content": "",
+      "position": {
+        "x": 3.302487373352051,
+        "y": 7.714607238769531,
+        "z": 26.773027420043947,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "19",
+      "title": "Sciatic nerve",
+      "content": "",
+      "position": {
+        "x": 9.434503555297852,
+        "y": -0.6895041465759277,
+        "z": 24.974266052246095,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "20",
+      "title": "Sacrotuberous ligament",
+      "content": "",
+      "position": {
+        "x": 6.781214237213135,
+        "y": -4.743491172790527,
+        "z": 24.093482971191408,
+        "global": false
+      }
+    }
+  ]
+}

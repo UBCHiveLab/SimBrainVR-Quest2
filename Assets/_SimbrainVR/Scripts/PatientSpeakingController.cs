@@ -7,7 +7,10 @@ public class PatientSpeakingController : MonoBehaviour
 {
     public float lookAtWeight = 0.9f;
     public bool isMakingEyeContact;
+    public GameObject dialogueBox;
+
     Animator _animator;
+
 
     void Start()
     {
@@ -30,42 +33,61 @@ public class PatientSpeakingController : MonoBehaviour
         {
             case PatientDialogueOption.WhatHappened:
                 SoundManager.Instance.PlaySound(SoundManager.Instance.patientWhatHappened);
-                SpeakAnimation(7.9f);
+                //SpeakAnimation(7.9f);
+                _animator.Play("PatientWhatHappened");
+                dialogueBox.SetActive(true);
+                dialogueBox.GetComponent<Dialogue>().TypeSpecificLine("I have double vision and can’t open my eye. My eye is stuck in this position. Also.... I have worst headache of my life. ");
                 break;
             case PatientDialogueOption.MedicalHistory:
                 SoundManager.Instance.PlaySound(SoundManager.Instance.patientMedicalHistory);
-                SpeakAnimation(4.5f);
+                //SpeakAnimation(4.5f);
+                dialogueBox.SetActive(true);
+                dialogueBox.GetComponent<Dialogue>().TypeSpecificLine("I have Hypertension, dyslipidemia, type 2 diabetes");
+                _animator.Play("PatientMedicalHistory");
                 break;
 
             case PatientDialogueOption.Medication:
                 SoundManager.Instance.PlaySound(SoundManager.Instance.patientMedication);
-                SpeakAnimation(8.75f);
+                dialogueBox.SetActive(true);
+                dialogueBox.GetComponent<Dialogue>().TypeSpecificLine("I am taking Amlodipine 10 mg PO daily, atorvastatin 20 mg PO daily, metformin 1000 mg PO BID");
+                _animator.Play("PatientMedication");
+                //SpeakAnimation(8.75f);
                 break;
 
             case PatientDialogueOption.Allergies:
                 SoundManager.Instance.PlaySound(SoundManager.Instance.patientAllergies);
-                SpeakAnimation(4f);
+                _animator.Play("PatientAllergies");
+                dialogueBox.SetActive(true);
+                dialogueBox.GetComponent<Dialogue>().TypeSpecificLine("when I take penicillin, I get rashes on my body");
                 break;
 
             case PatientDialogueOption.DrinkSmokeDrugs:
                 SoundManager.Instance.PlaySound(SoundManager.Instance.patientDrugs);
-                SpeakAnimation(5.2f);
+                _animator.Play("PatientSmokingDrugs");
+                dialogueBox.SetActive(true);
+                dialogueBox.GetComponent<Dialogue>().TypeSpecificLine("I have smoked from 20 years. And Social drinker like 2 times / week.");
                 break;
 
             case PatientDialogueOption.FamilyHistory:
                 SoundManager.Instance.PlaySound(SoundManager.Instance.patientFather);
-                SpeakAnimation
-                    (4.1f);
+                _animator.Play("PatientFamilyHistory");
+                dialogueBox.SetActive(true);
+                dialogueBox.GetComponent<Dialogue>().TypeSpecificLine("My Father passed away from aneurysm rupture in his 60’s.");
                 break;
 
             case PatientDialogueOption.FamilyMember:
                 SoundManager.Instance.PlaySound(SoundManager.Instance.patientFamily);
-                SpeakAnimation(1.5f);
+                _animator.Play("PatientHusband");
+                dialogueBox.SetActive(true);
+                dialogueBox.GetComponent<Dialogue>().TypeSpecificLine("I live with my husband.");
                 break;
 
             case PatientDialogueOption.DontKnow:
                 SoundManager.Instance.PlaySound(SoundManager.Instance.patientDontKnow);
-                SpeakAnimation(2.7f);
+                if(_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name != "Idle") 
+                    SpeakAnimation(2.7f);
+                
+                
                 break;
 
             default:

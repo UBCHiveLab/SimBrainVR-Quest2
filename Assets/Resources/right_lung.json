@@ -1,0 +1,169 @@
+{
+  "annotationDatas": [
+    {
+      "annotationId": "1",
+      "title": "Right main bronchus",
+      "content": "  At this level, it divides into the superior lobar and intermediate bronchi.",
+      "position": {
+        "x": 1.9730000495910645,
+        "y": 4.815874099731445,
+        "z": -8.728619575500489,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "2",
+      "title": "Superior lobar bronchus",
+      "content": "",
+      "position": {
+        "x": 3.6440000534057619,
+        "y": 2.452548027038574,
+        "z": -5.40507698059082,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "3",
+      "title": "Intermediate bronchus",
+      "content": "",
+      "position": {
+        "x": 1.7300000190734864,
+        "y": 6.326168060302734,
+        "z": -5.334352493286133,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "4",
+      "title": "Pulmonary artery",
+      "content": "",
+      "position": {
+        "x": -1.0099999904632569,
+        "y": 3.281693935394287,
+        "z": -8.279834747314454,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "5",
+      "title": "Pulmonary vein",
+      "content": "",
+      "position": {
+        "x": -0.2199999988079071,
+        "y": -0.6919971704483032,
+        "z": -4.837351322174072,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "6",
+      "title": "Pulmonary vein",
+      "content": "",
+      "position": {
+        "x": 3.3988687992095949,
+        "y": -2.11857533454895,
+        "z": -5.264626979827881,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "7",
+      "title": "Oblique fissure",
+      "content": "",
+      "position": {
+        "x": 6.709000110626221,
+        "y": 5.12397575378418,
+        "z": 9.456326484680176,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "8",
+      "title": "Horizontal fissure",
+      "content": "",
+      "position": {
+        "x": -9.6899995803833,
+        "y": -0.47243547439575198,
+        "z": 4.713524341583252,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "9",
+      "title": "Oblique fissure",
+      "content": "",
+      "position": {
+        "x": -5.190000057220459,
+        "y": -5.005911827087402,
+        "z": 11.541038513183594,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "10",
+      "title": "Apex",
+      "content": "",
+      "position": {
+        "x": -1.2325750589370728,
+        "y": 21.16337776184082,
+        "z": -8.323932647705079,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "11",
+      "title": "Superior lobe",
+      "content": "",
+      "position": {
+        "x": 0.16251656413078309,
+        "y": 19.58204460144043,
+        "z": -0.1599273681640625,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "12",
+      "title": "Inferior lobe",
+      "content": "",
+      "position": {
+        "x": 6.584263801574707,
+        "y": -1.5241894721984864,
+        "z": 13.121459007263184,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "13",
+      "title": "Middle lobe",
+      "content": "",
+      "position": {
+        "x": -10.6899995803833,
+        "y": -6.1685285568237309,
+        "z": 7.0286688804626469,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "14",
+      "title": "Anterior border",
+      "content": "",
+      "position": {
+        "x": -12.961000442504883,
+        "y": 0.23672819137573243,
+        "z": -9.66663932800293,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "15",
+      "title": "Diaphragmatic surface",
+      "content": "",
+      "position": {
+        "x": 3.9742352962493898,
+        "y": -5.028450012207031,
+        "z": 4.814229488372803,
+        "global": false
+      }
+    }
+  ]
+}

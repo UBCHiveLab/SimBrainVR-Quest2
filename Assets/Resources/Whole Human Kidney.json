@@ -1,0 +1,48 @@
+{
+  "annotationDatas": [
+    {
+      "annotationId": "1",
+      "title": "Ureter",
+      "content": "",
+      "position": {
+        "x": -17.309999465942384,
+        "y": -58.630001068115237,
+        "z": -4.099999904632568,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "2",
+      "title": "Renal Pelvis",
+      "content": "",
+      "position": {
+        "x": 8.449999809265137,
+        "y": -19.329999923706056,
+        "z": 3.259999990463257,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "3",
+      "title": "Renal Vein",
+      "content": "",
+      "position": {
+        "x": -2.1500000953674318,
+        "y": 9.520000457763672,
+        "z": 29.579999923706056,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "4",
+      "title": "Renal Artery",
+      "content": "",
+      "position": {
+        "x": 31.6200008392334,
+        "y": 20.280000686645509,
+        "z": 22.479999542236329,
+        "global": false
+      }
+    }
+  ]
+}

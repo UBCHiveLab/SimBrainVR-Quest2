@@ -1,0 +1,169 @@
+{
+    "annotationDatas": [
+        {
+            "annotationId": "0",
+            "title": "Information",
+            "content": "",
+            "position": {
+                "x": 80.29469299316406,
+                "y": 24.975502014160158,
+                "z": 59.70063781738281,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "1",
+            "title": "https://hivemodelstorage.blob.core.windows.net/win/infratemporal_fossa_3",
+            "content": "",
+            "position": {
+                "x": -14.339666366577149,
+                "y": -1.3394031524658204,
+                "z": -8.7230806350708,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "2",
+            "title": "Ramus of mandible",
+            "content": "",
+            "position": {
+                "x": -17.076793670654298,
+                "y": -23.580944061279298,
+                "z": 3.9751949310302736,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "3",
+            "title": "Inferior alveolar nerve",
+            "content": "",
+            "position": {
+                "x": -15.026093482971192,
+                "y": -10.425617218017579,
+                "z": -2.4475202560424806,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "4",
+            "title": "Lingual nerve",
+            "content": "",
+            "position": {
+                "x": -10.412541389465332,
+                "y": -11.086862564086914,
+                "z": 7.071476936340332,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "5",
+            "title": "Buccal nerve",
+            "content": "",
+            "position": {
+                "x": 5.778526782989502,
+                "y": 7.221826553344727,
+                "z": 21.371566772460939,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "6",
+            "title": "Mandibular nerve (V3)",
+            "content": "",
+            "position": {
+                "x": 1.3008339405059815,
+                "y": 22.24999237060547,
+                "z": -0.4297027587890625,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "7",
+            "title": "Auriculotemporal nerve",
+            "content": "",
+            "position": {
+                "x": -12.324441909790039,
+                "y": 12.683070182800293,
+                "z": -10.409849166870118,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "8",
+            "title": "Mandibular fossa",
+            "content": "",
+            "position": {
+                "x": -19.23167610168457,
+                "y": 28.422502517700197,
+                "z": -10.104150772094727,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "9",
+            "title": "Temporalis muscle",
+            "content": "",
+            "position": {
+                "x": -30.926856994628908,
+                "y": 57.23114013671875,
+                "z": 17.969593048095704,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "10",
+            "title": "Masseter (reflected)",
+            "content": "",
+            "position": {
+                "x": -28.20685386657715,
+                "y": -44.24315643310547,
+                "z": 3.904735565185547,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "11",
+            "title": "Chorda tympani",
+            "content": "",
+            "position": {
+                "x": 0.056763529777526858,
+                "y": 12.193854331970215,
+                "z": -9.434024810791016,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "12",
+            "title": "Frontal nerve",
+            "content": "",
+            "position": {
+                "x": 18.524890899658204,
+                "y": 67.10346221923828,
+                "z": 29.68120574951172,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "13",
+            "title": "Greater and lesser palatine nerves (CN V2)",
+            "content": "",
+            "position": {
+                "x": 24.60722541809082,
+                "y": 19.371421813964845,
+                "z": 14.104696273803711,
+                "global": false
+            }
+        },
+        {
+            "annotationId": "14",
+            "title": "Maxillary nerve (CN V2)",
+            "content": "",
+            "position": {
+                "x": 16.620363235473634,
+                "y": 33.71391296386719,
+                "z": 32.64958190917969,
+                "global": false
+            }
+        }
+    ]
+}

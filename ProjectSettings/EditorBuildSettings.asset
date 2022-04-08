@@ -5,18 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
+    path: Assets/_SimbrainVR/Scenes/MainMenu.unity
+    guid: 58acfd1d10c8cac47b2129d488a30ec8
+  - enabled: 1
     path: Assets/_SimbrainVR/Scenes/Start_Reception.unity
     guid: 125a93cc61a85c741b97ba21ad9a891c
-  - enabled: 0
+  - enabled: 1
     path: Assets/_SimbrainVR/Scenes/Clinic.unity
     guid: ffdc6ebe0a92edc4e938c40b065d7c24
-  - enabled: 0
-    path: Assets/_SimbrainVR/Scenes/MindPalace.unity
-    guid: 8d78433abc300b64aba69b88d3797646
   - enabled: 1
-    path: Assets/_SimbrainVR/Scenes/_TestScenes/TestScene.unity
-    guid: 96fddff1e82368b4db619bd6f75f2a66
+    path: Assets/_SimbrainVR/Scenes/_TestScenes/MindPalaceTestApril5.unity
+    guid: 954d2738886a08a4c93ff88e82462732
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 7dbacf440d9b9c745a4b9022ee97dce2, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 85a79126385aa144d9a305b8f1fc8b8a, type: 2}

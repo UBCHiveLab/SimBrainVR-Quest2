@@ -43,6 +43,7 @@ public class MedicalLight : MonoBehaviour
                 _patientRef = patientController;
                 patientController.PupilDecreaseR();
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
+                ClinicalLogger.Instance.hasShoneLight = true;
 
             }
             else if (hit.collider.name == "PatientLeftEye")
@@ -51,6 +52,8 @@ public class MedicalLight : MonoBehaviour
                 _patientRef = patientController;
                 patientController.PupilDecreaseL();
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
+
+                ClinicalLogger.Instance.hasShoneLight = true;
             }
             else
             {

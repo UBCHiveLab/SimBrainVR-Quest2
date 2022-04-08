@@ -1,0 +1,180 @@
+{
+  "annotationDatas": [
+    {
+      "annotationId": "0",
+      "title": "Information",
+      "content": "",
+      "position": {
+        "x": 40.897369384765628,
+        "y": -47.65541076660156,
+        "z": -27.525890350341798,
+        "global": true
+      }
+    },
+    {
+      "annotationId": "1",
+      "title": "Sacral promontory",
+      "content": "",
+      "position": {
+        "x": -2.0971622467041017,
+        "y": 40.97449493408203,
+        "z": -25.891643524169923,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "2",
+      "title": "Ala (wing)",
+      "content": "",
+      "position": {
+        "x": 24.016311645507814,
+        "y": 38.58258056640625,
+        "z": 24.052898406982423,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "3",
+      "title": "Superior articular process",
+      "content": "",
+      "position": {
+        "x": -9.534143447875977,
+        "y": 34.85775375366211,
+        "z": 19.424339294433595,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "4",
+      "title": "Superior articular facet",
+      "content": "Articulates with inferior articular facet of the L5 vertebra.",
+      "position": {
+        "x": -40.94773864746094,
+        "y": 27.161331176757814,
+        "z": 2.7015466690063478,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "5",
+      "title": "Median sacral crest",
+      "content": "",
+      "position": {
+        "x": -24.317171096801759,
+        "y": -16.991249084472658,
+        "z": 8.350800514221192,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "6",
+      "title": "Intermediate sacral crest",
+      "content": "",
+      "position": {
+        "x": -7.984233379364014,
+        "y": -30.196102142333986,
+        "z": 5.163769721984863,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "7",
+      "title": "Lateral sacral crest",
+      "content": "",
+      "position": {
+        "x": 2.7472152709960939,
+        "y": -2.6514010429382326,
+        "z": 17.02191925048828,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "8",
+      "title": "Sacral hiatus",
+      "content": "",
+      "position": {
+        "x": -6.420914649963379,
+        "y": -50.55725860595703,
+        "z": -11.136831283569336,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "9",
+      "title": "Sacral cornu (horn)",
+      "content": "",
+      "position": {
+        "x": -14.934450149536133,
+        "y": -57.76548385620117,
+        "z": -17.93545150756836,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "10",
+      "title": "Apex of sacrum",
+      "content": "",
+      "position": {
+        "x": 5.954106330871582,
+        "y": -62.411102294921878,
+        "z": -27.09540557861328,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "11",
+      "title": "Auricular surface",
+      "content": "The articular surface of the Sacroiliac (SI) joint.",
+      "position": {
+        "x": -51.720008850097659,
+        "y": 38.14534378051758,
+        "z": -26.964088439941408,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "12",
+      "title": "Transverse ridge",
+      "content": "",
+      "position": {
+        "x": -3.494485855102539,
+        "y": 11.655243873596192,
+        "z": -17.958240509033204,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "13",
+      "title": "Anterior sacral foramen",
+      "content": "",
+      "position": {
+        "x": 7.343454360961914,
+        "y": -14.476521492004395,
+        "z": 0.887446403503418,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "14",
+      "title": "Posterior sacral foramen",
+      "content": "",
+      "position": {
+        "x": -0.02266979217529297,
+        "y": -32.29097366333008,
+        "z": 6.723248481750488,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "15",
+      "title": "Sacral canal",
+      "content": "Due to limitations in the 3D scanning process, the canal in this mode is filled over",
+      "position": {
+        "x": -18.822948455810548,
+        "y": 19.739215850830079,
+        "z": -3.5423402786254885,
+        "global": false
+      }
+    }
+  ]
+}

@@ -230,7 +230,12 @@ public class VoiceRecognitionClinic : MonoBehaviour
 
                 if(message.Contains("mind palace"))
                 {
-                     SceneManager.LoadScene(1);
+                    //SceneManager.LoadScene(3);
+                    var sceneLoading = GameObject.Find("SceneLoader").GetComponent<SceneLoading>();
+                    if (sceneLoading != null)
+                    {
+                        sceneLoading.TransitionToMindPalace();
+                    }
 
                 }else if (message.Contains("flashlight"))
                 {
@@ -300,7 +305,6 @@ public class VoiceRecognitionClinic : MonoBehaviour
                         if (message.Contains("what happen") || message.Contains("tell me")) //this part is hardcoded
                         {
                             patientSpeakingController.Speak(PatientDialogueOption.WhatHappened);
-                            //patientLipContro.PlayWhatHappened();
                             Clipboard.Instance.ModifyClipboard(1);
                         }
                         else if (message.Contains("medical history"))

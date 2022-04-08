@@ -1,0 +1,202 @@
+{
+  "annotationDatas": [
+    {
+      "annotationId": "0",
+      "title": "Information",
+      "content": "[link src='https://sketchfab.com/3d-models/plastinated-human-hand-colour-coded-4646ffd6ad3645a1aa516ca4c019d17e' title='Plastinated Human Hand (colour coded)']",
+      "position": {
+        "x": 87.98059844970703,
+        "y": 28.357566833496095,
+        "z": -11.655937194824219,
+        "global": true
+      }
+    },
+    {
+      "annotationId": "1",
+      "title": "Superficial branch of ulnar nerve",
+      "content": "",
+      "position": {
+        "x": -8.365349769592286,
+        "y": -22.6621150970459,
+        "z": -16.247758865356447,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "2",
+      "title": "Superficial palmar arch",
+      "content": "This specimen has an incomplete arch.",
+      "position": {
+        "x": 3.1994080543518068,
+        "y": 21.8409423828125,
+        "z": -0.2935943603515625,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "3",
+      "title": "Common palmar digital nerve (from median nerve)",
+      "content": "",
+      "position": {
+        "x": 1.2046232223510743,
+        "y": 13.901007652282715,
+        "z": 0.051436424255371097,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "4",
+      "title": "Common palmar digital artery",
+      "content": "",
+      "position": {
+        "x": 9.192898750305176,
+        "y": 31.820472717285158,
+        "z": 2.844228744506836,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "5",
+      "title": "Flexor pollicis brevis",
+      "content": "",
+      "position": {
+        "x": 25.892717361450197,
+        "y": 13.24501895904541,
+        "z": -8.249056816101075,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "6",
+      "title": "Abductor pollicis brevis",
+      "content": "",
+      "position": {
+        "x": 29.52184295654297,
+        "y": -2.5021064281463625,
+        "z": -9.455520629882813,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "7",
+      "title": "Fexor retinaculum",
+      "content": "",
+      "position": {
+        "x": 12.123440742492676,
+        "y": -30.64149284362793,
+        "z": -9.41042709350586,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "8",
+      "title": "Ulnar canal (Guyon's canal)1",
+      "content": "",
+      "position": {
+        "x": -3.146878242492676,
+        "y": -36.52606964111328,
+        "z": -13.958826065063477,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "9",
+      "title": "Dorsal branch of ulnar nerve",
+      "content": "",
+      "position": {
+        "x": -31.516510009765626,
+        "y": -39.6285285949707,
+        "z": -7.463953018188477,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "10",
+      "title": "Dorsal digital branch of ulnar nerve",
+      "content": "",
+      "position": {
+        "x": -43.331504821777347,
+        "y": 36.31139373779297,
+        "z": -16.501060485839845,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "11",
+      "title": "Radial artery",
+      "content": "",
+      "position": {
+        "x": 20.48214340209961,
+        "y": -18.060054779052736,
+        "z": 27.418514251708986,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "12",
+      "title": "1st dorsal interosseous",
+      "content": "",
+      "position": {
+        "x": 28.436872482299806,
+        "y": 26.637859344482423,
+        "z": 35.88496398925781,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "13",
+      "title": "Adductor pollicis",
+      "content": "",
+      "position": {
+        "x": 34.89640808105469,
+        "y": 26.76436996459961,
+        "z": 27.993038177490236,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "14",
+      "title": "1st lumbrical",
+      "content": "",
+      "position": {
+        "x": 29.176433563232423,
+        "y": 43.133907318115237,
+        "z": 18.89804458618164,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "15",
+      "title": "Abductor Digiti Minimi",
+      "content": "",
+      "position": {
+        "x": -28.271488189697267,
+        "y": 2.5214004516601564,
+        "z": -20.81657600402832,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "16",
+      "title": "Flexor Digiti Minimi Brevis",
+      "content": "",
+      "position": {
+        "x": -18.369617462158204,
+        "y": 14.644172668457032,
+        "z": -18.3002986907959,
+        "global": false
+      }
+    },
+    {
+      "annotationId": "17",
+      "title": "Opponens Digiti Minimi",
+      "content": "",
+      "position": {
+        "x": -11.41529369354248,
+        "y": 11.925776481628418,
+        "z": -8.473529815673829,
+        "global": false
+      }
+    }
+  ]
+}

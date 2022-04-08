@@ -1,0 +1,177 @@
+﻿{
+  "annotationDatas": [
+     {
+          "annotationId": "0",
+          "title": "Information",
+          "content": "",
+          "position": {
+            "global": true
+          }
+        },
+        {
+          "annotationId": "1",
+          "title": "Medial condyle",
+          "content": "",
+          "position": {
+            "x": 22.514175415039064,
+            "y": 273.5284423828125,
+            "z": 9.725936889648438,
+            "global": false
+          }
+        },
+        {
+          "annotationId": "2",
+          "title": "Tibial tuberosity",
+          "content": "",
+          "position": {
+            "x": 0.06447029113769531,
+            "y": 251.6390380859375,
+            "z": -13.905181884765625,
+            "global": false
+          }
+        },
+        {
+          "annotationId": "3",
+          "title": "Tubercle of iliotibial tract (Gerdy's tubercle)",
+          "content": "",
+          "position": {
+            "x": -22.449390411376954,
+            "y": 274.4112854003906,
+            "z": -1.41485595703125,
+            "global": false
+          }
+        },
+        {
+          "annotationId": "4",
+          "title": "Lateral condyle",
+          "content": "",
+          "position": {
+            "x": -37.950782775878909,
+            "y": 266.3584899902344,
+            "z": 11.68023681640625,
+            "global": false
+          }
+        },
+        {
+          "annotationId": "5",
+          "title": "Anterior intercondylar area",
+          "content": "",
+          "position": {
+            "x": -0.06586265563964844,
+            "y": 282.23834228515627,
+            "z": 25.268234252929689,
+            "global": false
+          }
+        },
+        {
+          "annotationId": "6",
+          "title": "Articular facet for fibula",
+          "content": "",
+          "position": {
+            "x": -36.906307220458987,
+            "y": 254.29745483398438,
+            "z": 35.86863708496094,
+            "global": false
+          }
+        },
+        {
+          "annotationId": "7",
+          "title": "Posterior intercondylar area",
+          "content": "",
+          "position": {
+            "x": -7.380733489990234,
+            "y": 267.6585998535156,
+            "z": 53.01274108886719,
+            "global": false
+          }
+        },
+        {
+          "annotationId": "8",
+          "title": "Medial intercondylar tubercle of intercondylar eminence",
+          "content": "",
+          "position": {
+            "x": 6.191535949707031,
+            "y": 283.2931823730469,
+            "z": 44.68023681640625,
+            "global": false
+          }
+        },
+        {
+          "annotationId": "9",
+          "title": "Lateral intercondylar tubercle of intercondylar eminence",
+          "content": "",
+          "position": {
+            "x": -8.422626495361329,
+            "y": 285.23480224609377,
+            "z": 38.53387451171875,
+            "global": false
+          }
+        },
+        {
+          "annotationId": "10",
+          "title": "Soleal line",
+          "content": "",
+          "position": {
+            "x": -5.923358917236328,
+            "y": 215.51332092285157,
+            "z": 31.34051513671875,
+            "global": false
+          }
+        },
+        {
+          "annotationId": "11",
+          "title": "Nutrient foramen",
+          "content": "",
+          "position": {
+            "x": -9.225976943969727,
+            "y": 156.6580810546875,
+            "z": 17.739654541015626,
+            "global": false
+          }
+        },
+        {
+          "annotationId": "12",
+          "title": "Anterior border",
+          "content": "",
+          "position": {
+            "x": 3.2080907821655275,
+            "y": 136.91622924804688,
+            "z": -19.91171646118164,
+            "global": false
+          }
+        },
+        {
+          "annotationId": "13",
+          "title": "Medial malleolus",
+          "content": "",
+          "position": {
+            "x": 44.76853942871094,
+            "y": -92.1329574584961,
+            "z": 6.103435516357422,
+            "global": false
+          }
+        },
+        {
+          "annotationId": "14",
+          "title": "Groove for tibialis posterior",
+          "content": "",
+          "position": {
+            "x": 21.560890197753908,
+            "y": -85.26826477050781,
+            "z": 25.20660400390625,
+            "global": false
+          }
+        },
+        {
+          "annotationId": "15",
+          "title": "Fibular notch",
+          "content": "",
+          "position": {
+            "x": -12.59030818939209,
+            "y": -83.33065032958985,
+            "z": -0.4328346252441406,
+            "global": false
+          }
+        }
+      ]
+}
