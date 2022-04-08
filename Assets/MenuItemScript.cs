@@ -40,4 +40,10 @@ public class MenuItemScript : MonoBehaviour
       //  background.color = baseColor;
         description.SetActive(false); 
     }
+
+    public string DescriptionText()
+    {
+        string text = description.transform.gameObject.GetComponent<TextMeshProUGUI>().text;
+        return text; 
+    }
 }

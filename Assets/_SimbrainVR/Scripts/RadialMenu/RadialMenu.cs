@@ -27,14 +27,20 @@ public class RadialMenu : MonoBehaviour
         firstMenu.description.SetActive(true); 
         selection = 0;
         previousSelection = -1;
+        Debug.Log("cursor at 1");
+
     }
 
     // Update is called once per frame
     void Update()
     {
         OpenRadialMenu();
-        UpdateRadialMenu();
-
+        if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight))
+        {
+            UpdateRadialMenu();
+        }
+       
+        
         SimpleCapsuleWithStickMovement movt = playerMovement.GetComponent<SimpleCapsuleWithStickMovement>();
         if (Menu.activeInHierarchy)
         {
@@ -53,17 +59,62 @@ public class RadialMenu : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.Button.Three))
         {
             Menu.SetActive(!Menu.activeInHierarchy);
-            Vector3 controllerPos = OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTouch);
-            Quaternion controllerRotation = OVRInput.GetLocalControllerRotation(OVRInput.Controller.LTouch);
-          //  Menu.transform.localPosition = controllerPos;
-          //  Menu.transform.localRotation = controllerRotation;
             Menu.transform.localPosition = transform.position;
-         //   Menu.transform.localRotation = transform.rotation;
+
         }
     }
+    
+    
 
-    void UpdateRadialMenu()
+    private void UpdateRadialMenu()
     {
+        menuItemSc = menuItems[0].GetComponent<MenuItemScript>(); 
+        if (menuItemSc.description.gameObject.name == "Description")
+        {
+            previousMenuItemSc = menuItems[0].GetComponent<MenuItemScript>();
+            previousMenuItemSc.description.SetActive(false);
+
+            nextMenuItemSc = menuItems[1].GetComponent<MenuItemScript>();
+            nextMenuItemSc.MoveCursor();
+            Debug.Log("cursor at 2");    
+        }
+
+        menuItemSc = menuItems[1].GetComponent<MenuItemScript>();
+        if (menuItemSc.description.gameObject.name == "Description (1)")
+        {
+            previousMenuItemSc = menuItems[1].GetComponent<MenuItemScript>();
+            previousMenuItemSc.description.SetActive(false);
+
+            nextMenuItemSc = menuItems[2].GetComponent<MenuItemScript>();
+            nextMenuItemSc.MoveCursor();
+            Debug.Log("cursor at 3");
+        }
+
+        menuItemSc = menuItems[2].GetComponent<MenuItemScript>();
+        if (menuItemSc.description.gameObject.name == "Description (2)")
+        {
+            previousMenuItemSc = menuItems[2].GetComponent<MenuItemScript>();
+            previousMenuItemSc.description.SetActive(false);
+
+
+            nextMenuItemSc = menuItems[3].GetComponent<MenuItemScript>();
+            nextMenuItemSc.MoveCursor();
+            Debug.Log("cursor at 4"); 
+        }
+
+        menuItemSc = menuItems[3].GetComponent<MenuItemScript>();
+        if (menuItemSc.description.gameObject.name == "Description (3)")
+        {
+            previousMenuItemSc = menuItems[3].GetComponent<MenuItemScript>();
+            previousMenuItemSc.description.SetActive(false);
+
+            nextMenuItemSc = menuItems[4].GetComponent<MenuItemScript>();
+            nextMenuItemSc.MoveCursor();
+            Debug.Log("cursor at 5");        
+        }
+
+
+
         /*
         
         if (selection != previousSelection)
@@ -76,9 +127,10 @@ public class RadialMenu : MonoBehaviour
             menuItemSc.Select(); 
         }
         */
-      //  Debug.Log(selection);
+        //  Debug.Log(selection);
 
-        if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight))
+        /*
+        if (OVRInput.Get(OVRInput.Button.PrimaryThumbstick))
         {
            if (selection != previousSelection)
             {
@@ -96,12 +148,15 @@ public class RadialMenu : MonoBehaviour
             }
                
         }
-
+        */
         if (OVRInput.Get(OVRInput.Button.PrimaryThumbstick))
         {
             Raycaster ray = rightController.GetComponent<Raycaster>();
             ray.DisableLines(); 
             Debug.Log("hide lines"); 
         }
+        
     }
+
+
 }
