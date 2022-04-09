@@ -33,7 +33,7 @@ public class Raycaster : MonoBehaviour
     void Update()
     {
         CreateLine();
-        PressObject();
+     //   PressObject();
         line.gameObject.SetActive(true);
         //Iterates through the list of lines and positions. Sets each line's posiiton every frame to ensure it stays with it
         for (int i = 0; i < lines.Count; i++)
@@ -99,15 +99,53 @@ public class Raycaster : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.RawButton.X))
         {
             button.gameObject.SetActive(true);
-            button.onClick.AddListener(() => DisableLines()); 
+          //  button.onClick.AddListener(() => DisableLines()); 
         }
     }
     //Set the lines to inactive 
-    public void DisableLines()
+    public void DisableLines(bool show)
     {
-        foreach(var line in lines)
+        if (show)
         {
-            line.gameObject.SetActive(false); 
+            foreach (var line in lines)
+            {
+                line.gameObject.SetActive(false);
+            }
+        } else
+        {
+            foreach (var line in lines)
+            {
+                line.gameObject.SetActive(true); 
+            }
+        }
+    }
+        
+
+    public void AdjustObjectSize()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength * 10, layerUse))
+        {
+            if (OVRInput.GetDown(OVRInput.Button.Two))
+            {
+                GameObject objectHit = hit.transform.gameObject;
+                Debug.Log("objectHit" + objectHit);
+                objectHit.transform.localScale += new Vector3((float).1, (float).1, (float).1); 
+            }
+        }
+    }
+
+    public void DeleteObject()
+    {
+        RaycastHit hit; 
+        if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength* 10, layerUse))
+        {
+            if (OVRInput.GetDown(OVRInput.Button.Two))
+            {
+                GameObject objectDelete = hit.transform.gameObject;
+                Debug.Log("objectDelete " + objectDelete);
+                Destroy(objectDelete); 
+            }
         }
     }
     

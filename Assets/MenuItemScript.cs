@@ -25,7 +25,7 @@ public class MenuItemScript : MonoBehaviour
         cursor.transform.position = cursorPos.transform.position;
         cursor.transform.rotation = cursorPos.transform.rotation; 
         string desc = description.name;
-        Debug.Log(desc);
+     
         description.SetActive(true); 
     }
 

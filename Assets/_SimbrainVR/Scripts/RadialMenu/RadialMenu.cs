@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class RadialMenu : MonoBehaviour
 {
 
     public GameObject Menu;
-    public Transform dummyPos;
-    public Vector2 normalisedThumbstickPosition; 
+    
     public GameObject cursor;
     private int selection; 
     private int previousSelection;
@@ -19,15 +19,28 @@ public class RadialMenu : MonoBehaviour
     private MenuItemScript nextMenuItemSc;
 
     public GameObject playerMovement;
-    public GameObject rightController; 
+    public GameObject rightController;
+    Raycaster raycaster;
+    MenuItemScript sixthMenu;
+    string sixthDesc;
+    MenuItemScript seventhMenu;
+    string seventhDesc;
+
     // Start is called before the first frame update
     void Start()
     {
         MenuItemScript firstMenu = menuItems[0].GetComponent<MenuItemScript>();
-        firstMenu.description.SetActive(true); 
+        firstMenu.description.SetActive(true);
+        sixthMenu = menuItems[5].GetComponent<MenuItemScript>();
+        sixthDesc = sixthMenu.transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text;
+        Debug.Log(sixthDesc); 
+        seventhMenu = menuItems[6].GetComponent<MenuItemScript>();
+        seventhDesc = seventhMenu.transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text;
+        Debug.Log(seventhDesc); 
         selection = 0;
         previousSelection = -1;
         Debug.Log("cursor at 1");
+        raycaster = rightController.GetComponent<Raycaster>();
 
     }
 
@@ -35,12 +48,9 @@ public class RadialMenu : MonoBehaviour
     void Update()
     {
         OpenRadialMenu();
-        if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight))
-        {
-            UpdateRadialMenu();
-        }
-       
-        
+
+        UpdateSelection(); 
+        UpdateRadialMenu();
         SimpleCapsuleWithStickMovement movt = playerMovement.GetComponent<SimpleCapsuleWithStickMovement>();
         if (Menu.activeInHierarchy)
         {
@@ -50,6 +60,8 @@ public class RadialMenu : MonoBehaviour
         {
             movt.enabled = true; 
         }
+        RadialFunctions();
+        ShowToggle(); 
        // Menu.transform.localPosition = transform.position;
       //  Menu.transform.localRotation = transform.rotation;
     }
@@ -60,7 +72,12 @@ public class RadialMenu : MonoBehaviour
         {
             Menu.SetActive(!Menu.activeInHierarchy);
             Menu.transform.localPosition = transform.position;
-
+            selection = 0; 
+            for (int i = 1; i < menuItems.Length; i++)
+            {
+                menuItemSc = menuItems[i].GetComponent<MenuItemScript>();
+                menuItemSc.description.SetActive(false); 
+            }
         }
     }
     
@@ -68,95 +85,107 @@ public class RadialMenu : MonoBehaviour
 
     private void UpdateRadialMenu()
     {
-        menuItemSc = menuItems[0].GetComponent<MenuItemScript>(); 
-        if (menuItemSc.description.gameObject.name == "Description")
+        if (selection == 0)
         {
-            previousMenuItemSc = menuItems[0].GetComponent<MenuItemScript>();
+            previousMenuItemSc = menuItems[6].GetComponent<MenuItemScript>();
             previousMenuItemSc.description.SetActive(false);
+
+            menuItemSc = menuItems[0].GetComponent<MenuItemScript>();
+            menuItemSc.MoveCursor();
 
             nextMenuItemSc = menuItems[1].GetComponent<MenuItemScript>();
-            nextMenuItemSc.MoveCursor();
-            Debug.Log("cursor at 2");    
-        }
-
-        menuItemSc = menuItems[1].GetComponent<MenuItemScript>();
-        if (menuItemSc.description.gameObject.name == "Description (1)")
+            nextMenuItemSc.description.SetActive(false);
+        } else if (selection == 6)
         {
-            previousMenuItemSc = menuItems[1].GetComponent<MenuItemScript>();
+            previousMenuItemSc = menuItems[5].GetComponent<MenuItemScript>();
             previousMenuItemSc.description.SetActive(false);
 
-            nextMenuItemSc = menuItems[2].GetComponent<MenuItemScript>();
-            nextMenuItemSc.MoveCursor();
-            Debug.Log("cursor at 3");
-        }
+            menuItemSc = menuItems[6].GetComponent<MenuItemScript>();
+            menuItemSc.MoveCursor();
 
-        menuItemSc = menuItems[2].GetComponent<MenuItemScript>();
-        if (menuItemSc.description.gameObject.name == "Description (2)")
+            nextMenuItemSc = menuItems[0].GetComponent<MenuItemScript>();
+            nextMenuItemSc.description.SetActive(false);
+        } else
         {
-            previousMenuItemSc = menuItems[2].GetComponent<MenuItemScript>();
+            previousMenuItemSc = menuItems[selection - 1].GetComponent<MenuItemScript>();
             previousMenuItemSc.description.SetActive(false);
-
-
-            nextMenuItemSc = menuItems[3].GetComponent<MenuItemScript>();
-            nextMenuItemSc.MoveCursor();
-            Debug.Log("cursor at 4"); 
-        }
-
-        menuItemSc = menuItems[3].GetComponent<MenuItemScript>();
-        if (menuItemSc.description.gameObject.name == "Description (3)")
-        {
-            previousMenuItemSc = menuItems[3].GetComponent<MenuItemScript>();
-            previousMenuItemSc.description.SetActive(false);
-
-            nextMenuItemSc = menuItems[4].GetComponent<MenuItemScript>();
-            nextMenuItemSc.MoveCursor();
-            Debug.Log("cursor at 5");        
-        }
-
-
-
-        /*
-        
-        if (selection != previousSelection)
-        {
-            previousMenuItemSc = menuItems[previousSelection].GetComponent<MenuItemScript>();
-            previousMenuItemSc.Deselect();
-            previousSelection = selection;
 
             menuItemSc = menuItems[selection].GetComponent<MenuItemScript>();
-            menuItemSc.Select(); 
-        }
-        */
-        //  Debug.Log(selection);
+            menuItemSc.MoveCursor();
 
-        /*
-        if (OVRInput.Get(OVRInput.Button.PrimaryThumbstick))
-        {
-           if (selection != previousSelection)
-            {
-                if (previousSelection >= 0)
-                {
-                    previousMenuItemSc = menuItems[previousSelection].GetComponent<MenuItemScript>();
-                    previousMenuItemSc.description.SetActive(false);
-                    previousSelection = selection;
-                }
-               
-                selection++;
-                nextMenuItemSc = menuItems[selection].GetComponent<MenuItemScript>();
-                nextMenuItemSc.MoveCursor();
-                Debug.Log("cursor moved right");
-            }
-               
-        }
-        */
-        if (OVRInput.Get(OVRInput.Button.PrimaryThumbstick))
-        {
-            Raycaster ray = rightController.GetComponent<Raycaster>();
-            ray.DisableLines(); 
-            Debug.Log("hide lines"); 
+            nextMenuItemSc = menuItems[selection + 1].GetComponent<MenuItemScript>();
+            nextMenuItemSc.description.SetActive(false);
         }
         
     }
+
+    void UpdateSelection()
+    {
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryThumbstickRight))
+        {
+            if (selection == 6)
+            {
+                selection = 0; 
+            } else
+            {
+                selection = selection + 1;
+            }
+             
+        }
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryThumbstickLeft))
+        {
+            if (selection == 0)
+            {
+                selection = 6; 
+            } else
+            {
+                selection = selection - 1;
+            }
+           
+        }
+    }
+    void RadialFunctions()
+    {
+        if (OVRInput.Get(OVRInput.Button.PrimaryThumbstick))
+        {
+            if (selection == 4)
+            {
+                raycaster.DeleteObject(); 
+                Debug.Log("delete object"); 
+            }
+          
+            if (selection == 6)
+            { 
+                raycaster.AdjustObjectSize();
+                Debug.Log("adjust size"); 
+            }
+        }
+    }
+
+    void ShowToggle()
+    {
+
+        if (selection == 5)
+        {
+            if (OVRInput.GetDown(OVRInput.Button.PrimaryThumbstick))
+            {
+                if (sixthDesc == "Hidden")
+                {
+                    sixthDesc = "Show";
+                    raycaster.DisableLines(true);
+                    
+                }
+                else
+                {
+                    raycaster.DisableLines(false);
+                    //  sixthDesc = "Hidden"; 
+                }
+
+                Debug.Log("hide lines");
+            }
+        }
+    }
+
 
 
 }
