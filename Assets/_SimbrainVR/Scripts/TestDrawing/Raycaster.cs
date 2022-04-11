@@ -17,6 +17,13 @@ public class Raycaster : MonoBehaviour
     GameObject secondHitGameObject;
     int layerUse = ~1;
     public GameObject linePrefab;
+    [Header("Colours")]
+    public Material red;
+    public Material green;
+    public Material yellow;
+    public Material pink;
+    public Material purple;
+    public Material blue; 
     
 
     // Start is called before the first frame update
@@ -149,7 +156,52 @@ public class Raycaster : MonoBehaviour
         }
     }
     
-    
+    public void Colour (int number)
+    {
+        if(number == 0)
+        {
+            foreach (var line in lines)
+            {
+                line.material = blue;
+                
+       
+            }
+        } else if (number == 1)
+        {
+            foreach (var line in lines)
+            {
+                line.material = green;
+            }
+        }
+        else if (number == 2)
+        {
+            foreach (var line in lines)
+            {
+                line.material = yellow;
+            }
+        }
+        else if (number == 3)
+        {
+            foreach (var line in lines)
+            {
+                line.material = red;
+            }
+        }
+        else if (number == 4)
+        {
+            foreach (var line in lines)
+            {
+                line.material = purple;
+            }
+        }
+        else if (number == 5)
+        {
+            foreach (var line in lines)
+            {
+                line.material = pink;
+            }
+        }
+    }
 
 
 }

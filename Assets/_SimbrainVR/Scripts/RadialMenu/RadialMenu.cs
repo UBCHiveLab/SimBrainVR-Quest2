@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI; 
 
 public class RadialMenu : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class RadialMenu : MonoBehaviour
     private int previousSelection;
 
     public GameObject[] menuItems;
+    public Button[] symptomButtons;
+    public Button[] colorButtons;
 
     private MenuItemScript menuItemSc;
     private MenuItemScript previousMenuItemSc;
@@ -22,9 +25,13 @@ public class RadialMenu : MonoBehaviour
     public GameObject rightController;
     Raycaster raycaster;
     MenuItemScript sixthMenu;
-    string sixthDesc;
+    TextMeshProUGUI sixthDesc;
     MenuItemScript seventhMenu;
     string seventhDesc;
+    public GameObject colourDisplay;
+    public Button closeColor;
+    public GameObject symptomList;
+    public Button closeSymptoms; 
 
     // Start is called before the first frame update
     void Start()
@@ -32,14 +39,14 @@ public class RadialMenu : MonoBehaviour
         MenuItemScript firstMenu = menuItems[0].GetComponent<MenuItemScript>();
         firstMenu.description.SetActive(true);
         sixthMenu = menuItems[5].GetComponent<MenuItemScript>();
-        sixthDesc = sixthMenu.transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text;
-        Debug.Log(sixthDesc); 
+        sixthDesc = sixthMenu.transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>();
+        Debug.Log(sixthDesc.text); 
         seventhMenu = menuItems[6].GetComponent<MenuItemScript>();
         seventhDesc = seventhMenu.transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text;
         Debug.Log(seventhDesc); 
         selection = 0;
         previousSelection = -1;
-        Debug.Log("cursor at 1");
+      
         raycaster = rightController.GetComponent<Raycaster>();
 
     }
@@ -61,9 +68,11 @@ public class RadialMenu : MonoBehaviour
             movt.enabled = true; 
         }
         RadialFunctions();
-        ShowToggle(); 
-       // Menu.transform.localPosition = transform.position;
-      //  Menu.transform.localRotation = transform.rotation;
+        ShowToggle();
+       if (selection != 3)
+        {
+            colourDisplay.SetActive(false);
+        }
     }
 
     void OpenRadialMenu()
@@ -78,6 +87,7 @@ public class RadialMenu : MonoBehaviour
                 menuItemSc = menuItems[i].GetComponent<MenuItemScript>();
                 menuItemSc.description.SetActive(false); 
             }
+            SwitchOffDisplays();
         }
     }
     
@@ -85,6 +95,7 @@ public class RadialMenu : MonoBehaviour
 
     private void UpdateRadialMenu()
     {
+        
         if (selection == 0)
         {
             previousMenuItemSc = menuItems[6].GetComponent<MenuItemScript>();
@@ -105,6 +116,7 @@ public class RadialMenu : MonoBehaviour
 
             nextMenuItemSc = menuItems[0].GetComponent<MenuItemScript>();
             nextMenuItemSc.description.SetActive(false);
+            SwitchOffDisplays();
         } else
         {
             previousMenuItemSc = menuItems[selection - 1].GetComponent<MenuItemScript>();
@@ -115,7 +127,11 @@ public class RadialMenu : MonoBehaviour
 
             nextMenuItemSc = menuItems[selection + 1].GetComponent<MenuItemScript>();
             nextMenuItemSc.description.SetActive(false);
+            symptomList.SetActive(false);
         }
+
+        
+       
         
     }
 
@@ -146,18 +162,21 @@ public class RadialMenu : MonoBehaviour
     }
     void RadialFunctions()
     {
+    
         if (OVRInput.Get(OVRInput.Button.PrimaryThumbstick))
         {
             if (selection == 4)
             {
                 raycaster.DeleteObject(); 
-                Debug.Log("delete object"); 
+                Debug.Log("delete object");
+                
             }
           
             if (selection == 6)
             { 
                 raycaster.AdjustObjectSize();
-                Debug.Log("adjust size"); 
+                Debug.Log("adjust size");
+           
             }
         }
     }
@@ -165,27 +184,73 @@ public class RadialMenu : MonoBehaviour
     void ShowToggle()
     {
 
-        if (selection == 5)
+        if(OVRInput.GetDown(OVRInput.Button.PrimaryThumbstick))
         {
-            if (OVRInput.GetDown(OVRInput.Button.PrimaryThumbstick))
+            if (selection == 5)  
             {
-                if (sixthDesc == "Hidden")
+             //   SwitchOffDisplays(); 
+                if (sixthDesc.text == "Hidden")
                 {
-                    sixthDesc = "Show";
+                    sixthDesc.text = "Show";
                     raycaster.DisableLines(true);
-                    
+                    Debug.Log(sixthDesc);
                 }
                 else
                 {
                     raycaster.DisableLines(false);
-                    //  sixthDesc = "Hidden"; 
+                    sixthDesc.text = "Hidden";
+                    Debug.Log(sixthDesc);
                 }
 
                 Debug.Log("hide lines");
             }
+
+            if (selection == 3)
+            {
+              //  symptomList.SetActive(false);
+                colourDisplay.SetActive(true);
+                ChangeColour();
+            }
+
+            if (selection == 0)
+            {
+                symptomList.SetActive(true);
+                MarkSymptoms();
+            }
         }
     }
 
+    void MarkSymptoms()
+    {
+        symptomButtons[0].onClick.AddListener(() => Highlight(0));
+        symptomButtons[1].onClick.AddListener(() => Highlight(1));
+        symptomButtons[2].onClick.AddListener(() => Highlight(2));
+        symptomButtons[3].onClick.AddListener(() => Highlight(3));
+        symptomButtons[4].onClick.AddListener(() => Highlight(4));
+        closeSymptoms.onClick.AddListener(() => symptomList.SetActive(false));
+    }
 
+   void Highlight(int number)
+    {
+        symptomButtons[number].image.color = Color.blue; 
+    }
 
+    void SwitchOffDisplays()
+    {
+        symptomList.SetActive(false);
+        colourDisplay.SetActive(false);
+    }
+
+    void ChangeColour()
+    {
+        colorButtons[0].onClick.AddListener(() => raycaster.Colour(0));
+        colorButtons[1].onClick.AddListener(() => raycaster.Colour(1));
+        colorButtons[2].onClick.AddListener(() => raycaster.Colour(2));
+        colorButtons[3].onClick.AddListener(() => raycaster.Colour(3));
+        colorButtons[4].onClick.AddListener(() => raycaster.Colour(4));
+        colorButtons[5].onClick.AddListener(() => raycaster.Colour(5));
+        closeColor.onClick.AddListener(() => colourDisplay.SetActive(false));
+    }
+
+    
 }
