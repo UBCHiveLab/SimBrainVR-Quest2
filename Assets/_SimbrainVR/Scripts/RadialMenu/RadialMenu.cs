@@ -35,6 +35,7 @@ public class RadialMenu : MonoBehaviour
 
     int layerUse = ~1;
     int rayLength = 100;
+    GameObject objectHit;
 
     // Start is called before the first frame update
     void Start()
@@ -62,18 +63,25 @@ public class RadialMenu : MonoBehaviour
         UpdateSelection(); 
         UpdateRadialMenu();
         SimpleCapsuleWithStickMovement movt = playerMovement.GetComponent<SimpleCapsuleWithStickMovement>();
+        if (Menu.activeInHierarchy)
+        {
+            movt.enabled = false;
+        //    Menu.transform.position = objectHit.transform.position + (transform.right * .3f);
+        }
+        else
+        {
+            movt.enabled = true;
+        }
+        /*
         if (DetectObject() != null)
         {
             if (Menu.activeInHierarchy)
             {
-                movt.enabled = false;
+                
                 Menu.transform.localPosition = DetectObject().transform.position + (transform.right * .3f);
             }
-            else
-            {
-                movt.enabled = true;
-            }
         }
+        */
         RadialFunctions();
         ShowToggle();
        if (selection != 3)
@@ -89,7 +97,9 @@ public class RadialMenu : MonoBehaviour
             if (DetectObject() != null)
             {
                 Menu.SetActive(!Menu.activeInHierarchy);
-                Menu.transform.localPosition = DetectObject().transform.position + (transform.right * .3f);
+                
+                objectHit = DetectObject();
+                Menu.transform.localPosition = objectHit.transform.position + (transform.right * .3f);
                 selection = 0;
                 for (int i = 1; i < menuItems.Length; i++)
                 {
@@ -141,11 +151,7 @@ public class RadialMenu : MonoBehaviour
             nextMenuItemSc = menuItems[selection + 1].GetComponent<MenuItemScript>();
             nextMenuItemSc.description.SetActive(false);
             symptomList.SetActive(false);
-        }
-
-        
-       
-        
+        }       
     }
 
     void UpdateSelection()
@@ -180,14 +186,18 @@ public class RadialMenu : MonoBehaviour
         {
             if (selection == 4)
             {
-                raycaster.DeleteObject(); 
+                objectHit.SetActive(false);
+                Menu.SetActive(false);
+             //   raycaster.DeleteObject(); 
                 Debug.Log("delete object");
                 
             }
           
             if (selection == 6)
-            { 
-                raycaster.AdjustObjectSize();
+            {
+                objectHit.transform.localScale += new Vector3(.01f, .01f, .01f);
+              //  DetectObject().transform.localScale += new Vector3((float).1, (float).1, (float).1);
+              //  raycaster.AdjustObjectSize();
                 Debug.Log("adjust size");
            
             }
@@ -201,21 +211,28 @@ public class RadialMenu : MonoBehaviour
         {
             if (selection == 5)  
             {
+                ObjectData objectData = objectHit.GetComponent<ObjectData>();
+             //   objectData.ToggleLines(sixthDesc.text == "Hidden"); 
+                
+                
              //   SwitchOffDisplays(); 
                 if (sixthDesc.text == "Hidden")
                 {
                     sixthDesc.text = "Show";
-                    raycaster.DisableLines(true);
-                    Debug.Log(sixthDesc);
+                    objectHit.GetComponent<ObjectData>().DisableLines();
+                    objectHit.GetComponent<ObjectData>().DisplayConnections();
+                    Debug.Log(objectHit.GetComponent<ObjectData>().DisplayLines());
+                    //  raycaster.DisableLines(true);
+                  
                 }
                 else
                 {
-                    raycaster.DisableLines(false);
+                    objectHit.GetComponent<ObjectData>().EnableLines();
+                  //  raycaster.DisableLines(false);
                     sixthDesc.text = "Hidden";
-                    Debug.Log(sixthDesc);
+               
                 }
-
-                Debug.Log("hide lines");
+                
             }
 
             if (selection == 3)
@@ -256,12 +273,14 @@ public class RadialMenu : MonoBehaviour
 
     void ChangeColour()
     {
-        colorButtons[0].onClick.AddListener(() => raycaster.Colour(0));
-        colorButtons[1].onClick.AddListener(() => raycaster.Colour(1));
-        colorButtons[2].onClick.AddListener(() => raycaster.Colour(2));
-        colorButtons[3].onClick.AddListener(() => raycaster.Colour(3));
-        colorButtons[4].onClick.AddListener(() => raycaster.Colour(4));
-        colorButtons[5].onClick.AddListener(() => raycaster.Colour(5));
+        ObjectData data = objectHit.GetComponent<ObjectData>();
+
+        colorButtons[0].onClick.AddListener(() => data.Colour(0));
+        colorButtons[1].onClick.AddListener(() => data.Colour(1));
+        colorButtons[2].onClick.AddListener(() => data.Colour(2));
+        colorButtons[3].onClick.AddListener(() => data.Colour(3));
+        colorButtons[4].onClick.AddListener(() => data.Colour(4));
+        colorButtons[5].onClick.AddListener(() => data.Colour(5));
         closeColor.onClick.AddListener(() => colourDisplay.SetActive(false));
     }
 

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI; 
 public class Raycaster : MonoBehaviour
 {
+    
     public int rayLength = 100;
     public Button button; 
     private List<LineRenderer> lines; 
@@ -31,7 +32,7 @@ public class Raycaster : MonoBehaviour
     {
         hitObjectsList = new List<Transform>();
         lines = new List<LineRenderer>(); 
-        line.positionCount = 0;
+      //  line.positionCount = 0;
         firstHitObjectsList = new List<Transform>();
         secondHitObjectsList = new List<Transform>(); 
     }
@@ -57,7 +58,7 @@ public class Raycaster : MonoBehaviour
     void CreateLine()
     {
         RaycastHit hit; // did the ray make contact with an object
-                        //Sets the first position of the line
+        //Sets the first position of the line
         if (OVRInput.GetDown(OVRInput.Button.One))
         {
             if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength * 10, layerUse))
@@ -128,20 +129,7 @@ public class Raycaster : MonoBehaviour
     }
         
 
-    public void AdjustObjectSize()
-    {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength * 10, layerUse))
-        {
-            if (OVRInput.GetDown(OVRInput.Button.Two))
-            {
-                GameObject objectHit = hit.transform.gameObject;
-                Debug.Log("objectHit" + objectHit);
-                objectHit.transform.localScale += new Vector3((float).1, (float).1, (float).1); 
-            }
-        }
-    }
-
+   
     public void DeleteObject()
     {
         RaycastHit hit; 
