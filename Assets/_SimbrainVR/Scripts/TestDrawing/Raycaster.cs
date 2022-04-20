@@ -42,7 +42,7 @@ public class Raycaster : MonoBehaviour
     {
         CreateLine();
      //   PressObject();
-        line.gameObject.SetActive(true);
+      //  line.gameObject.SetActive(true);
         //Iterates through the list of lines and positions. Sets each line's posiiton every frame to ensure it stays with it
         for (int i = 0; i < lines.Count; i++)
         {

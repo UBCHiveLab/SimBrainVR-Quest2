@@ -94,9 +94,12 @@ public class ObjectData : MonoBehaviour
 
     public void DisableLines()
     {
+        Debug.Log("disable lines" + connectedLines.Count);
         foreach (var line in connectedLines)
         {
+            Debug.Log(line.name);
             line.gameObject.SetActive(false);
+
         }
     }
 
