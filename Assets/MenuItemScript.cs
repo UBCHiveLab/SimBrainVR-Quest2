@@ -17,7 +17,6 @@ public class MenuItemScript : MonoBehaviour
     void Start()
     {
         description.SetActive(false); 
-     //   background.color = baseColor; 
     }
 
     public void MoveCursor(GameObject cursor)
@@ -25,8 +24,7 @@ public class MenuItemScript : MonoBehaviour
         Debug.Log(cursor);
         cursor.transform.position = cursorPos.transform.position;
         cursor.transform.rotation = cursorPos.transform.rotation; 
-        string desc = description.name;
-     
+      
         description.SetActive(true);
         Debug.Log((description.activeInHierarchy));
         Debug.Log(description + "description");

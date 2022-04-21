@@ -73,16 +73,13 @@ public class RadialMenu : MonoBehaviour
         fifthDesc = fifthMenu.transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>();
         Debug.Log(fifthDesc.text); 
      
-        
-      //  selection = 0;
+      
         previousSelection = -1;
         currentSpecimen1Pos = specimen1.position;
         currentSpecimen2Pos = specimen2.position;
         currentSpecimen3Pos = specimen3.position; 
         Debug.Log(currentSpecimen1Pos);
         raycaster = rightController.GetComponent<Raycaster>();
-        
-
     }
 
     // Update is called once per frame
@@ -159,43 +156,38 @@ public class RadialMenu : MonoBehaviour
         {
             if (DetectObject() != null)
             {
-              //  Menu.SetActive(!Menu.activeInHierarchy);
-                
                 objectHit = DetectObject();
-              //  Menu.transform.localPosition = objectHit.transform.position + (transform.right * .3f);
-              //  selection = 0;
-              /*
-                for (int i = 1; i < menuItems.Length; i++)
+                //  Menu.transform.localPosition = objectHit.transform.position + (transform.right * .3f);
+                //  selection = 0;
+                /*
+                  for (int i = 1; i < menuItems.Length; i++)
+                  {
+                      menuItemSc = menuItems[i].GetComponent<MenuItemScript>();
+                      menuItemSc.description.SetActive(false);
+                  }
+                */
+                if (objectHit.name.Contains("LOADEDSPECIMEN"))
                 {
-                    menuItemSc = menuItems[i].GetComponent<MenuItemScript>();
-                    menuItemSc.description.SetActive(false);
+                    Debug.Log("show radial menu for 3d objects");
+                    OpenSpecimenRadialMenu();
+
                 }
-              */
+                if (objectHit.name.Contains("IMAGE"))
+                {
+                    Debug.Log("show radial menu for images");
+                    OpenImageRadialMenu();
+                }
+                if (objectHit.name.Contains("TEXT"))
+                {
+                    Debug.Log("show radial menu for text");
+                    OpenTextRadialMenu();
+                }
+                if (objectHit.name.Contains("Line"))
+                {
+                    Debug.Log("show radial menu for line");
+                    OpenLineRadialMenu();
+                }
             }
-            if (objectHit.name.Contains("LOADEDSPECIMEN"))
-            {
-                Debug.Log("show radial menu for 3d objects");
-                OpenSpecimenRadialMenu();
-                
-            }
-            if (objectHit.name.Contains("IMAGE"))
-            {
-                Debug.Log("show radial menu fpr images");
-                OpenImageRadialMenu();
-            }
-            if (objectHit.name.Contains("TEXT"))
-            {
-                Debug.Log("show radial menu for text");
-                OpenTextRadialMenu();
-            }
-            if (objectHit.name.Contains("Line"))
-            {
-                Debug.Log("show radial menu for line");
-                OpenLineRadialMenu();
-            }
-            
-          //  Menu.transform.localPosition = transform.position;
-            
             SwitchOffDisplays();
         }
     }
@@ -204,35 +196,33 @@ public class RadialMenu : MonoBehaviour
     {
         ObjectRadialMenu.SetActive(!ObjectRadialMenu.activeInHierarchy);
         ObjectRadialMenu.transform.position = objectHit.transform.position + (transform.right * .3f);
-      //  objectSelection = 0; 
-        UpdateSelection(objectSelection);
+        objectSelection = 0; 
+       for (int i = 1; i < objectMenuItems.Length; i++)
+        {
+            menuItemSc = objectMenuItems[i].GetComponent<MenuItemScript>();
+            menuItemSc.description.SetActive(false);
+        }
       
     }
     private void OpenImageRadialMenu()
     {
         ImageRadialMenu.SetActive(!ImageRadialMenu.activeInHierarchy);
         ImageRadialMenu.transform.position = objectHit.transform.position + (transform.right * .3f);
-     //   imageSelection = 0;
-      //  UpdateSelection(imageSelection);
-       
+        imageSelection = 0;
     }
     private void OpenTextRadialMenu()
     {
         TextRadialMenu.SetActive(!TextRadialMenu.activeInHierarchy);
         TextRadialMenu.transform.position = objectHit.transform.position + (transform.right * .3f);
-       // textSelection = 0;
-        //UpdateSelection(textSelection);
-       
+        textSelection = 0; 
     }
 
     private void OpenLineRadialMenu()
     {
         LineRadialMenu.SetActive(!LineRadialMenu.activeInHierarchy);
         LineRadialMenu.transform.position = objectHit.transform.position + (transform.right * .3f);
-        //lineSelection = 0;
-        //UpdateSelection(lineSelection);
-     
-    }
+        lineSelection = 0; 
+      }
     private void UpdateSpecimenRadialMenu()
     {
 
@@ -757,7 +747,7 @@ public class RadialMenu : MonoBehaviour
     {
         RaycastHit hit;
         GameObject hitObject = null; 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength * 10, layerUse))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength, layerUse))
         {
             hitObject = hit.transform.gameObject; 
         }
