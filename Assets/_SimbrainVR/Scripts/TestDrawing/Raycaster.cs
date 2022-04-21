@@ -10,8 +10,8 @@ public class Raycaster : MonoBehaviour
     public Button button; 
     private List<LineRenderer> lines; 
     private List<Transform> hitObjectsList;
-    private List<Transform> firstHitObjectsList;
-    private List<Transform> secondHitObjectsList;
+    private List<GameObject> firstHitObjectsList;
+    private List<GameObject> secondHitObjectsList;
 
     public LineRenderer line;
     GameObject firstHitGameObject;
@@ -33,8 +33,8 @@ public class Raycaster : MonoBehaviour
         hitObjectsList = new List<Transform>();
         lines = new List<LineRenderer>(); 
       //  line.positionCount = 0;
-        firstHitObjectsList = new List<Transform>();
-        secondHitObjectsList = new List<Transform>(); 
+        firstHitObjectsList = new List<GameObject>();
+        secondHitObjectsList = new List<GameObject>(); 
     }
 
     // Update is called once per frame
@@ -46,10 +46,10 @@ public class Raycaster : MonoBehaviour
         //Iterates through the list of lines and positions. Sets each line's posiiton every frame to ensure it stays with it
         for (int i = 0; i < lines.Count; i++)
         {
-            lines[i].SetPosition(0, firstHitObjectsList[i].position);
+            lines[i].SetPosition(0, firstHitObjectsList[i].transform.position);
             if (i >= 0 && i < secondHitObjectsList.Count)
             {
-                lines[i].SetPosition(1, secondHitObjectsList[i].position);
+                lines[i].SetPosition(1, secondHitObjectsList[i].transform.position);
             }
         }
     }
@@ -64,9 +64,12 @@ public class Raycaster : MonoBehaviour
             if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength * 10, layerUse))
             {
                 firstHitGameObject = hit.transform.gameObject;
-                firstHitObjectsList.Add(firstHitGameObject.transform);
-                line = Instantiate(linePrefab, firstHitGameObject.transform).GetComponent<LineRenderer>();
-                lines.Add(line);
+                if (firstHitGameObject.GetComponent<ObjectData>() != null)
+                {
+                    firstHitObjectsList.Add(firstHitGameObject);
+                    
+                }         
+                
             }
         }
         //Sets the second position of the line
@@ -75,11 +78,17 @@ public class Raycaster : MonoBehaviour
             if (OVRInput.GetUp(OVRInput.Button.One))
             {
                 secondHitGameObject = hit.transform.gameObject;
-                secondHitObjectsList.Add(secondHitGameObject.transform);
-                firstHitGameObject.GetComponent<ObjectData>().AddConnections(secondHitGameObject); //adding second game object to the list of objects hit 
-                firstHitGameObject.GetComponent<ObjectData>().AddLines(line);
-                secondHitGameObject.GetComponent<ObjectData>().AddLines(line);
-                secondHitGameObject.GetComponent<ObjectData>().AddConnections(firstHitGameObject); //adding first game object to second's list of hit objects
+                if (secondHitGameObject.GetComponent<ObjectData>() != null)
+                {
+                    secondHitObjectsList.Add(secondHitGameObject);
+                    line = Instantiate(linePrefab, firstHitGameObject.transform).GetComponent<LineRenderer>();
+                    lines.Add(line);
+                    firstHitGameObject.GetComponent<ObjectData>().AddConnections(secondHitGameObject); //adding second game object to the list of objects hit 
+                    firstHitGameObject.GetComponent<ObjectData>().AddLines(line);
+                    secondHitGameObject.GetComponent<ObjectData>().AddLines(line);
+                    secondHitGameObject.GetComponent<ObjectData>().AddConnections(firstHitGameObject); //adding first game object to second's list of hit objects
+                } 
+                
             }
         }       
     }
