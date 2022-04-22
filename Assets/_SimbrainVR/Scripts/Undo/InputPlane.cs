@@ -21,7 +21,9 @@ public class InputPlane : MonoBehaviour
             if(Physics.Raycast(ray, out hitInfo, Mathf.Infinity))
             {
                 Color c = new Color(Random.Range(0.5f, 1f), Random.Range(0.5f, 1f), Random.Range(0.5f, 1f));
-                CubePlacer.PlaceCube(hitInfo.point, c, cubePrefab); 
+                ICommand command = new PlaceCubeCommand(hitInfo.point, c, cubePrefab);
+                CommandInvoker.AddCommand(command);
+                //CubePlacer.PlaceCube(hitInfo.point, c, cubePrefab); 
             }
         }
     }
