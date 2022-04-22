@@ -5,137 +5,92 @@ using UnityEngine;
 using UnityEngine.UI; 
 public class Raycaster : MonoBehaviour
 {
+    
     public int rayLength = 100;
     public Button button; 
     private List<LineRenderer> lines; 
     private List<Transform> hitObjectsList;
-    private List<Transform> firstHitObjectsList;
-    private List<Transform> secondHitObjectsList; 
-   
+    private List<GameObject> firstHitObjectsList;
+    private List<GameObject> secondHitObjectsList;
 
- //   public GameObject linePrefab;
     public LineRenderer line;
     GameObject firstHitGameObject;
     GameObject secondHitGameObject;
     int layerUse = ~1;
     public GameObject linePrefab;
+    [Header("Colours")]
+    public Material red;
+    public Material green;
+    public Material yellow;
+    public Material pink;
+    public Material purple;
+    public Material blue; 
+    
 
     // Start is called before the first frame update
     void Start()
     {
         hitObjectsList = new List<Transform>();
         lines = new List<LineRenderer>(); 
-        line.positionCount = 0;
-        firstHitObjectsList = new List<Transform>();
-        secondHitObjectsList = new List<Transform>();
-
-        line.gameObject.SetActive(true);
-        StartCoroutine(OutlineObjectsTemp()); //temp for demo purposes
+      //  line.positionCount = 0;
+        firstHitObjectsList = new List<GameObject>();
+        secondHitObjectsList = new List<GameObject>(); 
     }
 
     // Update is called once per frame
     void Update()
     {
         CreateLine();
-        //PressObject();
-        OpenMenu();
-        //line.gameObject.SetActive(true);
-
+     //   PressObject();
+      //  line.gameObject.SetActive(true);
         //Iterates through the list of lines and positions. Sets each line's posiiton every frame to ensure it stays with it
         for (int i = 0; i < lines.Count; i++)
         {
-            
-            lines[i].SetPosition(0, firstHitObjectsList[i].position);
-            //if(secondHitObjectsList[i] != null) lines[i].SetPosition(1, secondHitObjectsList[i].position);
-
-            if(i >= 0 && i< secondHitObjectsList.Count) //condition to check if index out of range
+            lines[i].SetPosition(0, firstHitObjectsList[i].transform.position);
+            if (i >= 0 && i < secondHitObjectsList.Count)
             {
-                lines[i].SetPosition(1, secondHitObjectsList[i].position);
+                lines[i].SetPosition(1, secondHitObjectsList[i].transform.position);
             }
-            else
-            {
-                if (btnDown)
-                {
-                    lines[i].SetPosition(1, transform.position);
-                }
-                else
-                {
-                    //temp hackjob, work on it further - todo i think if the player releases btn and can't find a secondhitobject, then the current line should be deleted.
-                    if (!(i >= 0 && i < secondHitObjectsList.Count)) lines[i].SetPosition(1, firstHitObjectsList[i].position);//if (!(i >= 0 && i < secondHitObjectsList.Count)) lines.RemoveAt(i);
-                   
-                }
-                
-            }
- 
         }
-        
-        /*
-        if (line.positionCount >= 0)
-        { 
-            for (int i = 0; i < line.positionCount; i++)
-            {
-                line.SetPosition(i,hitObjectsList[i].position); 
-               // Debug.Log("hit list " + hitObjectsList[i].position);
-            }
-        }*/
-        
-    //    line.SetPosition(0, firstHitGameObject.transform.position);
-      //  line.SetPosition(1, secondHitGameObject.transform.position);
     }
-
-
-    bool btnDown;
-
+    
+    
     void CreateLine()
     {
         RaycastHit hit; // did the ray make contact with an object
         //Sets the first position of the line
         if (OVRInput.GetDown(OVRInput.Button.One))
         {
-            btnDown = true;
-            //called many times
             if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength * 10, layerUse))
             {
                 firstHitGameObject = hit.transform.gameObject;
-                firstHitObjectsList.Add(firstHitGameObject.transform);
-                line = Instantiate(linePrefab, firstHitGameObject.transform).GetComponent<LineRenderer>();
-                lines.Add(line);
-
-                if (!hitObjectsList.Contains(firstHitGameObject.transform))
+                if (firstHitGameObject.GetComponent<ObjectData>() != null)
                 {
-                    hitObjectsList.Add(firstHitGameObject.transform);
-                }
-                 
-
+                    firstHitObjectsList.Add(firstHitGameObject);
+                    
+                }         
+                
             }
-
         }
         //Sets the second position of the line
-        if (OVRInput.GetUp(OVRInput.Button.One))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength * 10, layerUse))
         {
-            btnDown = false;
-            //called once
-            if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength * 10, layerUse))
+            if (OVRInput.GetUp(OVRInput.Button.One))
             {
                 secondHitGameObject = hit.transform.gameObject;
-                secondHitObjectsList.Add(secondHitGameObject.transform); 
-                firstHitGameObject.GetComponent<ObjectData>().AddConnections(secondHitGameObject); //adding second game object to the list of objects hit 
-                firstHitGameObject.GetComponent<ObjectData>().AddLines(line);
-                secondHitGameObject.GetComponent<ObjectData>().AddLines(line); 
-                secondHitGameObject.GetComponent<ObjectData>().AddConnections(firstHitGameObject); //adding first game object to second's list of hit objects
-
-
-                //    Debug.Log(secondHitGameObject.name);
-                //   hitObjectsList.Add(secondHitGameObject.transform);
-                //   line.positionCount++;
-                if (!hitObjectsList.Contains(secondHitGameObject.transform))
+                if (secondHitGameObject.GetComponent<ObjectData>() != null)
                 {
-                    hitObjectsList.Add(secondHitGameObject.transform);
-                }
-            }      
-        }
-
-
+                    secondHitObjectsList.Add(secondHitGameObject);
+                    line = Instantiate(linePrefab, firstHitGameObject.transform).GetComponent<LineRenderer>();
+                    lines.Add(line);
+                    firstHitGameObject.GetComponent<ObjectData>().AddConnections(secondHitGameObject); //adding second game object to the list of objects hit 
+                    firstHitGameObject.GetComponent<ObjectData>().AddLines(line);
+                    secondHitGameObject.GetComponent<ObjectData>().AddLines(line);
+                    secondHitGameObject.GetComponent<ObjectData>().AddConnections(firstHitGameObject); //adding first game object to second's list of hit objects
+                } 
+                
+            }
+        }       
     }
 
     //By pressing B on controller, you can figure out the gameobjects it's connected to, the number of them and the number of lines we've created under it 
@@ -149,10 +104,9 @@ public class Raycaster : MonoBehaviour
                 GameObject hitObject = hit.transform.gameObject;
               //  Debug.Log(hitObject.name);
                 hitObject.GetComponent<ObjectData>().DisplayConnections();
-                hitObject.GetComponent<ObjectData>().EnableLines();
+                hitObject.GetComponent<ObjectData>().EnableLines(); 
                 Debug.Log("list of Objects" + hitObject.GetComponent<ObjectData>().DisplayCountOfConnections());
                 Debug.Log("list of lines for this object" + hitObject.GetComponent<ObjectData>().DisplayLines());
-
             }
         }
     }
@@ -162,34 +116,89 @@ public class Raycaster : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.RawButton.X))
         {
             button.gameObject.SetActive(true);
-            button.onClick.AddListener(() => DisableLines()); 
+          //  button.onClick.AddListener(() => DisableLines()); 
         }
     }
     //Set the lines to inactive 
-    void DisableLines()
+    public void DisableLines(bool show)
     {
-        foreach(var line in lines)
+        if (show)
         {
-            line.gameObject.SetActive(false); 
-        }
-    }
-
-    IEnumerator OutlineObjectsTemp()
-    {
-        while (true)
-        {
-
-            foreach (var obj in hitObjectsList)
+            foreach (var line in lines)
             {
-                Outline outline = obj.GetComponent<Outline>();
-                if (outline != null)
-                {
-                    outline.enabled = true;
-                }
+                line.gameObject.SetActive(false);
             }
-
-            yield return new WaitForSeconds(2f);
+        } else
+        {
+            foreach (var line in lines)
+            {
+                line.gameObject.SetActive(true); 
+            }
         }
     }
+        
+
+   
+    public void DeleteObject()
+    {
+        RaycastHit hit; 
+        if (Physics.Raycast(transform.position, transform.forward, out hit, rayLength* 10, layerUse))
+        {
+            if (OVRInput.GetDown(OVRInput.Button.Two))
+            {
+                GameObject objectDelete = hit.transform.gameObject;
+                Debug.Log("objectDelete " + objectDelete);
+                Destroy(objectDelete); 
+            }
+        }
+    }
+    
+    public void Colour (int number)
+    {
+        if(number == 0)
+        {
+            foreach (var line in lines)
+            {
+                line.material = blue;
+                
+       
+            }
+        } else if (number == 1)
+        {
+            foreach (var line in lines)
+            {
+                line.material = green;
+            }
+        }
+        else if (number == 2)
+        {
+            foreach (var line in lines)
+            {
+                line.material = yellow;
+            }
+        }
+        else if (number == 3)
+        {
+            foreach (var line in lines)
+            {
+                line.material = red;
+            }
+        }
+        else if (number == 4)
+        {
+            foreach (var line in lines)
+            {
+                line.material = purple;
+            }
+        }
+        else if (number == 5)
+        {
+            foreach (var line in lines)
+            {
+                line.material = pink;
+            }
+        }
+    }
+
 
 }
