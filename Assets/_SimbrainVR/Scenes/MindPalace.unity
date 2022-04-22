@@ -4818,9 +4818,9 @@ MonoBehaviour:
   closeColor: {fileID: 1372031151}
   symptomList: {fileID: 684118763}
   closeSymptoms: {fileID: 906936625}
-  specimen1: {fileID: 487307275}
-  specimen2: {fileID: 671944438}
-  specimen3: {fileID: 1534357780}
+  specimen1: {fileID: 487307276}
+  specimen2: {fileID: 671944437}
+  specimen3: {fileID: 1834836525}
 --- !u!114 &1476617990 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6173512852677764410, guid: cfd516b348f41c6409c5a97221f7399f, type: 3}

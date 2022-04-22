@@ -55,12 +55,15 @@ public class RadialMenu : MonoBehaviour
     GameObject objectHit;
 
     [Header("specimens")]
-    public Transform specimen1;
-    private Vector3 currentSpecimen1Pos; 
-    public Transform specimen2;
+    public GameObject specimen1;
+    private Vector3 currentSpecimen1Pos;
+    private Quaternion currentSpecimen1Rot; 
+    public GameObject specimen2;
+    private Quaternion currentSpecimen2Rot; 
     private Vector3 currentSpecimen2Pos; 
-    public Transform specimen3;
-    private Vector3 currentSpecimen3Pos; 
+    public GameObject specimen3;
+    private Vector3 currentSpecimen3Pos;
+    private Quaternion currentSpecimen3Rot; 
 
     // Start is called before the first frame update
     void Start()
@@ -75,9 +78,12 @@ public class RadialMenu : MonoBehaviour
      
       
         previousSelection = -1;
-        currentSpecimen1Pos = specimen1.position;
-        currentSpecimen2Pos = specimen2.position;
-        currentSpecimen3Pos = specimen3.position; 
+        currentSpecimen1Pos = specimen1.transform.position;
+        currentSpecimen2Pos = specimen2.transform.position;
+        currentSpecimen3Pos = specimen3.transform.position;
+        currentSpecimen1Rot = specimen1.transform.rotation;
+        currentSpecimen2Rot = specimen2.transform.rotation;
+        currentSpecimen3Rot = specimen3.transform.rotation; 
         Debug.Log(currentSpecimen1Pos);
         raycaster = rightController.GetComponent<Raycaster>();
     }
@@ -209,20 +215,35 @@ public class RadialMenu : MonoBehaviour
         ImageRadialMenu.SetActive(!ImageRadialMenu.activeInHierarchy);
         ImageRadialMenu.transform.position = objectHit.transform.position + (transform.right * .3f);
         imageSelection = 0;
+        for (int i = 1; i < objectMenuItems.Length; i++)
+        {
+            menuItemSc = imageMenuItems[i].GetComponent<MenuItemScript>();
+            menuItemSc.description.SetActive(false);
+        }
     }
     private void OpenTextRadialMenu()
     {
         TextRadialMenu.SetActive(!TextRadialMenu.activeInHierarchy);
         TextRadialMenu.transform.position = objectHit.transform.position + (transform.right * .3f);
-        textSelection = 0; 
+        textSelection = 0;
+        for (int i = 1; i < objectMenuItems.Length; i++)
+        {
+            menuItemSc = textMenuItems[i].GetComponent<MenuItemScript>();
+            menuItemSc.description.SetActive(false);
+        }
     }
 
     private void OpenLineRadialMenu()
     {
         LineRadialMenu.SetActive(!LineRadialMenu.activeInHierarchy);
         LineRadialMenu.transform.position = objectHit.transform.position + (transform.right * .3f);
-        lineSelection = 0; 
-      }
+        lineSelection = 0;
+        for (int i = 1; i < objectMenuItems.Length; i++)
+        {
+            menuItemSc = lineMenuItems[i].GetComponent<MenuItemScript>();
+            menuItemSc.description.SetActive(false);
+        }
+    }
     private void UpdateSpecimenRadialMenu()
     {
 
@@ -593,9 +614,15 @@ public class RadialMenu : MonoBehaviour
             }
             if (objectSelection == 4)
             {
-                if (objectHit.name.Contains("1")) objectHit.transform.position = currentSpecimen1Pos; 
-                if (objectHit.name.Contains("2")) objectHit.transform.position = currentSpecimen2Pos;
-                if (objectHit.name.Contains("3")) objectHit.transform.position = currentSpecimen3Pos;
+                if (objectHit.name.Contains("1")) 
+                    objectHit.transform.position = currentSpecimen1Pos;
+                objectHit.transform.rotation = currentSpecimen1Rot; 
+                if (objectHit.name.Contains("2")) 
+                    objectHit.transform.position = currentSpecimen2Pos;
+                objectHit.transform.rotation = currentSpecimen2Rot; 
+                if (objectHit.name.Contains("3")) 
+                    objectHit.transform.position = currentSpecimen3Pos;
+                    objectHit.transform.rotation = currentSpecimen3Rot; 
                 Debug.Log("set specimen back to cart");
                 Debug.Log(currentSpecimen1Pos);
                 symptomList.SetActive(false);
