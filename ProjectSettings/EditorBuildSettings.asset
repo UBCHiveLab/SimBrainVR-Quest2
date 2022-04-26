@@ -15,8 +15,8 @@ EditorBuildSettings:
     path: Assets/_SimbrainVR/Scenes/Clinic.unity
     guid: ffdc6ebe0a92edc4e938c40b065d7c24
   - enabled: 1
-    path: Assets/_SimbrainVR/Scenes/_TestScenes/MindPalaceTestApril5.unity
-    guid: 954d2738886a08a4c93ff88e82462732
+    path: Assets/_SimbrainVR/Scenes/_TestScenes/MindPalaceGalaxy_April20.unity
+    guid: 1f60dba532d625148a0d8ff5565755b5
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 7dbacf440d9b9c745a4b9022ee97dce2, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 85a79126385aa144d9a305b8f1fc8b8a, type: 2}

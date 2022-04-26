@@ -4123,6 +4123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1149689597}
   - component: {fileID: 1149689598}
+  - component: {fileID: 1149689599}
   m_Layer: 0
   m_Name: SpeechToText
   m_TagString: Untagged
@@ -4152,7 +4153,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149689596}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8a504bc6a30d814c9d0327fcd12516e, type: 3}
   m_Name: 
@@ -4162,6 +4163,19 @@ MonoBehaviour:
   patientHumanoid: {fileID: 919132148487234102}
   patientExamMode: {fileID: 919132149007579974}
   hasStartedAskingQuestions: 0
+--- !u!114 &1149689599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149689596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a11da240b12f03848ad30efb4d3d0c0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tobeEnabled: {fileID: 1149689598}
 --- !u!1 &1158242794
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,15 +6,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-struct Annotation
+/*
+struct AnnotationData2
 {
     public string id, title, content;
     public bool global;
     public Vector3 position;
-}
+}*/
 
 public class TestModelLoader : MonoBehaviour
 {
+    /*
     public string reqUri = "https://hivemodelstorage.blob.core.windows.net/win/brainoptic";
     public string prefabPath = "Assets/Models/Specimens/AssetBundles/BrainOptic.prefab";
     public string annotationID = "Infratemporalfossa2"; //Infratemporalfossa2, l4lungswithtrachea, "Brain Optic", "Brain before Sections", hand_and_forearm
@@ -109,7 +111,7 @@ public class TestModelLoader : MonoBehaviour
         var courses = courseCollection.Find(filter).ToList();
         var regions = regionCollection.Find(filter).ToList();
 
-        /*
+        
         manifest = new DataManifest();
         manifest.specimenData = new SpecimenRequestData[specimens.Count];
 
@@ -206,7 +208,7 @@ public class TestModelLoader : MonoBehaviour
                 manifest.regions[i].organs[y] = organs[y].AsString;
             }
         }
-        */
+        
     }
 
     private IEnumerator LoadFromData()
@@ -301,4 +303,6 @@ public class TestModelLoader : MonoBehaviour
             }
         }
     }
+
+    */
 }
