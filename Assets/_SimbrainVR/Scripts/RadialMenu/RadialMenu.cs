@@ -141,18 +141,6 @@ public class RadialMenu : MonoBehaviour
             objectSelection = 0;
             imageSelection = 0; 
         }
-        /*
-        if (DetectObject() != null)
-        {
-            if (Menu.activeInHierarchy)
-            {
-                
-                Menu.transform.localPosition = DetectObject().transform.position + (transform.right * .3f);
-            }
-        }
-        */
-  
-      //  ShowToggle();
        
     }
     
