@@ -18,8 +18,7 @@ public class RadialMenu : MonoBehaviour
     public GameObject imageCursor;
     public GameObject lineCursor;
     public GameObject textCursor; 
-   // private int selection; 
-    private int previousSelection;
+
     [Header("selection")]
     private int objectSelection = 0;
     private int textSelection = 0;
@@ -43,8 +42,7 @@ public class RadialMenu : MonoBehaviour
     Raycaster raycaster;
     MenuItemScript fifthMenu;
     TextMeshProUGUI fifthDesc;
-    MenuItemScript seventhMenu;
-    string seventhDesc;
+    
     public GameObject colourDisplay;
     public Button closeColor;
     public GameObject symptomList;
@@ -73,8 +71,6 @@ public class RadialMenu : MonoBehaviour
         fifthDesc = fifthMenu.transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>();
         Debug.Log(fifthDesc.text); 
      
-      
-        previousSelection = -1;
         currentSpecimen1Pos = specimen1.position;
         currentSpecimen2Pos = specimen2.position;
         currentSpecimen3Pos = specimen3.position; 
@@ -82,18 +78,18 @@ public class RadialMenu : MonoBehaviour
         raycaster = rightController.GetComponent<Raycaster>();
     }
 
-    // Update is called once per frame
+    /*
+     * All methods called in update
+     * Tried updating radial menus pos in update, however, it ended up looking vert jittery - probably needs a better fix
+     */
     void Update()
     {
         OpenRadialMenu();
-
-      //  UpdateSelection(); 
-      //  UpdateRadialMenu();
         SimpleCapsuleWithStickMovement movt = playerMovement.GetComponent<SimpleCapsuleWithStickMovement>();
         if ((ObjectRadialMenu.activeInHierarchy) || (LineRadialMenu.activeInHierarchy) || (ImageRadialMenu.activeInHierarchy) || (TextRadialMenu.activeInHierarchy))
         {
+            //to ensure the joystick movt doesn't move the player when the radial menus are open 
             movt.enabled = false;
-        //    Menu.transform.position = objectHit.transform.position + (transform.right * .3f);
         }
         else
         {
@@ -127,6 +123,8 @@ public class RadialMenu : MonoBehaviour
             imageSelection = 0;
             objectSelection = 0; 
         }
+        //Line radial menu is not set-up, I struggled to make it clickable. 
+        // I've set up the functioning for the line menu, once it's clickable, it should be working 
         if (LineRadialMenu.activeInHierarchy)
         {
             UpdateLineSelection();
@@ -135,21 +133,8 @@ public class RadialMenu : MonoBehaviour
             objectSelection = 0;
             imageSelection = 0; 
         }
-        /*
-        if (DetectObject() != null)
-        {
-            if (Menu.activeInHierarchy)
-            {
-                
-                Menu.transform.localPosition = DetectObject().transform.position + (transform.right * .3f);
-            }
-        }
-        */
-  
-      //  ShowToggle();
-       
     }
-    
+    //Decides which radial menu to open up
     void OpenRadialMenu()
     {
         if (OVRInput.GetDown(OVRInput.Button.Three))
@@ -157,30 +142,21 @@ public class RadialMenu : MonoBehaviour
             if (DetectObject() != null)
             {
                 objectHit = DetectObject();
-                //  Menu.transform.localPosition = objectHit.transform.position + (transform.right * .3f);
-                //  selection = 0;
-                /*
-                  for (int i = 1; i < menuItems.Length; i++)
-                  {
-                      menuItemSc = menuItems[i].GetComponent<MenuItemScript>();
-                      menuItemSc.description.SetActive(false);
-                  }
-                */
                 if (objectHit.name.Contains("LOADEDSPECIMEN"))
                 {
                     Debug.Log("show radial menu for 3d objects");
                     OpenSpecimenRadialMenu();
 
                 }
-                if (objectHit.name.Contains("IMAGE"))
+                if (objectHit.name.Contains("IMAGE")) 
                 {
                     Debug.Log("show radial menu for images");
                     OpenImageRadialMenu();
+                    // OpenImageRadialMenu();
                 }
                 if (objectHit.name.Contains("TEXT"))
                 {
-                    Debug.Log("show radial menu for text");
-                    OpenTextRadialMenu();
+                    OpenTextRadialMenu(); 
                 }
                 if (objectHit.name.Contains("Line"))
                 {
@@ -191,13 +167,16 @@ public class RadialMenu : MonoBehaviour
             SwitchOffDisplays();
         }
     }
-    
+    /*
+     * Opens up the specific radial menu 
+     * Always opens at the first menu item and ensures that the other descriptions are inactive
+     */
     private void OpenSpecimenRadialMenu()
     {
         ObjectRadialMenu.SetActive(!ObjectRadialMenu.activeInHierarchy);
         ObjectRadialMenu.transform.position = objectHit.transform.position + (transform.right * .3f);
         objectSelection = 0; 
-       for (int i = 1; i < objectMenuItems.Length; i++)
+        for (int i = 1; i < objectMenuItems.Length; i++)
         {
             menuItemSc = objectMenuItems[i].GetComponent<MenuItemScript>();
             menuItemSc.description.SetActive(false);
@@ -209,20 +188,40 @@ public class RadialMenu : MonoBehaviour
         ImageRadialMenu.SetActive(!ImageRadialMenu.activeInHierarchy);
         ImageRadialMenu.transform.position = objectHit.transform.position + (transform.right * .3f);
         imageSelection = 0;
+        for (int i = 1; i < imageMenuItems.Length; i++)
+        {
+            menuItemSc = imageMenuItems[i].GetComponent<MenuItemScript>();
+            menuItemSc.description.SetActive(false);
+        }
     }
     private void OpenTextRadialMenu()
     {
         TextRadialMenu.SetActive(!TextRadialMenu.activeInHierarchy);
         TextRadialMenu.transform.position = objectHit.transform.position + (transform.right * .3f);
-        textSelection = 0; 
+        textSelection = 0;
+        for (int i = 1; i < textMenuItems.Length; i++)
+        {
+            menuItemSc = textMenuItems[i].GetComponent<MenuItemScript>();
+            menuItemSc.description.SetActive(false);
+        }
     }
 
     private void OpenLineRadialMenu()
     {
         LineRadialMenu.SetActive(!LineRadialMenu.activeInHierarchy);
         LineRadialMenu.transform.position = objectHit.transform.position + (transform.right * .3f);
-        lineSelection = 0; 
-      }
+        lineSelection = 0;
+        for (int i = 1; i < lineMenuItems.Length; i++)
+        {
+            menuItemSc = lineMenuItems[i].GetComponent<MenuItemScript>();
+            menuItemSc.description.SetActive(false);
+        }
+    }
+
+    /*
+     * Depending on the selection, the description of each item is dispalyed and the cursor's pos is moved
+     * Had to do it seperately for all types of radial menus (unsure if there is an easier way to do it)
+     */
     private void UpdateSpecimenRadialMenu()
     {
 
@@ -393,45 +392,12 @@ public class RadialMenu : MonoBehaviour
             symptomList.SetActive(false);
         }
     }
+    
     /*
-    private void UpdateRadialMenu(int selection)
-    {
-        
-        if (selection == 0)
-        {
-            previousMenuItemSc = menuItems[5].GetComponent<MenuItemScript>();
-            previousMenuItemSc.description.SetActive(false);
-
-            menuItemSc = menuItems[0].GetComponent<MenuItemScript>();
-            menuItemSc.MoveCursor();
-
-            nextMenuItemSc = menuItems[1].GetComponent<MenuItemScript>();
-            nextMenuItemSc.description.SetActive(false);
-        } else if (selection == 5)
-        {
-            previousMenuItemSc = menuItems[4].GetComponent<MenuItemScript>();
-            previousMenuItemSc.description.SetActive(false);
-
-            menuItemSc = menuItems[5].GetComponent<MenuItemScript>();
-            menuItemSc.MoveCursor();
-
-            nextMenuItemSc = menuItems[0].GetComponent<MenuItemScript>();
-            nextMenuItemSc.description.SetActive(false);
-            SwitchOffDisplays();
-        } else
-        {
-            previousMenuItemSc = menuItems[selection - 1].GetComponent<MenuItemScript>();
-            previousMenuItemSc.description.SetActive(false);
-
-            menuItemSc = menuItems[selection].GetComponent<MenuItemScript>();
-            menuItemSc.MoveCursor();
-
-            nextMenuItemSc = menuItems[selection + 1].GetComponent<MenuItemScript>();
-            nextMenuItemSc.description.SetActive(false);
-            symptomList.SetActive(false);
-        }       
-    }
-    */
+     * Selection tracks the index of the list where the radial menu's cursor is pointing. 
+     * Currently I've updated the selection terms for all radial menus individually. I tried using one method for all using a parameter - but it didn't work. 
+     * Probably needs to be looked at further
+     */
     void UpdateSpecimenSelection()
     {
         Debug.Log("objectselection " + objectSelection);
@@ -579,6 +545,10 @@ public class RadialMenu : MonoBehaviour
            
         }
     }
+    /*
+     * All functions in the radial menu for the 3d obejcts 
+     * Some other functions still need to be updated
+     */
     void SpecimenRadialFunctions()
     {
 
@@ -605,6 +575,11 @@ public class RadialMenu : MonoBehaviour
         }
     }
 
+    /*
+     * Needs to be updated, I was a little confused with the work of the pins
+     * Emma mentioned all the functions have to be for the pins, since I'm a little unsure how I should be tracking the different pins - I've left the functions 
+     * to work on the image itself
+     */
     void ImageRadialFunctions()
     {
         if (OVRInput.GetDown(OVRInput.Button.PrimaryThumbstick))
@@ -742,7 +717,7 @@ public class RadialMenu : MonoBehaviour
         colorButtons[5].onClick.AddListener(() => data.Colour(5));
         closeColor.onClick.AddListener(() => colourDisplay.SetActive(false));
     }
-
+    //Method to detect if there is an object that the controller is raycasting towards
     GameObject DetectObject()
     {
         RaycastHit hit;

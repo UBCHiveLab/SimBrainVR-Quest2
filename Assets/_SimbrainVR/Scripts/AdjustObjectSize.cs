@@ -24,7 +24,11 @@ public class AdjustObjectSize : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    /*
+     * Adjusts size of object 
+     * Doesn't work very accurately
+     * Currently, if the right controller is pointing at the object and the left controller's index trigger is pressed, then the object's size increases/decreases
+     */
     void Update()
     {
         RaycastHit hit; 
