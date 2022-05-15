@@ -9,9 +9,7 @@ language governing permissions and limitations under the license.
 
 ************************************************************************************/
 
-using System;
 using UnityEngine;
-using OVRTouchSample;
 
 namespace OculusSampleFramework
 {
@@ -20,12 +18,12 @@ namespace OculusSampleFramework
         public string m_materialColorField;
 
         GrabbableCrosshair m_crosshair;
-        GrabManager m_crosshairManager;
-        Renderer m_renderer;
-        MaterialPropertyBlock m_mpb;
+        protected GrabManager m_crosshairManager;
+        protected Renderer m_renderer;
+        protected MaterialPropertyBlock m_mpb;
 
 
-        public bool InRange
+        public virtual bool InRange
         {
             get { return m_inRange; }
             set
@@ -36,7 +34,7 @@ namespace OculusSampleFramework
         }
         bool m_inRange;
 
-        public bool Targeted
+        public virtual bool Targeted
         {
             get { return m_targeted; }
             set

@@ -52,6 +52,7 @@ public class AdjustObjectSize : MonoBehaviour
 
                 Vector3 newScale = new Vector3(p * initialObjectScale.x, p * initialObjectScale.y, p * initialObjectScale.z); // calculate new object scale with p
 
+                Debug.Log("scale " + newScale);
                 hit.transform.localScale = newScale; // set new scale
             }
         }
