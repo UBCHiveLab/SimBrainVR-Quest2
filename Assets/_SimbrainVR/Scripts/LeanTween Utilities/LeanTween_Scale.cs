@@ -12,8 +12,8 @@ public class LeanTween_Scale : MonoBehaviour
     [SerializeField] private bool deactivateOnDisable = true;
     //[SerializeField] private bool ignoreTimeScale = false;
     [SerializeField] private bool backToStartingScaleOnDeactivated = false;
-    [SerializeField] private Vector3 target = Vector2.one;
-    [SerializeField] private float setFrom = 1f;
+    [SerializeField] private Vector3 target = Vector3.one;
+    [SerializeField] private Vector3 setFrom = Vector3.one;
     [SerializeField] private float tweenDuration = 1f;
     [SerializeField] private LeanTweenType tweenType = LeanTweenType.linear;
     [SerializeField] private UnityEvent OnTweenActivated = default;

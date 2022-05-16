@@ -19,7 +19,7 @@ namespace OculusSampleFramework
 
         GrabbableCrosshair m_crosshair;
         protected GrabManager m_crosshairManager;
-        protected Renderer m_renderer;
+        [SerializeField] protected Renderer m_renderer;
         protected MaterialPropertyBlock m_mpb;
 
 
@@ -32,7 +32,7 @@ namespace OculusSampleFramework
                 RefreshCrosshair();
             }
         }
-        bool m_inRange;
+        protected bool m_inRange;
 
         public virtual bool Targeted
         {
@@ -43,13 +43,16 @@ namespace OculusSampleFramework
                 RefreshCrosshair();
             }
         }
-        bool m_targeted;
+        protected bool m_targeted;
 
         protected override void Start()
         {
             base.Start();
             m_crosshair = gameObject.GetComponentInChildren<GrabbableCrosshair>();
-            m_renderer = gameObject.GetComponent<Renderer>();
+
+            if (m_renderer == null)
+                m_renderer = gameObject.GetComponent<Renderer>();
+
             m_crosshairManager = FindObjectOfType<GrabManager>();
             m_mpb = new MaterialPropertyBlock();
             RefreshCrosshair();

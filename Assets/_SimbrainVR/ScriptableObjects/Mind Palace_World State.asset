@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da05e0fb9ff3a134384a9d1c2b5be3d8, type: 3}
+  m_Name: Mind Palace_World State
+  m_EditorClassIdentifier: 
+  OnSecondGrabbableSelected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000}
+        m_TargetAssemblyTypeName: MindPalaceWorldStateSO, Assembly-CSharp
+        m_MethodName: SpawnLineRendererBetweenLastAddedPoints
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4986569410556188414, guid: d3ddb448ecae80e459183229a665cbf9, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.LineRenderer, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

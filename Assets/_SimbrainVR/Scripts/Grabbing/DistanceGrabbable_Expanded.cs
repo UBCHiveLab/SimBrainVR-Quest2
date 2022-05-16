@@ -6,10 +6,14 @@ using OculusSampleFramework;
 
 public class DistanceGrabbable_Expanded : DistanceGrabbable
 {
+    [SerializeField] private MindPalaceWorldStateSO mindPalaceWorldState = default;
+
     public UnityEvent OnInRange = default;
     public UnityEvent OnOutOfRange = default;
     public UnityEvent OnTargeted = default;
     public UnityEvent OnTargetedExit = default;
+    public UnityEvent OnSelected = default;
+    public UnityEvent OnDeselected = default;
 
     public override bool InRange
     {
@@ -35,7 +39,6 @@ public class DistanceGrabbable_Expanded : DistanceGrabbable
             //RefreshCrosshair();
         }
     }
-    bool m_inRange;
 
     public override bool Targeted
     {
@@ -62,7 +65,7 @@ public class DistanceGrabbable_Expanded : DistanceGrabbable
             //RefreshCrosshair();
         }
     }
-    bool m_targeted;
+    //bool m_targeted;
 
     public void SetToHighlightedOutline()
     {
@@ -82,5 +85,19 @@ public class DistanceGrabbable_Expanded : DistanceGrabbable
         m_renderer.GetPropertyBlock(m_mpb);
         m_mpb.SetColor(m_materialColorField, m_crosshairManager.OutlineColorInRange);
 
+    }
+
+    public void Select()
+    {
+        OnSelected?.Invoke();
+
+        mindPalaceWorldState.HandleGrabbableSelected(this);
+    }
+
+    public void Deselect()
+    {
+        OnDeselected?.Invoke();
+
+        mindPalaceWorldState.HandleGrabbableDeselected(this);
     }
 }
