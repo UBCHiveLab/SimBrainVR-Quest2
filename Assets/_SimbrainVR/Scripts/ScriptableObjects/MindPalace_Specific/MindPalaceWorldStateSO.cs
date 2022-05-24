@@ -8,14 +8,14 @@ public class MindPalaceWorldStateSO : ScriptableObject
 {
     public UnityEvent OnSecondGrabbableSelected = default;
 
-    private List<OVRGrabbable> grabbablesSelected = new List<OVRGrabbable>();
+    private List<DistanceGrabbable_Expanded> grabbablesSelected = new List<DistanceGrabbable_Expanded>();
 
     public void ClearLists()
     {
         grabbablesSelected.Clear();
     }
 
-    public void HandleGrabbableSelected(OVRGrabbable grabbable)
+    public void HandleGrabbableSelected(DistanceGrabbable_Expanded grabbable)
     {
         if (grabbablesSelected.Contains(grabbable) == false)
             grabbablesSelected.Add(grabbable);
@@ -26,18 +26,24 @@ public class MindPalaceWorldStateSO : ScriptableObject
         }
     }
 
-    public void SpawnLineRendererBetweenLastAddedPoints(LineRenderer linePrefabToClone)
+    public void SpawnLineRendererBetweenLastAddedPoints(MindPalace_LineBetweenGrabbables linePrefabToClone)
     {
         if (grabbablesSelected.Count >= 2)
         {
-            OVRGrabbable grabbable1 = grabbablesSelected[0];
+            DistanceGrabbable_Expanded grabbable1 = grabbablesSelected[0];
 
-            OVRGrabbable grabbable2 = grabbablesSelected[1];
+            DistanceGrabbable_Expanded grabbable2 = grabbablesSelected[1];
 
-            LineRenderer lineRenderer = Instantiate(linePrefabToClone, grabbable1.transform.position, Quaternion.identity);
-            lineRenderer.SetPosition(0, grabbable1.transform.position);
-            lineRenderer.SetPosition(1, grabbable2.transform.position);
+            MindPalace_LineBetweenGrabbables lineRenderer = Instantiate(linePrefabToClone, grabbable1.transform.position, Quaternion.identity);
+            lineRenderer.Initialize(grabbable1, grabbable2);
 
+            //lineRenderer.SetPosition(0, grabbable1.transform.position);
+            //lineRenderer.SetPosition(1, grabbable2.transform.position);
+
+            //grabbable1.Deselect();
+            //grabbable2.Deselect();
+
+            /*
             try
             {
                 DistanceGrabbable_Expanded expandedGrabbable1 = (DistanceGrabbable_Expanded)grabbable1;
@@ -56,14 +62,14 @@ public class MindPalaceWorldStateSO : ScriptableObject
             catch (System.InvalidCastException)
             {
             }
-
-            grabbablesSelected.Remove(grabbable1);
-            grabbablesSelected.Remove(grabbable2);
+            */
+            //grabbablesSelected.Remove(grabbable1);
+            //grabbablesSelected.Remove(grabbable2);
         }
 
     }
 
-    public void HandleGrabbableDeselected(OVRGrabbable grabbable)
+    public void HandleGrabbableDeselected(DistanceGrabbable_Expanded grabbable)
     {
         grabbablesSelected.Remove(grabbable);
     }

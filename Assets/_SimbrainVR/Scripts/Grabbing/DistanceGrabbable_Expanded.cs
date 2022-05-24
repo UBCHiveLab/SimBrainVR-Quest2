@@ -100,4 +100,5 @@ public class DistanceGrabbable_Expanded : DistanceGrabbable
 
         mindPalaceWorldState.HandleGrabbableDeselected(this);
     }
+
 }

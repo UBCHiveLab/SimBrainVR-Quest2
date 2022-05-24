@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4986569410556188413}
+  - component: {fileID: 7606778115570354014}
+  - component: {fileID: 6094293260212071189}
   - component: {fileID: 4986569410556188414}
   m_Layer: 0
   m_Name: MindPalace_Line between Grabbables
@@ -31,6 +33,76 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7606778115570354014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4986569410556188412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9212ee66c2b6e81479ed92db1e003ac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnDestroyedUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6094293260212071189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4986569410556188412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cbf6324f9335d6448649e8c44dee496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineRenderer: {fileID: 4986569410556188414}
+  OnInitialized:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6094293260212071189}
+        m_TargetAssemblyTypeName: MindPalace_LineBetweenGrabbables, Assembly-CSharp
+        m_MethodName: DeselectBothPoints
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnAnyPointSelected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6094293260212071189}
+        m_TargetAssemblyTypeName: MindPalace_LineBetweenGrabbables, Assembly-CSharp
+        m_MethodName: DeselectBothPointsAfterFrame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7606778115570354014}
+        m_TargetAssemblyTypeName: GameObjectDestroyer, Assembly-CSharp
+        m_MethodName: DestroyThisObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!120 &4986569410556188414
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -50,7 +122,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -94,7 +166,7 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.77254903, g: 0.08235294, b: 0.08235294, a: 1}
+      key0: {r: 1, g: 1, b: 1, a: 1}
       key1: {r: 0.77254903, g: 0.08235294, b: 0.08235294, a: 1}
       key2: {r: 0.77254903, g: 0.08235294, b: 0.08235294, a: 0}
       key3: {r: 1, g: 0.8156863, b: 0.8156863, a: 0}
