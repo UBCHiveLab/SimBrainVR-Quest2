@@ -8973,6 +8973,7 @@ GameObject:
   - component: {fileID: 2213414121157575423}
   - component: {fileID: 1032290574041199351}
   - component: {fileID: 1463339445}
+  - component: {fileID: 1033203190201222832}
   m_Layer: 2
   m_Name: DistanceGrabHandLeft
   m_TagString: Untagged
@@ -8980,6 +8981,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1033203190201222832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033203190201222831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb7a8e1c2fb8f49438e54621ef3c5042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pinPrefab: {fileID: 9098250033200057782, guid: 617caf3d58a52d34d9ad6cdf7549bbcb, type: 3}
+  pinLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  spherecastRadius: 0.1
+  spherecastDistance: 0.5
 --- !u!1 &1033207168241372257
 GameObject:
   m_ObjectHideFlags: 0
@@ -9324,7 +9343,6 @@ GameObject:
   - component: {fileID: 678684074}
   - component: {fileID: 1943757482}
   - component: {fileID: 1943757483}
-  - component: {fileID: 1033371198540799084}
   m_Layer: 2
   m_Name: DistanceGrabHandRight
   m_TagString: Untagged
@@ -9332,24 +9350,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1033371198540799084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1033371198540799083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb7a8e1c2fb8f49438e54621ef3c5042, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pinPrefab: {fileID: 9098250033200057782, guid: 617caf3d58a52d34d9ad6cdf7549bbcb, type: 3}
-  pinLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  spherecastRadius: 0.1
-  spherecastDistance: 0.5
 --- !u!1 &1033373337754348675
 GameObject:
   m_ObjectHideFlags: 0
@@ -12006,7 +12006,7 @@ MonoBehaviour:
   HMDRotatesPlayer: 1
   RotationEitherThumbstick: 0
   RotationAngle: 45
-  Speed: 1.5
+  Speed: 1
   CameraRig: {fileID: 0}
 --- !u!136 &4415579577502022224
 CapsuleCollider:
@@ -13384,7 +13384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &6734054649039628380
 MonoBehaviour:
   m_ObjectHideFlags: 0

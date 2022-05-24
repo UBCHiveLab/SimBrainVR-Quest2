@@ -30637,7 +30637,7 @@ MonoBehaviour:
   HMDRotatesPlayer: 1
   RotationEitherThumbstick: 0
   RotationAngle: 45
-  Speed: 1.5
+  Speed: 1
   CameraRig: {fileID: 0}
 --- !u!4 &4415579577447619219
 Transform:

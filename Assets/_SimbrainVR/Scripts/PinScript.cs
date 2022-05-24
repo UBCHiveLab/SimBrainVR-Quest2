@@ -15,13 +15,13 @@ public class PinScript : MonoBehaviour
     private void Update()
     {
 
-        if (OVRInput.Get(OVRInput.RawButton.RHandTrigger))
+        if (OVRInput.Get(OVRInput.RawButton.LHandTrigger))
         {
             
             DeletePinSphereCast();
         }
 
-        if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger))
+        if (OVRInput.Get(OVRInput.RawButton.LIndexTrigger))
         {
             StartCoroutine(SpawnPin());
         }
