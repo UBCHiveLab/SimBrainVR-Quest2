@@ -28,6 +28,10 @@ public class OVRGrabbable : MonoBehaviour
     protected Transform m_snapOffset;
     [SerializeField]
     protected Collider[] m_grabPoints = null;
+    [SerializeField]
+    protected Collider m_optionalExternalCollider = null;
+    [SerializeField]
+    protected Rigidbody m_optionalExternalRigidbody = null;
 
     protected bool m_grabbedKinematic = false;
     protected Collider m_grabbedCollider = null;
@@ -136,7 +140,14 @@ public class OVRGrabbable : MonoBehaviour
             Collider collider = this.GetComponent<Collider>();
             if (collider == null)
             {
-				throw new ArgumentException("Grabbables cannot have zero grab points and no collider -- please add a grab point or collider.");
+                collider = m_optionalExternalCollider;
+
+                if (collider == null)
+                {
+				    throw new ArgumentException("Grabbables cannot have zero grab points and no collider -- please add a grab point or collider.");
+
+                }
+
             }
 
             // Create a default grab point
@@ -146,7 +157,15 @@ public class OVRGrabbable : MonoBehaviour
 
     protected virtual void Start()
     {
-        m_grabbedKinematic = GetComponent<Rigidbody>().isKinematic;
+        Rigidbody rigidbodyToUse = GetComponent<Rigidbody>();
+
+        if (rigidbodyToUse == null)
+        {
+            rigidbodyToUse = m_optionalExternalRigidbody;
+        }
+
+        m_grabbedKinematic = rigidbodyToUse.isKinematic;
+
     }
 
     void OnDestroy()

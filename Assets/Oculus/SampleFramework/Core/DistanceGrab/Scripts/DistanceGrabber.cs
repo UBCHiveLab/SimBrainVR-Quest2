@@ -314,6 +314,12 @@ namespace OculusSampleFramework
                 if (hitInfo.collider != null)
                 {
                     grabbable = hitInfo.collider.gameObject.GetComponentInParent<DistanceGrabbable>();
+                    if (grabbable == null)
+                    {
+                        grabbable = hitInfo.collider.gameObject.GetComponentInChildren<DistanceGrabbable>();
+
+                    }
+
                     hitCollider = grabbable == null ? null : hitInfo.collider;
                     if(grabbable)
                     {
@@ -336,6 +342,12 @@ namespace OculusSampleFramework
                         if(hitInfo.collider != null)
                         {
                             obstruction = obstructionHitInfo.collider.gameObject.GetComponentInParent<DistanceGrabbable>();
+
+                            if (obstruction == null)
+                            {
+                                obstruction = obstructionHitInfo.collider.gameObject.GetComponentInChildren<DistanceGrabbable>();
+
+                            }
                         }
                         if (obstruction != grabbable && obstructionHitInfo.distance < hitInfo.distance)
                         {

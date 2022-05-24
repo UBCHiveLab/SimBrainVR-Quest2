@@ -990,12 +990,12 @@ GameObject:
   - component: {fileID: 4155510778741589799}
   - component: {fileID: 4155510778741589797}
   m_Layer: 0
-  m_Name: VoiceRecg
+  m_Name: VoiceRecg_OLD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4155510778741589796
 Transform:
   m_ObjectHideFlags: 0
@@ -1829,7 +1829,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5794738496872604142
 Transform:
   m_ObjectHideFlags: 0
