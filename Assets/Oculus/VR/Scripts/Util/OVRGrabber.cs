@@ -179,7 +179,7 @@ public class OVRGrabber : MonoBehaviour
     void OnTriggerEnter(Collider otherCollider)
     {
         // Get the grab trigger
-		OVRGrabbable grabbable = otherCollider.GetComponent<OVRGrabbable>() ?? otherCollider.GetComponentInParent<OVRGrabbable>();
+		OVRGrabbable grabbable = otherCollider.GetComponent<OVRGrabbable>() ?? otherCollider.GetComponentInParent<OVRGrabbable>() ?? otherCollider.GetComponentInChildren<OVRGrabbable>(); //CUSTOM CHANGE: NOW ALSO GETS COMPONENT IN CHILDREN
         if (grabbable == null) return;
 
         // Add the grabbable
@@ -190,7 +190,7 @@ public class OVRGrabber : MonoBehaviour
 
     void OnTriggerExit(Collider otherCollider)
     {
-		OVRGrabbable grabbable = otherCollider.GetComponent<OVRGrabbable>() ?? otherCollider.GetComponentInParent<OVRGrabbable>();
+		OVRGrabbable grabbable = otherCollider.GetComponent<OVRGrabbable>() ?? otherCollider.GetComponentInParent<OVRGrabbable>() ?? otherCollider.GetComponentInChildren<OVRGrabbable>(); //CUSTOM CHANGE: NOW ALSO GETS COMPONENT IN CHILDREN
         if (grabbable == null) return;
 
         // Remove the grabbable
