@@ -277,6 +277,12 @@ public class VoiceRecognitionClinic : MonoBehaviour
                         if (eric != null) eric.GetComponent<EricNurse>().ToggleLight(true);
                     }
 
+                }else if (message.Contains("extend")) //can you extend your arms?
+                {
+                    MotorTest.Instance.ToggleRaiseArms(true);
+                }else if (message.Contains("put down")) //put down your arms
+                {
+                    MotorTest.Instance.ToggleRaiseArms(false);
                 }
                 else if (message.Contains("done"))
                 {

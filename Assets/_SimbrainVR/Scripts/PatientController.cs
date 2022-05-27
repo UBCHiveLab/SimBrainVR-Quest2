@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum PatientDialogueOption { WhatHappened, MedicalHistory, Medication, Allergies, DrinkSmokeDrugs, FamilyHistory, FamilyMember, DontKnow }
 
+//used for eye test (swinging light test)
 public class PatientController : MonoBehaviour
 {
     Animator _animator;

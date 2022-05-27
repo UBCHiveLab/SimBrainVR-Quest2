@@ -8,7 +8,6 @@ public class PatientSpeakingController : MonoBehaviour
     public float lookAtWeight = 0.9f;
     public bool isMakingEyeContact;
     public GameObject dialogueBox;
-
     Animator _animator;
 
 

@@ -5,16 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/_SimbrainVR/Scenes/MainMenu.unity
     guid: 58acfd1d10c8cac47b2129d488a30ec8
-  - enabled: 1
+  - enabled: 0
     path: Assets/_SimbrainVR/Scenes/Start_Reception.unity
     guid: 125a93cc61a85c741b97ba21ad9a891c
   - enabled: 1
     path: Assets/_SimbrainVR/Scenes/Clinic.unity
     guid: ffdc6ebe0a92edc4e938c40b065d7c24
-  - enabled: 1
+  - enabled: 0
     path: Assets/_SimbrainVR/Scenes/_TestScenes/MindPalaceGalaxy_April20.unity
     guid: 1f60dba532d625148a0d8ff5565755b5
   m_configObjects:
