@@ -109,6 +109,12 @@ public class OVRGrabbable : MonoBehaviour
         get { return m_grabPoints; }
     }
 
+    //CUSTOM
+    public Collider optionalExternalCollider
+    {
+        get { return m_optionalExternalCollider; }
+    }
+
 	/// <summary>
 	/// Notifies the object that it has been grabbed.
 	/// </summary>
@@ -116,7 +122,20 @@ public class OVRGrabbable : MonoBehaviour
     {
         m_grabbedBy = hand;
         m_grabbedCollider = grabPoint;
-        gameObject.GetComponent<Rigidbody>().isKinematic = true;
+
+        if (m_grabbedCollider == null)
+        {
+            m_grabbedCollider = m_optionalExternalCollider;
+        }
+        
+        Rigidbody rigidbodyToUse = GetComponent<Rigidbody>();
+
+        if (rigidbodyToUse == null)
+        {
+            rigidbodyToUse = m_optionalExternalRigidbody;
+        }
+
+        rigidbodyToUse.isKinematic = true;
     }
 
 	/// <summary>
@@ -124,7 +143,13 @@ public class OVRGrabbable : MonoBehaviour
 	/// </summary>
 	virtual public void GrabEnd(Vector3 linearVelocity, Vector3 angularVelocity)
     {
-        Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+        Rigidbody rb = GetComponent<Rigidbody>();
+
+        if (rb == null)
+        {
+            rb = m_optionalExternalRigidbody;
+        }
+
         rb.isKinematic = m_grabbedKinematic;
         rb.velocity = linearVelocity;
         rb.angularVelocity = angularVelocity;
