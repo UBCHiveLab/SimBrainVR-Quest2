@@ -18,8 +18,8 @@ public class MindPalace_LineBetweenGrabbables : MonoBehaviour
         grabbable1 = _grabbable1;
         grabbable2 = _grabbable2;
 
-        lineRenderer.SetPosition(0, grabbable1.transform.position);
-        lineRenderer.SetPosition(1, grabbable2.transform.position);
+        lineRenderer.SetPosition(0, grabbable1.ReferencePosition.position);
+        lineRenderer.SetPosition(1, grabbable2.ReferencePosition.position);
 
         StartCoroutine(SubscribeNextFrame());
 
@@ -76,8 +76,8 @@ public class MindPalace_LineBetweenGrabbables : MonoBehaviour
     {
         if (grabbable1 != null && grabbable2 != null)
         {
-            lineRenderer.SetPosition(0, grabbable1.transform.position);
-            lineRenderer.SetPosition(1, grabbable2.transform.position);
+            lineRenderer.SetPosition(0, grabbable1.ReferencePosition.position);
+            lineRenderer.SetPosition(1, grabbable2.ReferencePosition.position);
 
         }
 
