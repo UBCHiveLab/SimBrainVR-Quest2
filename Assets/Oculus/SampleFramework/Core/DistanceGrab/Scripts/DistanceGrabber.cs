@@ -362,7 +362,8 @@ namespace OculusSampleFramework
 
         protected override void GrabVolumeEnable(bool enabled)
         {
-            if(m_useSpherecast) enabled = false;
+            //CUSTOM COMMENTED CODE -- in testing to enable close-range grabbing when using spherecast
+            //if(m_useSpherecast) enabled = false;
             base.GrabVolumeEnable(enabled);
         }
 

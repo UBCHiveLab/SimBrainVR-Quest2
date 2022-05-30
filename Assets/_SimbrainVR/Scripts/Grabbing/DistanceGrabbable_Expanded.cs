@@ -7,6 +7,7 @@ using OculusSampleFramework;
 public class DistanceGrabbable_Expanded : DistanceGrabbable
 {
     [SerializeField] private MindPalaceWorldStateSO mindPalaceWorldState = default;
+    [SerializeField] private Transform referencePosition = default;
 
     public UnityEvent OnInRange = default;
     public UnityEvent OnOutOfRange = default;
@@ -14,6 +15,17 @@ public class DistanceGrabbable_Expanded : DistanceGrabbable
     public UnityEvent OnTargetedExit = default;
     public UnityEvent OnSelected = default;
     public UnityEvent OnDeselected = default;
+
+    public virtual Transform ReferencePosition
+    {
+        get
+        {
+            if (referencePosition != null)
+                return referencePosition;
+
+            return transform;
+        }
+    }
 
     public override bool InRange
     {
