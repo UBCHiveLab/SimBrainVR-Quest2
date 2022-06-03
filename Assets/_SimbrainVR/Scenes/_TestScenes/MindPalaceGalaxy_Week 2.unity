@@ -888,7 +888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6089324462561597847, guid: d66e6aa6b05e75748b0d2951774137bb, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6089324462561597847, guid: d66e6aa6b05e75748b0d2951774137bb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3927,12 +3927,12 @@ MonoBehaviour:
   m_controller: 1
   m_parentTransform: {fileID: 873799675}
   m_player: {fileID: 165252312}
-  m_spherecastRadius: 0
+  m_spherecastRadius: 0.35
   m_noSnapThreshhold: 0.05
   m_useSpherecast: 1
   m_preventGrabThroughWalls: 1
   m_objectPullVelocity: 10
-  m_maxGrabDistance: 0
+  m_maxGrabDistance: 4
   m_grabObjectsInLayer: 8
   m_obstructionLayer: 0
 --- !u!114 &668929022
@@ -4519,7 +4519,7 @@ MonoBehaviour:
   m_useSpherecast: 1
   m_preventGrabThroughWalls: 1
   m_objectPullVelocity: 10
-  m_maxGrabDistance: 2
+  m_maxGrabDistance: 4
   m_grabObjectsInLayer: 8
   m_obstructionLayer: 0
 --- !u!114 &822012429
@@ -5181,6 +5181,7 @@ GameObject:
   - component: {fileID: 921767713}
   - component: {fileID: 921767712}
   - component: {fileID: 921767711}
+  - component: {fileID: 921767715}
   m_Layer: 2
   m_Name: CenterEyeAnchor
   m_TagString: MainCamera
@@ -5302,6 +5303,40 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921767709}
   m_Enabled: 1
+--- !u!114 &921767715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921767709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d58f9370fe246469b290719a5b0a5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnabled:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  useOnUpdate: 1
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 5c7878e26b871784cb947c36615023bd, type: 2}
+        m_TargetAssemblyTypeName: Vector3SO, Assembly-CSharp
+        m_MethodName: SetValueToTransform
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 921767710}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &925765146
 GameObject:
   m_ObjectHideFlags: 0
@@ -7462,7 +7497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6089324462561597847, guid: d66e6aa6b05e75748b0d2951774137bb, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6089324462561597847, guid: d66e6aa6b05e75748b0d2951774137bb, type: 3}
       propertyPath: m_LocalPosition.x
