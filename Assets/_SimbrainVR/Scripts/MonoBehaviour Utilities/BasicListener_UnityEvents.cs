@@ -9,6 +9,9 @@ public class BasicListener_UnityEvents : MonoBehaviour
     public UnityEvent OnEnabled = default;
     public UnityEvent OnStarted = default;
 
+    public bool useOnUpdate = false;
+    public UnityEvent OnUpdate = default;
+
     private void OnEnable()
     {
         OnEnabled?.Invoke();
@@ -17,5 +20,11 @@ public class BasicListener_UnityEvents : MonoBehaviour
     void Start()
     {
         OnStarted?.Invoke();
+    }
+
+    private void Update()
+    {
+        if (useOnUpdate)
+            OnUpdate?.Invoke();
     }
 }

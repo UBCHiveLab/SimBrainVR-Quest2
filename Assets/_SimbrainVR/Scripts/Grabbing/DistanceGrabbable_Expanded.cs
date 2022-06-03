@@ -81,21 +81,30 @@ public class DistanceGrabbable_Expanded : DistanceGrabbable
 
     public void SetToHighlightedOutline()
     {
-        m_renderer.GetPropertyBlock(m_mpb);
-        m_mpb.SetColor(m_materialColorField, m_crosshairManager.OutlineColorHighlighted);
+        if (m_renderer != null)
+            m_renderer.GetPropertyBlock(m_mpb);
+
+        if (m_mpb != null)
+            m_mpb.SetColor(m_materialColorField, m_crosshairManager.OutlineColorHighlighted);
 
     }
 
     public void SetToOutOfRangeOutline()
     {
-        m_renderer.GetPropertyBlock(m_mpb);
-        m_mpb.SetColor(m_materialColorField, m_crosshairManager.OutlineColorOutOfRange);
+        if (m_renderer != null)
+            m_renderer.GetPropertyBlock(m_mpb);
+
+        if (m_mpb != null)
+            m_mpb.SetColor(m_materialColorField, m_crosshairManager.OutlineColorOutOfRange);
 
     }
     public void SetToInRangeOutline()
     {
-        m_renderer.GetPropertyBlock(m_mpb);
-        m_mpb.SetColor(m_materialColorField, m_crosshairManager.OutlineColorInRange);
+        if (m_renderer != null)
+            m_renderer.GetPropertyBlock(m_mpb);
+
+        if (m_mpb != null)
+            m_mpb.SetColor(m_materialColorField, m_crosshairManager.OutlineColorInRange);
 
     }
 

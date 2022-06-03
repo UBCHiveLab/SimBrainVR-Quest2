@@ -12,6 +12,7 @@ permissions and limitations under the License.
 
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// An object that can be grabbed and thrown by OVRGrabber.
@@ -32,6 +33,9 @@ public class OVRGrabbable : MonoBehaviour
     protected Collider m_optionalExternalCollider = null;
     [SerializeField]
     protected Rigidbody m_optionalExternalRigidbody = null;
+
+    public UnityEvent<OVRGrabber> OnGrabStarted = default;
+    public UnityEvent OnGrabExit = default;
 
     protected bool m_grabbedKinematic = false;
     protected Collider m_grabbedCollider = null;
@@ -136,6 +140,8 @@ public class OVRGrabbable : MonoBehaviour
         }
 
         rigidbodyToUse.isKinematic = true;
+
+        OnGrabStarted?.Invoke(hand);
     }
 
 	/// <summary>
@@ -155,6 +161,8 @@ public class OVRGrabbable : MonoBehaviour
         rb.angularVelocity = angularVelocity;
         m_grabbedBy = null;
         m_grabbedCollider = null;
+
+        OnGrabExit?.Invoke();
     }
 
     void Awake()

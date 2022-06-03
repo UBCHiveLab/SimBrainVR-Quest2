@@ -1268,7 +1268,7 @@ GameObject:
   - component: {fileID: 4155510779426523951}
   - component: {fileID: 4155510779426523950}
   - component: {fileID: 4155510779426523945}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MindPalaceWhiteEnvironment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
