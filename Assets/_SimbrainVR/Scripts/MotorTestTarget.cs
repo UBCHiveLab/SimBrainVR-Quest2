@@ -16,16 +16,24 @@ public class MotorTestTarget : MonoBehaviour
     
     void Update()
     {
-        if (Vector3.Distance(originalPos, ovrHandRight.position) < 0.22f)
+        if (Vector3.Distance(originalPos, ovrHandRight.position) < 0.2f)
         {
             transform.position = ovrHandRight.position;
-        }else if (Vector3.Distance(originalPos, ovrHandLeft.position) < 0.22f)
+            OVRInput.SetControllerVibration(1, .3f, OVRInput.Controller.RTouch);
+        }
+        else if (Vector3.Distance(originalPos, ovrHandLeft.position) < 0.2f)
         {
             transform.position = ovrHandLeft.position;
         }
         else
         {
-            transform.position = originalPos;
+            OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
+            
         }
+        //else transform.position = originalPos;
+
     }
 }
+
+
+//change - for each hand, bind this with bool = isleft, isright

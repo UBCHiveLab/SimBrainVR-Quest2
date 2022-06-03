@@ -37,7 +37,7 @@ public class PatientController : MonoBehaviour
 
     public void PupilDecreaseL()
     {
-        _animator.Play("PupilDecrease_L");
+        _animator.Play("PupilDecrease");
     }
 
 

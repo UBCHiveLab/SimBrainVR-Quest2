@@ -391,6 +391,19 @@ public class VoiceRecognitionClinic : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+       
+        if (Input.GetKeyDown(KeyCode.F10))
+        {
+            foreach (var device in Microphone.devices)
+            {
+                Debug.Log("Name: " + device);
+            }
+        }
+
+    }
+
 
     private void OnDestroy()
     {

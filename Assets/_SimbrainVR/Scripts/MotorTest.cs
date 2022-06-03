@@ -58,3 +58,7 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
 
 
 }
+
+
+//todo 
+//coroutine to raise arm (lerp) then set bool at the end. coroutine should have boolean to prevent running multiple times.
