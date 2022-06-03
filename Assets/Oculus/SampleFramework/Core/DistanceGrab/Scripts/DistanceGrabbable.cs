@@ -56,7 +56,9 @@ namespace OculusSampleFramework
             m_crosshairManager = FindObjectOfType<GrabManager>();
             m_mpb = new MaterialPropertyBlock();
             RefreshCrosshair();
-            m_renderer.SetPropertyBlock(m_mpb);
+
+            if (m_renderer != null)
+                m_renderer.SetPropertyBlock(m_mpb);
         }
 
         void RefreshCrosshair()
@@ -69,11 +71,15 @@ namespace OculusSampleFramework
             }
             if (m_materialColorField != null)
             {
-                m_renderer.GetPropertyBlock(m_mpb);
+                if (m_renderer != null)
+                    m_renderer.GetPropertyBlock(m_mpb);
+
                 if (isGrabbed || !InRange) m_mpb.SetColor(m_materialColorField, m_crosshairManager.OutlineColorOutOfRange);
                 else if (Targeted) m_mpb.SetColor(m_materialColorField, m_crosshairManager.OutlineColorHighlighted);
                 else m_mpb.SetColor(m_materialColorField, m_crosshairManager.OutlineColorInRange);
-                m_renderer.SetPropertyBlock(m_mpb);
+
+                if (m_renderer != null)
+                    m_renderer.SetPropertyBlock(m_mpb);
             }
         }
     }
