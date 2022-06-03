@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5306597410885807624
 Transform:
   m_ObjectHideFlags: 0
@@ -142,6 +142,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 951926740011113470}
   - {fileID: 8017479961823129051}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -245,6 +246,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 6140439153751930134}
+        m_TargetAssemblyTypeName: LeanTween_Move, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: a3c7fea102317ba42a306815aff76cfa, type: 2}
         m_TargetAssemblyTypeName: AddComponent_Canvas_SO, Assembly-CSharp
         m_MethodName: Activate
@@ -293,6 +306,121 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b45cd2ac780db642a4b51174040ebdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7203834244385112597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 951926740011113470}
+  - component: {fileID: 6140439153751930134}
+  m_Layer: 8
+  m_Name: Move Up_LeanTween
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &951926740011113470
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7203834244385112597}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5122819921819885077}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6140439153751930134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7203834244385112597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3faac6ee27ec124db995c4a314fd31f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useForDebug: 0
+  activateOnStart: 0
+  ignoreTimeScale: 0
+  objectToMove: {fileID: 4084816365927087716}
+  signedOffsetToMove: {x: 0, y: 0.35}
+  useTransformHints: 0
+  originPositionTransformHint: {fileID: 0}
+  targetPositionTransformHint: {fileID: 0}
+  tweenDuration: 0.5
+  tweenType: 2
+  useCustomCurve: 0
+  customCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  loop: 0
+  delay: 0
+  useLoopCount: 0
+  loopCount: 10
+  OnTweenActivated:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTweenCompleted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5920600287225637148}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2504599348460859963}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  OnTweenCompletedPublic:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &4735062414226493096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -300,6 +428,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5122819921819885077}
     m_Modifications:
+    - target: {fileID: 1413110735410489268, guid: 096a3b23096e054499bb975564fc28f1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1413110735410489268, guid: 096a3b23096e054499bb975564fc28f1, type: 3}
       propertyPath: referencePosition
       value: 
@@ -366,7 +498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3383784032855761779, guid: 096a3b23096e054499bb975564fc28f1, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3383784032855761779, guid: 096a3b23096e054499bb975564fc28f1, type: 3}
       propertyPath: m_LocalScale.x
@@ -436,3 +568,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3383784032855761779, guid: 096a3b23096e054499bb975564fc28f1, type: 3}
   m_PrefabInstance: {fileID: 4735062414226493096}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5920600287225637148 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1413110735410489268, guid: 096a3b23096e054499bb975564fc28f1, type: 3}
+  m_PrefabInstance: {fileID: 4735062414226493096}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4084816365927087716}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08cc8b91e118585428c40e0300a21792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
