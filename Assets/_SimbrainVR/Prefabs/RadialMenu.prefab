@@ -129,7 +129,6 @@ MonoBehaviour:
   baseColor: {r: 0, g: 0, b: 0, a: 0}
   background: {fileID: 4371208682485946472}
   description: {fileID: 0}
-  cursor: {fileID: 0}
   cursorPos: {fileID: 0}
 --- !u!1 &3062633887565384317
 GameObject:
@@ -260,7 +259,6 @@ MonoBehaviour:
   baseColor: {r: 0, g: 0, b: 0, a: 0}
   background: {fileID: 5315739974780156394}
   description: {fileID: 0}
-  cursor: {fileID: 0}
   cursorPos: {fileID: 0}
 --- !u!1 &4302920384873867474
 GameObject:
@@ -566,7 +564,6 @@ MonoBehaviour:
   baseColor: {r: 0, g: 0, b: 0, a: 0}
   background: {fileID: 4613367958794694416}
   description: {fileID: 0}
-  cursor: {fileID: 0}
   cursorPos: {fileID: 0}
 --- !u!1 &5100142645146430296
 GameObject:
@@ -697,7 +694,6 @@ MonoBehaviour:
   baseColor: {r: 0, g: 0, b: 0, a: 0}
   background: {fileID: 5288368013859353973}
   description: {fileID: 0}
-  cursor: {fileID: 0}
   cursorPos: {fileID: 0}
 --- !u!1 &5567239176663071192
 GameObject:
@@ -828,7 +824,6 @@ MonoBehaviour:
   baseColor: {r: 0, g: 0, b: 0, a: 0}
   background: {fileID: 5869790022550476066}
   description: {fileID: 0}
-  cursor: {fileID: 0}
   cursorPos: {fileID: 0}
 --- !u!1 &5763100731517555738
 GameObject:
@@ -1465,7 +1460,6 @@ MonoBehaviour:
   baseColor: {r: 0, g: 0, b: 0, a: 0}
   background: {fileID: 2639561257983390196}
   description: {fileID: 0}
-  cursor: {fileID: 0}
   cursorPos: {fileID: 0}
 --- !u!1 &8740123735627347728
 GameObject:
@@ -1596,7 +1590,6 @@ MonoBehaviour:
   baseColor: {r: 0, g: 0, b: 0, a: 0}
   background: {fileID: 8006621244172085669}
   description: {fileID: 0}
-  cursor: {fileID: 0}
   cursorPos: {fileID: 0}
 --- !u!1 &9117685911002232671
 GameObject:
