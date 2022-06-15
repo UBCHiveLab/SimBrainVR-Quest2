@@ -12,12 +12,22 @@ public class ClinicSceneController : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(InitiateClinicSequence());
+
+        if (!ClinicalLogger.Instance.finishedIntroduction)
+        {
+            StartCoroutine(InitiateClinicSequence());
+        }
+        else
+        {
+            VoiceRecognitionClinic.Instance.hasStartedAskingQuestions = true;
+        }
     }
 
     private IEnumerator InitiateClinicSequence()     //todo - clean up this sequence so that not the logic is here, could be issues later.
     {
-        
+
+        ClinicalLogger.Instance.finishedIntroduction = true;
+
         //Nurse start
         nurse._agent.SetDestination(nurse.final.position);
         nurse._animator.SetBool("isWalking", true);

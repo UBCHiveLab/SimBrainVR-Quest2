@@ -19,6 +19,16 @@ public class PatientController : MonoBehaviour
         _animator.Play("Idle");
     }
 
+    public void PupilDecreaseBoth()
+    {
+        _animator.SetBool("decrease", true);
+    }
+
+    public void PupilIncreaseBoth()
+    {
+        _animator.SetBool("decrease", false);
+    }
+
     public void PupilIncreaseR()
     {
         _animator.Play("PupilIncreaseR");
@@ -41,15 +51,6 @@ public class PatientController : MonoBehaviour
     }
 
 
-    void SpeakAnimation(float delay)
-    {
-        _animator.SetBool("isSpeaking", true);
-        Invoke("StopSpeaking", delay);
-    }
-    void StopSpeaking()
-    {
-        _animator.SetBool("isSpeaking", false);
-    }
 
 
 }

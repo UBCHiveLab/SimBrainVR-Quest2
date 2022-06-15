@@ -10,6 +10,8 @@ public class ClinicalLogger : MonoBehaviour
 
     public bool hasShoneLight, hasDimmedLights;
 
+    public bool finishedIntroduction;
+
     private void Awake()
     {
         if (_instance != null && _instance != this)

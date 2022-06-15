@@ -6,7 +6,10 @@ public class MotorTestTarget : MonoBehaviour
 {
 
     [SerializeField] Transform ovrHandRight, ovrHandLeft; //drag in from inspector
+    [SerializeField] float maxDist = 0.3f;
+
     Vector3 originalPos;
+    bool hasVibrated;
 
     void Start()
     {
@@ -16,22 +19,55 @@ public class MotorTestTarget : MonoBehaviour
     
     void Update()
     {
-        if (Vector3.Distance(originalPos, ovrHandRight.position) < 0.2f)
+        if (Vector3.Distance(originalPos, ovrHandRight.position) < maxDist)
         {
             transform.position = ovrHandRight.position;
-            OVRInput.SetControllerVibration(1, .3f, OVRInput.Controller.RTouch);
+            StartCoroutine(VibrateController(true));
         }
-        else if (Vector3.Distance(originalPos, ovrHandLeft.position) < 0.2f)
+        else if (Vector3.Distance(originalPos, ovrHandLeft.position) < maxDist)
         {
             transform.position = ovrHandLeft.position;
+            StartCoroutine(VibrateController(false));
         }
         else
         {
-            OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
-            
+            hasVibrated = false;
         }
+
         //else transform.position = originalPos;
 
+    }
+
+
+    IEnumerator VibrateController(bool isRight)
+    {
+        if (!hasVibrated)
+        {
+            hasVibrated = true;
+
+            if (isRight)
+            {
+                OVRInput.SetControllerVibration(1, .3f, OVRInput.Controller.RTouch);
+            }
+            else
+            {
+                OVRInput.SetControllerVibration(1, .3f, OVRInput.Controller.LTouch);
+            }
+
+            yield return new WaitForSeconds(0.5f);
+
+            if (isRight)
+            {
+                OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
+            }
+            else
+            {
+                OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.LTouch);
+            }
+
+            //hasVibrated = false;
+        }
+        
     }
 }
 

@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//controls patient speech as well as walking beahviors
 public class PatientSpeakingController : MonoBehaviour
 {
     public float lookAtWeight = 0.9f;
     public bool isMakingEyeContact;
     public GameObject dialogueBox;
     Animator _animator;
-
 
     void Start()
     {

@@ -266,12 +266,12 @@ public class VoiceRecognitionClinic : MonoBehaviour
                 else if (message.Contains("eric"))
                 {
 
-                    if(message.Contains("off") && message.Contains("light"))
+                    if(message.Contains("off") || message.Contains("light"))
                     {
                         var eric = GameObject.Find("Eric_Nurse");
                         if (eric != null) eric.GetComponent<EricNurse>().ToggleLight(false);
                     }
-                    else if (message.Contains("on") && message.Contains("light"))
+                    else if (message.Contains("on") || message.Contains("light"))
                     {
                         var eric = GameObject.Find("Eric_Nurse");
                         if (eric != null) eric.GetComponent<EricNurse>().ToggleLight(true);
@@ -283,6 +283,19 @@ public class VoiceRecognitionClinic : MonoBehaviour
                 }else if (message.Contains("put down")) //put down your arms
                 {
                     MotorTest.Instance.ToggleRaiseArms(false);
+                    MotorTest.Instance.ToggleLegs(false);
+                }
+                else if (message.Contains("legs")) //put down your arms
+                {
+                    MotorTest.Instance.ToggleLegs(true);
+                }
+                else if (message.Contains("walk") || message.Contains("stand up") || message.Contains("keep walk"))
+                {
+                    MotorTest.Instance.TakeWalk();
+                }
+                else if (message.Contains("seat") || message.Contains("sit down"))
+                {
+                    MotorTest.Instance.TakeSeat();
                 }
                 else if (message.Contains("done"))
                 {
@@ -389,19 +402,6 @@ public class VoiceRecognitionClinic : MonoBehaviour
         {
             
         }
-    }
-
-    private void Update()
-    {
-       
-        if (Input.GetKeyDown(KeyCode.F10))
-        {
-            foreach (var device in Microphone.devices)
-            {
-                Debug.Log("Name: " + device);
-            }
-        }
-
     }
 
 

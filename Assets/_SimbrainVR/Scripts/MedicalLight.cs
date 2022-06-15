@@ -41,7 +41,7 @@ public class MedicalLight : MonoBehaviour
             {
                 PatientController patientController = hit.collider.transform.parent.GetComponent<PatientController>();
                 _patientRef = patientController;
-                patientController.PupilDecreaseR();
+                patientController.PupilDecreaseBoth();
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
                 ClinicalLogger.Instance.hasShoneLight = true;
 
@@ -50,14 +50,14 @@ public class MedicalLight : MonoBehaviour
             {
                 PatientController patientController = hit.collider.transform.parent.GetComponent<PatientController>();
                 _patientRef = patientController;
-                patientController.PupilDecreaseL();
+                patientController.PupilDecreaseBoth();
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
 
                 ClinicalLogger.Instance.hasShoneLight = true;
             }
             else
             {
-                if(_patientRef!=null) _patientRef.Idle();
+                if(_patientRef!=null) _patientRef.PupilIncreaseBoth();
             }
         }
         else

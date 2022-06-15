@@ -29,7 +29,8 @@ public class EricNurse : MonoBehaviour
     public void InitiateSequence()
     {
         _agent.SetDestination(final.position);
-        StartCoroutine(EricNurseSequence());
+
+         StartCoroutine(EricNurseSequence());
     }
 
     public void Wave()
@@ -65,6 +66,9 @@ public class EricNurse : MonoBehaviour
 
     private IEnumerator EricNurseSequence()     //todo - clean up this sequence so that not the logic is here, could be issues later.
     {
+
+        
+
         _animator.SetBool("isWalking", true);
         yield return new WaitForSeconds(0.2f);
         while (_agent.remainingDistance > 0.2f)
