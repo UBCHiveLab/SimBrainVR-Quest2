@@ -706,6 +706,8 @@ namespace UnityEngine.EventSystems
 
                     leftData.delta = position - leftData.position;
                     leftData.position = position;
+
+                    Debug.Log("ovr raycaster " + ovrRaycaster.name);
                 }
             }
 

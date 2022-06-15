@@ -187,7 +187,6 @@ MonoBehaviour:
   baseColor: {r: 0, g: 0, b: 0, a: 0}
   background: {fileID: 1560849717866593550}
   description: {fileID: 6173512854051079089}
-  cursor: {fileID: 3723225481317925566}
   cursorPos: {fileID: 6173512853555300585}
 --- !u!1 &1796504915669380038
 GameObject:
@@ -320,7 +319,6 @@ MonoBehaviour:
   baseColor: {r: 0.01886791, g: 0.018422913, b: 0.018422913, a: 0}
   background: {fileID: 2074109439195703147}
   description: {fileID: 6173512853193841393}
-  cursor: {fileID: 3723225481317925566}
   cursorPos: {fileID: 6173512854404831375}
 --- !u!1 &1897735835054327300
 GameObject:
@@ -453,7 +451,6 @@ MonoBehaviour:
   baseColor: {r: 0, g: 0, b: 0, a: 0}
   background: {fileID: 349336654648198972}
   description: {fileID: 6173512852662535354}
-  cursor: {fileID: 3723225481317925566}
   cursorPos: {fileID: 6173512854138381281}
 --- !u!1 &2480142764330075751
 GameObject:
@@ -511,7 +508,6 @@ MonoBehaviour:
   baseColor: {r: 0, g: 0, b: 0, a: 0}
   background: {fileID: 8146206615502005226}
   description: {fileID: 6173512853539767562}
-  cursor: {fileID: 3723225481317925566}
   cursorPos: {fileID: 6173512854025045135}
 --- !u!1 &3026167584893675862
 GameObject:
@@ -570,7 +566,6 @@ MonoBehaviour:
   baseColor: {r: 0, g: 0, b: 0, a: 0}
   background: {fileID: 4229305161449585595}
   description: {fileID: 6173512852677573221}
-  cursor: {fileID: 3723225481317925566}
   cursorPos: {fileID: 6173512853231959399}
 --- !u!1 &3108678072321942849
 GameObject:
@@ -1229,7 +1224,6 @@ MonoBehaviour:
   baseColor: {r: 0, g: 0, b: 0, a: 0}
   background: {fileID: 7567487837859809910}
   description: {fileID: 6173512853957835373}
-  cursor: {fileID: 3723225481317925566}
   cursorPos: {fileID: 6173512852688675648}
 --- !u!1 &5617621297112247341
 GameObject:
@@ -6624,7 +6618,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.34942627, y: 1.1454773}
+  m_AnchoredPosition: {x: -0.34942627, y: 1.1455078}
   m_SizeDelta: {x: 1.6928, y: 1.2013}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1005468943055014761
@@ -6746,7 +6740,6 @@ MonoBehaviour:
   baseColor: {r: 0, g: 0, b: 0, a: 0}
   background: {fileID: 2047436254136101876}
   description: {fileID: 6173512853542089190}
-  cursor: {fileID: 3723225481317925566}
   cursorPos: {fileID: 6173512853352488935}
 --- !u!1 &9163717416733907043
 GameObject:
