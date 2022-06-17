@@ -10,6 +10,8 @@ public class MindPalace_LineBetweenGrabbables : MonoBehaviour
     public UnityEvent OnInitialized = default;
     public UnityEvent OnAnyPointSelected = default;
 
+    public UnityEvent<MindPalace_LineBetweenGrabbables> OnDestroyed = default;
+
     private DistanceGrabbable_Expanded grabbable1 = default;
     private DistanceGrabbable_Expanded grabbable2 = default;
 
@@ -41,6 +43,7 @@ public class MindPalace_LineBetweenGrabbables : MonoBehaviour
 
         grabbable2.OnSelected.RemoveListener(HandlePointSelected);
 
+        OnDestroyed?.Invoke(this);
     }
 
     private void HandlePointSelected()
@@ -81,6 +84,22 @@ public class MindPalace_LineBetweenGrabbables : MonoBehaviour
 
         }
 
+    }
+
+    public bool IsLinkedToGrabbable(DistanceGrabbable_Expanded grabbable)
+    {
+        if (grabbable1 == grabbable)
+            return true;
+
+        if (grabbable2 == grabbable)
+            return true;
+
+        return false;
+    }
+
+    public void DestroyLine()
+    {
+        Destroy(gameObject);
     }
 
 }

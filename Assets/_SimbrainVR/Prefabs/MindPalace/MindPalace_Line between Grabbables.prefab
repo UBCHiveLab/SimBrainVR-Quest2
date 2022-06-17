@@ -90,7 +90,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
       - m_Target: {fileID: 7606778115570354014}
         m_TargetAssemblyTypeName: GameObjectDestroyer, Assembly-CSharp
         m_MethodName: DestroyThisObject
@@ -102,7 +102,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!120 &4986569410556188414
 LineRenderer:
   m_ObjectHideFlags: 0
