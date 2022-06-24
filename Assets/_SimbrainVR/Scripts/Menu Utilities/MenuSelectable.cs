@@ -141,4 +141,8 @@ public class MenuSelectable : MonoBehaviour, ISelectHandler, IDeselectHandler, I
     {
         selectable.interactable = true;
     }
+    public void DeactivateInteraction()
+    {
+        selectable.interactable = false;
+    }
 }
