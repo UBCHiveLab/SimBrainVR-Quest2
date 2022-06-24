@@ -201,6 +201,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3314735474057379531}
     m_Modifications:
+    - target: {fileID: 57190040019891793, guid: 096a3b23096e054499bb975564fc28f1, type: 3}
+      propertyPath: m_Name
+      value: UNUSED_Close Radial Menu_On Player Click
+      objectReference: {fileID: 0}
     - target: {fileID: 1413110735410489268, guid: 096a3b23096e054499bb975564fc28f1, type: 3}
       propertyPath: m_renderer
       value: 
@@ -260,6 +264,10 @@ PrefabInstance:
     - target: {fileID: 3383784032855761779, guid: 096a3b23096e054499bb975564fc28f1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995690439226925889, guid: 096a3b23096e054499bb975564fc28f1, type: 3}
+      propertyPath: m_Name
+      value: UNUSED_Open Radial Menu_On Player Click
       objectReference: {fileID: 0}
     - target: {fileID: 8720795141810368716, guid: 096a3b23096e054499bb975564fc28f1, type: 3}
       propertyPath: m_Name
@@ -335,6 +343,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 509e96842293f3745a7b328922a3a1b7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: decc42fd4966d904394212abf0c24854, type: 2}
     - target: {fileID: 919132149155446097, guid: 509e96842293f3745a7b328922a3a1b7, type: 3}
       propertyPath: m_Name
       value: cut_brain_on_tray_400k

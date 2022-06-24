@@ -10,6 +10,8 @@ public class MindPalaceWorldStateSO : ScriptableObject
 
     private List<DistanceGrabbable_Expanded> grabbablesSelected = new List<DistanceGrabbable_Expanded>();
 
+    private List<MindPalace_LineBetweenGrabbables> linesInScene = new List<MindPalace_LineBetweenGrabbables>();
+
     public void ClearLists()
     {
         grabbablesSelected.Clear();
@@ -35,7 +37,12 @@ public class MindPalaceWorldStateSO : ScriptableObject
             DistanceGrabbable_Expanded grabbable2 = grabbablesSelected[1];
 
             MindPalace_LineBetweenGrabbables lineRenderer = Instantiate(linePrefabToClone, grabbable1.transform.position, Quaternion.identity);
+
+            lineRenderer.OnDestroyed.AddListener(HandleLineDestroyed);
+
             lineRenderer.Initialize(grabbable1, grabbable2);
+
+            linesInScene.Add(lineRenderer);
 
             //lineRenderer.SetPosition(0, grabbable1.transform.position);
             //lineRenderer.SetPosition(1, grabbable2.transform.position);
@@ -72,5 +79,28 @@ public class MindPalaceWorldStateSO : ScriptableObject
     public void HandleGrabbableDeselected(DistanceGrabbable_Expanded grabbable)
     {
         grabbablesSelected.Remove(grabbable);
+    }
+
+    private void HandleLineDestroyed(MindPalace_LineBetweenGrabbables line)
+    {
+        linesInScene.Remove(line);
+    }
+
+    public void DestroyAllLinesConnectingToGrabbable(DistanceGrabbable_Expanded grabbable)
+    {
+        List<MindPalace_LineBetweenGrabbables> linesWithGrabbable = new List<MindPalace_LineBetweenGrabbables>();
+
+        foreach (MindPalace_LineBetweenGrabbables line in linesInScene)
+        {
+            if (line.IsLinkedToGrabbable(grabbable))
+            {
+                linesWithGrabbable.Add(line);
+            }
+        }
+
+        for (int i = 0; i < linesWithGrabbable.Count; i++)
+        {
+            linesWithGrabbable[i].DestroyLine();
+        }
     }
 }
