@@ -277,17 +277,23 @@ public class VoiceRecognitionClinic : MonoBehaviour
                         if (eric != null) eric.GetComponent<EricNurse>().ToggleLight(true);
                     }
 
-                }else if (message.Contains("extend")) //can you extend your arms?
+                }else if (message.Contains("arms")) //can you extend your arms?
                 {
                     MotorTest.Instance.ToggleRaiseArms(true);
-                }else if (message.Contains("put down")) //put down your arms
-                {
-                    MotorTest.Instance.ToggleRaiseArms(false);
-                    MotorTest.Instance.ToggleLegs(false);
                 }
                 else if (message.Contains("legs")) //put down your arms
                 {
                     MotorTest.Instance.ToggleLegs(true);
+                }
+                else if (message.Contains("head")) //put down your arms
+                {
+                    MotorTest.Instance.ToggleHead(true);
+                }
+                else if (message.Contains("put down") || message.Contains("stop exam")) //put down your arms
+                {
+                    MotorTest.Instance.ToggleRaiseArms(false);
+                    MotorTest.Instance.ToggleLegs(false);
+                    MotorTest.Instance.ToggleHead(false);
                 }
                 else if (message.Contains("walk") || message.Contains("stand up") || message.Contains("keep walk"))
                 {
@@ -296,6 +302,14 @@ public class VoiceRecognitionClinic : MonoBehaviour
                 else if (message.Contains("seat") || message.Contains("sit down"))
                 {
                     MotorTest.Instance.TakeSeat();
+                }
+                else if (message.Contains("lie") || message.Contains("lay") || message.Contains("lay back"))
+                {
+                    MotorTest.Instance.LieDown();
+                }
+                else if (message.Contains("sit") || message.Contains("back up") || message.Contains("get back up"))
+                {
+                    MotorTest.Instance.SitUp();
                 }
                 else if (message.Contains("done"))
                 {

@@ -28,6 +28,9 @@ public class MotorTestTarget : MonoBehaviour
         {
             transform.position = ovrHandLeft.position;
             StartCoroutine(VibrateController(false));
+        }else if (Vector3.Distance(originalPos, ovrHandLeft.position) > maxDist && Vector3.Distance(originalPos, ovrHandRight.position) > maxDist)
+        {
+            transform.position = originalPos;
         }
         else
         {

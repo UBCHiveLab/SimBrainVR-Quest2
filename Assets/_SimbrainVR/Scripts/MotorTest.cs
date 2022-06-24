@@ -12,16 +12,22 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
 
     [SerializeField] Transform leftLegTargetPos;  //todo - set this up in start instead of inspector.
     [SerializeField] Transform rightLegTargetPos;
+    [SerializeField] Transform headPos;
 
     public bool isHoldingHandsUp;
     public bool isHoldingLegsUp;
+    public bool isMovingHead;
+
 
     public Transform bedTransform, pointA, pointB;
 
     Animator _animator;
     NavMeshAgent _agent;
+    PatientSpeakingController pController;
 
     private static MotorTest _instance;
+
+    Vector3 originalPos, originalRot;
 
     public static MotorTest Instance { get { return _instance; } }
 
@@ -34,7 +40,7 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
         else
         {
             _instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
         }
     }
 
@@ -42,7 +48,10 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
     {
         _animator = GetComponent<Animator>();
         _agent = GetComponent<NavMeshAgent>();
+        pController = GetComponent<PatientSpeakingController>();
         _agent.baseOffset = 0.3f;
+        originalPos = transform.position;
+        originalRot = transform.rotation.eulerAngles;
     }
 
     public void ToggleRaiseArms(bool state)
@@ -60,6 +69,12 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
     public void ToggleLegs(bool state)
     {
         isHoldingLegsUp = state;
+    }
+
+    public void ToggleHead(bool state)
+    {
+        isMovingHead = state;
+        pController.isLookingAtPlayer = state;
     }
 
 
@@ -111,7 +126,6 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
 
             if (Vector3.Distance(transform.position, bedTransform.position) <= 0.5f)
             {
-                print("here111");
                 _animator.SetBool("isWalking", true);
                 yield return new WaitForSeconds(.9f);
                 _agent.SetDestination(pointA.position);
@@ -145,6 +159,27 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
         
     }
 
+    public void LieDown()
+    {
+        _agent.enabled = false;
+        
+        transform.eulerAngles = new Vector3(
+            9.82f,
+            178f,
+            0
+        );
+        _animator.SetBool("islyingDown", true);
+        transform.position = new Vector3(-4.668f, 0.946f, 1.378f);
+    }
+
+    public void SitUp()
+    {
+        _animator.SetBool("islyingDown", false);
+        transform.position = originalPos;
+        transform.eulerAngles = originalRot;
+        _agent.enabled = true;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F1))
@@ -167,6 +202,8 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
         }
     }
 
+
+
     void OnAnimatorIK()
     {
 
@@ -187,6 +224,13 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
 
             _animator.SetIKPositionWeight(AvatarIKGoal.RightFoot, ikWeight);
             _animator.SetIKPosition(AvatarIKGoal.RightFoot, rightLegTargetPos.position);
+        }
+
+        if (isMovingHead)
+        {
+
+            _animator.SetLookAtWeight(ikWeight);
+            _animator.SetLookAtPosition(headPos.position);
         }
     }
 

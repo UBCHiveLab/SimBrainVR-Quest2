@@ -9,6 +9,7 @@ public class PatientSpeakingController : MonoBehaviour
     public float lookAtWeight = 0.9f;
     public bool isMakingEyeContact;
     public GameObject dialogueBox;
+    public bool isLookingAtPlayer;
     Animator _animator;
 
     void Start()
@@ -110,7 +111,7 @@ public class PatientSpeakingController : MonoBehaviour
     
     void OnAnimatorIK()
     {
-        if (Camera.main != null)
+        if (Camera.main != null && isLookingAtPlayer)
         {
             _animator.SetLookAtWeight(lookAtWeight);
             _animator.SetLookAtPosition(Camera.main.transform.position);
