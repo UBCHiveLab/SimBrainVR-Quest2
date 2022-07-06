@@ -7919,6 +7919,86 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1165190169983174066, guid: fbbe7b65c6cb54d49b62424616615212, type: 3}
   m_PrefabInstance: {fileID: 537590664}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &548253501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 548253503}
+  - component: {fileID: 548253502}
+  - component: {fileID: 548253504}
+  m_Layer: 0
+  m_Name: Spawn Random Models
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &548253502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548253501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34a8c62d236cf44f8139fc0bbbec9f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnLocation: {fileID: 548253503}
+  randomAreaAroundSpawnLocation: {x: 2.5, y: 1.2, z: 2.5}
+  minYPositionAfterSpawning: 1.2
+  addRigidbodyAfterSpawning: 1
+  addMeshColliderToParentAfterSpawning: 1
+  destroyMeshColliderOnChildAfterSpawning: 1
+  addGrabbableAsChild: 1
+  grabbablePrefab: {fileID: 1413110735410489268, guid: 096a3b23096e054499bb975564fc28f1, type: 3}
+--- !u!4 &548253503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548253501}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.33, y: 1.08, z: -0.87}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &548253504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548253501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37db68d5d2ffea04e8f0c7c11a852ab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 333
+  OnSinglePress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 548253502}
+        m_TargetAssemblyTypeName: LoadModelsFromDatabase, Assembly-CSharp
+        m_MethodName: SpawnRandomModel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 9b9ca05f7630afe45bd51c2600a5f8db, type: 2}
+          m_ObjectArgumentAssemblyTypeName: SpecimensListSO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &553488010
 GameObject:
   m_ObjectHideFlags: 0
@@ -13338,6 +13418,79 @@ Transform:
   m_Father: {fileID: 316029946}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &646755724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 646755726}
+  - component: {fileID: 646755725}
+  - component: {fileID: 646755727}
+  m_Layer: 0
+  m_Name: Fill Specimens List
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &646755725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646755724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4d8acd755646d45aea35907d81a8ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  specimensListSO: {fileID: 11400000, guid: 9b9ca05f7630afe45bd51c2600a5f8db, type: 2}
+--- !u!4 &646755726
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646755724}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &646755727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646755724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37db68d5d2ffea04e8f0c7c11a852ab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 285
+  OnSinglePress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 646755725}
+        m_TargetAssemblyTypeName: SpecimensList_Fill, Assembly-CSharp
+        m_MethodName: FillUsingSpecimensJson
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4900000, guid: 7db0a2210e409de4189a57235632c995, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &652952463
 GameObject:
   m_ObjectHideFlags: 0

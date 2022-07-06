@@ -117,12 +117,26 @@ public class OVRGrabbable : MonoBehaviour
     public Collider optionalExternalCollider
     {
         get { return m_optionalExternalCollider; }
+        set 
+        {
+            if (m_grabPoints.Length == 0)
+                m_grabPoints = new Collider[1] { value };
+
+            m_optionalExternalCollider = value; 
+        }
     }
 
-	/// <summary>
-	/// Notifies the object that it has been grabbed.
-	/// </summary>
-	virtual public void GrabBegin(OVRGrabber hand, Collider grabPoint)
+    //CUSTOM
+    public Rigidbody optionalExternalRigidbody
+    {
+        get { return m_optionalExternalRigidbody; }
+        set { m_optionalExternalRigidbody = value; }
+    }
+
+    /// <summary>
+    /// Notifies the object that it has been grabbed.
+    /// </summary>
+    virtual public void GrabBegin(OVRGrabber hand, Collider grabPoint)
     {
         m_grabbedBy = hand;
         m_grabbedCollider = grabPoint;
@@ -184,7 +198,8 @@ public class OVRGrabbable : MonoBehaviour
             }
 
             // Create a default grab point
-            m_grabPoints = new Collider[1] { collider };
+            if (collider != null)
+                m_grabPoints = new Collider[1] { collider };
         }
     }
 
