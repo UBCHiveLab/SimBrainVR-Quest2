@@ -418,7 +418,32 @@ public class VoiceRecognitionClinic : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            MotorTest.Instance.LieDown();
+        }
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            MotorTest.Instance.SitUp();
+        }
 
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            MotorTest.Instance.ToggleHead(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.F4))
+        {
+            MotorTest.Instance.ToggleRaiseArms(false);
+            MotorTest.Instance.ToggleLegs(false);
+            MotorTest.Instance.ToggleHead(false);
+        }
+
+
+
+    }
     private void OnDestroy()
     {
         Disable();
