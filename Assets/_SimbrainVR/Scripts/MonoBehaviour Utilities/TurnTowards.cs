@@ -8,6 +8,7 @@ public class TurnTowards : MonoBehaviour
     [SerializeField] private bool turnX = false;
     [SerializeField] private bool turnY = false;
     [SerializeField] private bool turnZ = false;
+    [SerializeField] private Vector3 offset = Vector3.zero;
 
     public void Activate(Vector3SO vector3)
     {
@@ -24,7 +25,7 @@ public class TurnTowards : MonoBehaviour
         if (!turnZ)
             lookRot.z = transform.eulerAngles.z;
         
-        transformToUse.eulerAngles = lookRot;
+        transformToUse.eulerAngles = lookRot + offset;
     }
 
 }

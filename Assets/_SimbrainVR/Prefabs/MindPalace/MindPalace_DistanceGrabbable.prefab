@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1886217713470598321}
   - component: {fileID: 1518900894253086045}
   m_Layer: 8
-  m_Name: Close Radial Menu_On Player Click
+  m_Name: UNUSED_Close Radial Menu_On Player Click
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,6 +113,7 @@ Transform:
   m_LocalScale: {x: 1.4883856, y: 1.4883828, z: 1.4883852}
   m_Children:
   - {fileID: 5083574564780391509}
+  - {fileID: 4821938616436443053}
   m_Father: {fileID: 7989402221417789995}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -252,12 +253,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4352953850776775762}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.1276552}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 7989402217485184649}
-  m_RootOrder: 3
+  m_Father: {fileID: 7314429965923567257}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6332802956131704963
 MonoBehaviour:
@@ -660,7 +661,6 @@ Transform:
   - {fileID: 4392008010565512587}
   - {fileID: 1886217713470598321}
   - {fileID: 5490027380665282739}
-  - {fileID: 4821938616436443053}
   m_Father: {fileID: 3321431782067704660}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -724,7 +724,7 @@ GameObject:
   - component: {fileID: 4392008010565512587}
   - component: {fileID: 6194266223975781403}
   m_Layer: 8
-  m_Name: Open Radial Menu_On Player Click
+  m_Name: UNUSED_Open Radial Menu_On Player Click
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
