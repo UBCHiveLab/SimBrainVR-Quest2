@@ -111,7 +111,7 @@ public class PatientSpeakingController : MonoBehaviour
     
     void OnAnimatorIK()
     {
-        if (Camera.main != null && isLookingAtPlayer)
+        if (Camera.main != null && isLookingAtPlayer && _animator.GetBool("islyingDown")==false)
         {
             _animator.SetLookAtWeight(lookAtWeight);
             _animator.SetLookAtPosition(Camera.main.transform.position);

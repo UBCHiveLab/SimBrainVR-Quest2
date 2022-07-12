@@ -26,6 +26,7 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
     PatientSpeakingController pController;
 
     private static MotorTest _instance;
+    private bool isSittingDown;
 
     Vector3 originalPos, originalRot;
 
@@ -49,6 +50,7 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
         _animator = GetComponent<Animator>();
         _agent = GetComponent<NavMeshAgent>();
         pController = GetComponent<PatientSpeakingController>();
+        isSittingDown = true;
         _agent.baseOffset = 0.3f;
         originalPos = transform.position;
         originalRot = transform.rotation.eulerAngles;
@@ -83,6 +85,7 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
 
     public void TakeWalk()
     {
+        isSittingDown = false;
         _agent.enabled = true;
         _agent.baseOffset = 0f;
         StartCoroutine(Walk());
@@ -90,6 +93,7 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
 
     public void TakeSeat()
     {
+        isSittingDown = true;
         StartCoroutine(SitDown());
     }
 
@@ -105,7 +109,7 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
 
             while (_agent.remainingDistance > 0.2f)
             {
-                yield return new WaitForEndOfFrame();
+                yield return new WaitForSeconds(0.15f);
             }
 
             _agent.baseOffset = 0.3f;
@@ -162,7 +166,8 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
     public void LieDown()
     {
         _agent.enabled = false;
-        
+        isSittingDown = false;
+
         transform.eulerAngles = new Vector3(
             9.82f,
             178f,
@@ -174,20 +179,13 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
 
     public void SitUp()
     {
+        isSittingDown = true;
         _animator.SetBool("islyingDown", false);
         transform.position = originalPos;
         transform.eulerAngles = originalRot;
         _agent.enabled = true;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F1))
-        {
-            ToggleRaiseArms(true);
-        }
-        
-    }
 
     IEnumerator SmoothRaiseArms()
     {
@@ -206,6 +204,8 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
 
     void OnAnimatorIK()
     {
+
+        if (!isSittingDown) return;
 
         if (isHoldingHandsUp)
         {
@@ -232,6 +232,8 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
             _animator.SetLookAtWeight(ikWeight);
             _animator.SetLookAtPosition(headPos.position);
         }
+
+
     }
 
     /*
