@@ -307,7 +307,7 @@ public class VoiceRecognitionClinic : MonoBehaviour
                 {
                     MotorTest.Instance.LieDown();
                 }
-                else if (message.Contains("sit") || message.Contains("back up") || message.Contains("get back up"))
+                else if (message.Contains("sit back up") || message.Contains("back up") || message.Contains("get back up") || message.Contains("set up") || message.Contains("sit back"))
                 {
                     MotorTest.Instance.SitUp();
                 }
@@ -330,7 +330,7 @@ public class VoiceRecognitionClinic : MonoBehaviour
 
                 if (patientSpeakingController.gameObject.activeSelf)
                 {
-                    if (patientSpeakingController.isMakingEyeContact)
+                    if ( MotorTest.Instance.isSittingDown) //patientSpeakingController.isMakingEyeContact
                     {
                         if (!patientHumanoid.activeSelf) return;
                         //if (!message.Contains("julia")) return;
