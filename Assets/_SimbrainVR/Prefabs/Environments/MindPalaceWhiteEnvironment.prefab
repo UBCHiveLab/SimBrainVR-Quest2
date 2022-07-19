@@ -1267,7 +1267,7 @@ GameObject:
   - component: {fileID: 4155510779426523948}
   - component: {fileID: 4155510779426523951}
   - component: {fileID: 4155510779426523950}
-  - component: {fileID: 4155510779426523945}
+  - component: {fileID: 3448712557978701475}
   m_Layer: 3
   m_Name: MindPalaceWhiteEnvironment
   m_TagString: Untagged
@@ -1284,7 +1284,7 @@ Transform:
   m_GameObject: {fileID: 4155510779426523944}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 1, z: 10}
+  m_LocalScale: {x: 15.230705, y: 0.7402087, z: 16}
   m_Children:
   - {fileID: 5794738496872604142}
   - {fileID: 4155510778741589796}
@@ -1299,7 +1299,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4155510779426523944}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &4155510779426523950
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1341,8 +1341,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4155510779426523945
-BoxCollider:
+--- !u!64 &3448712557978701475
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1351,9 +1351,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &4216644501023909719
 GameObject:
   m_ObjectHideFlags: 0
