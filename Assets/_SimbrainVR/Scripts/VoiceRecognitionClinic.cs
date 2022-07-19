@@ -277,7 +277,7 @@ public class VoiceRecognitionClinic : MonoBehaviour
                         if (eric != null) eric.GetComponent<EricNurse>().ToggleLight(true);
                     }
 
-                }else if (message.Contains("arms")) //can you extend your arms?
+                }else if (message.Contains("arm")) //can you extend your arms?
                 {
                     MotorTest.Instance.ToggleRaiseArms(true);
                 }
@@ -307,7 +307,7 @@ public class VoiceRecognitionClinic : MonoBehaviour
                 {
                     MotorTest.Instance.LieDown();
                 }
-                else if (message.Contains("sit") || message.Contains("back up") || message.Contains("get back up"))
+                else if (message.Contains("sit back up") || message.Contains("back up") || message.Contains("get back up") || message.Contains("set up") || message.Contains("sit back"))
                 {
                     MotorTest.Instance.SitUp();
                 }
@@ -330,7 +330,7 @@ public class VoiceRecognitionClinic : MonoBehaviour
 
                 if (patientSpeakingController.gameObject.activeSelf)
                 {
-                    if (patientSpeakingController.isMakingEyeContact)
+                    if ( MotorTest.Instance.isSittingDown) //patientSpeakingController.isMakingEyeContact
                     {
                         if (!patientHumanoid.activeSelf) return;
                         //if (!message.Contains("julia")) return;
@@ -418,7 +418,32 @@ public class VoiceRecognitionClinic : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            MotorTest.Instance.LieDown();
+        }
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            MotorTest.Instance.SitUp();
+        }
 
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            MotorTest.Instance.ToggleHead(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.F4))
+        {
+            MotorTest.Instance.ToggleRaiseArms(false);
+            MotorTest.Instance.ToggleLegs(false);
+            MotorTest.Instance.ToggleHead(false);
+        }
+
+
+
+    }
     private void OnDestroy()
     {
         Disable();

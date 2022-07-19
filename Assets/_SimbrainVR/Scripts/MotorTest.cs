@@ -17,6 +17,7 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
     public bool isHoldingHandsUp;
     public bool isHoldingLegsUp;
     public bool isMovingHead;
+    public bool isSittingDown;
 
 
     public Transform bedTransform, pointA, pointB;
@@ -26,6 +27,7 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
     PatientSpeakingController pController;
 
     private static MotorTest _instance;
+
 
     Vector3 originalPos, originalRot;
 
@@ -49,6 +51,7 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
         _animator = GetComponent<Animator>();
         _agent = GetComponent<NavMeshAgent>();
         pController = GetComponent<PatientSpeakingController>();
+        isSittingDown = true;
         _agent.baseOffset = 0.3f;
         originalPos = transform.position;
         originalRot = transform.rotation.eulerAngles;
@@ -78,11 +81,14 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
     }
 
 
-    bool walkCoroutineStarted, sitCoroutineStarted;
+    bool walkCoroutineStarted, sitCoroutineStarted, sitDownSequenceCoroutineStarted;
 
 
     public void TakeWalk()
     {
+        isSittingDown = false;
+        isHoldingHandsUp = false; isHoldingLegsUp = false; isMovingHead = false;
+
         _agent.enabled = true;
         _agent.baseOffset = 0f;
         StartCoroutine(Walk());
@@ -90,6 +96,7 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
 
     public void TakeSeat()
     {
+        isSittingDown = true;
         StartCoroutine(SitDown());
     }
 
@@ -98,6 +105,7 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
         if (!sitCoroutineStarted)
         {
             sitCoroutineStarted = true;
+            _agent.enabled = true;
 
             _animator.SetBool("isStanding", false);
             _agent.SetDestination(bedTransform.position);
@@ -105,7 +113,7 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
 
             while (_agent.remainingDistance > 0.2f)
             {
-                yield return new WaitForEndOfFrame();
+                yield return new WaitForSeconds(0.15f);
             }
 
             _agent.baseOffset = 0.3f;
@@ -123,6 +131,7 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
         {
             walkCoroutineStarted = true;
             _animator.SetBool("isStanding", false);
+            _animator.SetBool("isLyingDown", false);
 
             if (Vector3.Distance(transform.position, bedTransform.position) <= 0.5f)
             {
@@ -162,7 +171,10 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
     public void LieDown()
     {
         _agent.enabled = false;
-        
+        isSittingDown = false;
+
+        isHoldingHandsUp = false; isHoldingLegsUp = false; isMovingHead = false;
+
         transform.eulerAngles = new Vector3(
             9.82f,
             178f,
@@ -174,20 +186,33 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
 
     public void SitUp()
     {
-        _animator.SetBool("islyingDown", false);
-        transform.position = originalPos;
-        transform.eulerAngles = originalRot;
-        _agent.enabled = true;
+        isSittingDown = true;
+       
+        StartCoroutine(SitUpSequence());
     }
 
-    private void Update()
+    IEnumerator SitUpSequence()
     {
-        if (Input.GetKeyDown(KeyCode.F1))
+        if (!sitDownSequenceCoroutineStarted)
         {
-            ToggleRaiseArms(true);
+
+            sitDownSequenceCoroutineStarted = true;
+
+            _animator.SetBool("islyingDown", false);
+
+            yield return new WaitForSeconds(2f);
+            transform.eulerAngles = originalRot;
+            yield return new WaitForSeconds(4.1f);
+
+            transform.position = originalPos;
+            
+            _agent.enabled = true;
+
+            sitDownSequenceCoroutineStarted = false;
         }
-        
+
     }
+
 
     IEnumerator SmoothRaiseArms()
     {
@@ -206,6 +231,8 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
 
     void OnAnimatorIK()
     {
+
+        if (!isSittingDown) return;
 
         if (isHoldingHandsUp)
         {
@@ -232,6 +259,8 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
             _animator.SetLookAtWeight(ikWeight);
             _animator.SetLookAtPosition(headPos.position);
         }
+
+
     }
 
     /*

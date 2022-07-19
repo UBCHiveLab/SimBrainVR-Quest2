@@ -97,7 +97,7 @@ public class TestModelLoader : MonoBehaviour
     }
 
 
-    
+    //Loads the 3D model from database
     private IEnumerator LoadFromData()
     {
         yield return new WaitForSeconds(0.1f); // Allows animations to run without hiccuping
@@ -167,56 +167,8 @@ public class TestModelLoader : MonoBehaviour
         }
     }
 
-    /*
-
-    private IEnumerator LoadFromData()
-    {
-        yield return new WaitForSeconds(0.1f); // Allows animations to run without hiccuping 
-        using (UnityWebRequest req = UnityWebRequestAssetBundle.GetAssetBundle(reqUri, 0U))
-        {
-            yield return req.SendWebRequest();
-            if (req.isNetworkError || req.isHttpError)
-            {
-                yield break;
-            }
-            else
-            {
-                yield return new WaitForSeconds(.5f);
-                try
-                {
-                    AssetBundle bundle = DownloadHandlerAssetBundle.GetContent(req);
-                    if (prefabPath != null)
-                    {
-                        print("we got here");
-                        GameObject prefab = bundle.LoadAsset<GameObject>(prefabPath);
-
-                        Renderer rend = prefab.transform.GetChild(0).GetComponent<Renderer>();
-                        //EDIT: better to make a list and check for all children and ensure they're all the same shader
-                        Renderer rendChildren = rend.transform.GetChild(0).GetChild(0).GetComponent<Renderer>();
-                        if (rend != null)
-                        {
-                            rend.sharedMaterial.shader = Shader.Find("Sprites/Default");
-                            if (rendChildren != null)
-                            {
-                                rendChildren.sharedMaterial.shader = Shader.Find("Sprites/Default");
-                            }
-                        }
-                        Instantiate(prefab, specimenContent);
-                        print(prefab.name);
-                    }
-                    else
-                    {
-                    }
-                }
-                catch (Exception e)
-                {
-                    print("error");
-                }
-            }
-        }
-    }
-
-    */
+    
+    //Loads model from database, using assetbundle
     public void TestLoadBundle()
     {
         StartCoroutine(LoadFromData());

@@ -7154,7 +7154,7 @@ MonoBehaviour:
   start_clip: {fileID: 2128142062}
   rightHandTargetStartPos: {fileID: 1213521951}
   rightHandTargetPos: {fileID: 582986234}
-  lerpVal: 0.0095
+  lerpVal: 0.015
 --- !u!4 &1003452895863912498
 Transform:
   m_ObjectHideFlags: 0
