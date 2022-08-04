@@ -14,10 +14,14 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
     [SerializeField] Transform rightLegTargetPos;
     [SerializeField] Transform headPos;
 
+    [SerializeField] Transform rightLegReflexPos, leftLegReflexPos;
+
     public bool isHoldingHandsUp;
     public bool isHoldingLegsUp;
     public bool isMovingHead;
     public bool isSittingDown;
+
+    public float legReflexSpeed = 5f;
 
 
     public Transform bedTransform, pointA, pointB;
@@ -227,6 +231,66 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
         }
     }
 
+    bool isReflexRightTest, isReflexLeftTest;
+    public void TendonReflexTest(bool isRightLeg)
+    {
+        StartCoroutine(ReflexLeg(isRightLeg));
+    }
+    IEnumerator ReflexLeg(bool isRightLeg)
+    {
+        bool wasLegsUp = true;
+        if (!isHoldingLegsUp)
+        {
+            isHoldingLegsUp = true;
+            wasLegsUp = false;
+        }
+
+        Vector3 leftLegOriginalPos = leftLegTargetPos.position;
+        Vector3 rightLegOriginalPos = rightLegTargetPos.position;
+        float timePassed = 0;
+
+        if (isRightLeg)
+        {
+            rightLegReflexPos.GetComponent<SwingingMotion>().enabled = true;
+            rightLegTargetPos.GetComponent<MotorTestTarget>().enabled = false;
+            isReflexRightTest = true;
+        }
+        else
+        {
+            leftLegReflexPos.GetComponent<SwingingMotion>().enabled = true;
+            leftLegTargetPos.GetComponent<MotorTestTarget>().enabled = false;
+            isReflexLeftTest = true;
+        }
+
+        while (timePassed < 0.9f)
+        {
+            if (isRightLeg)
+            {
+                rightLegTargetPos.position = rightLegReflexPos.position;
+            }
+            else
+            {
+                leftLegTargetPos.position = leftLegReflexPos.position;
+            }
+            yield return new WaitForEndOfFrame();
+            timePassed += Time.deltaTime;
+        }
+
+        rightLegTargetPos.position = rightLegOriginalPos;
+        leftLegTargetPos.position = leftLegOriginalPos;
+        rightLegReflexPos.GetComponent<SwingingMotion>().enabled = false;
+        leftLegReflexPos.GetComponent<SwingingMotion>().enabled = false;
+        rightLegTargetPos.GetComponent<MotorTestTarget>().enabled = true;
+        leftLegTargetPos.GetComponent<MotorTestTarget>().enabled = true;
+
+        if (!wasLegsUp)
+        {
+            isHoldingLegsUp = false;
+        }
+
+        isReflexRightTest = false;
+        isReflexLeftTest = false;
+    }
 
 
     void OnAnimatorIK()
@@ -247,10 +311,10 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
         if (isHoldingLegsUp)
         {
             _animator.SetIKPositionWeight(AvatarIKGoal.LeftFoot, ikWeight);
-            _animator.SetIKPosition(AvatarIKGoal.LeftFoot, leftLegTargetPos.position);
+            if(!isReflexRightTest) _animator.SetIKPosition(AvatarIKGoal.LeftFoot, leftLegTargetPos.position);
 
             _animator.SetIKPositionWeight(AvatarIKGoal.RightFoot, ikWeight);
-            _animator.SetIKPosition(AvatarIKGoal.RightFoot, rightLegTargetPos.position);
+            if(!isReflexLeftTest) _animator.SetIKPosition(AvatarIKGoal.RightFoot, rightLegTargetPos.position);
         }
 
         if (isMovingHead)
@@ -262,28 +326,6 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
 
 
     }
-
-    /*
-    bool isToggling;
-    IEnumerable ToggleHandsPosition(bool isUp)
-    {
-
-        if (!isToggling)
-        {
-            isToggling = true;
-
-            while ()
-            {
-                
-            }
-
-
-            isToggling = false;
-
-        }
-
-    }*/
-
 
 
 }

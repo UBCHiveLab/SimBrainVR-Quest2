@@ -371,7 +371,7 @@ public class VoiceRecognitionClinic : MonoBehaviour
                         }
                         else if (hasSaidSomething)
                         {
-                            if (hasStartedAskingQuestions && (Time.time - talkingStartTime >= 5.5f))
+                            if (hasStartedAskingQuestions && (Time.time - talkingStartTime >= 10.5f))
                             {
                                 hasSaidSomething = false;
                                 talkingStartTime = Time.time;
@@ -420,6 +420,7 @@ public class VoiceRecognitionClinic : MonoBehaviour
 
     private void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.F1))
         {
             MotorTest.Instance.LieDown();
@@ -441,7 +442,7 @@ public class VoiceRecognitionClinic : MonoBehaviour
             MotorTest.Instance.ToggleHead(false);
         }
 
-
+        */
 
     }
     private void OnDestroy()
