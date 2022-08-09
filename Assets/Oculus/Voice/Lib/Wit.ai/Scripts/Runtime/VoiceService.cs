@@ -1,13 +1,17 @@
 ﻿/*
- * Copyright (c) Facebook, Inc. and its affiliates.
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ * All rights reserved.
  *
  * This source code is licensed under the license found in the
  * LICENSE file in the root directory of this source tree.
  */
 
+using System;
 using Facebook.WitAi.Configuration;
+using Facebook.WitAi.Data.Intents;
 using Facebook.WitAi.Events;
 using Facebook.WitAi.Interfaces;
+using Facebook.WitAi.Lib;
 using UnityEngine;
 
 namespace Facebook.WitAi
@@ -38,7 +42,7 @@ namespace Facebook.WitAi
         /// </summary>
         public abstract bool MicActive { get; }
 
-        public VoiceEvents VoiceEvents
+        public virtual VoiceEvents VoiceEvents
         {
             get => events;
             set => events = value;
@@ -92,9 +96,68 @@ namespace Facebook.WitAi
         /// <param name="text"></param>
         /// <param name="requestOptions"></param>
         public abstract void Activate(string text, WitRequestOptions requestOptions);
+
+        protected virtual void Awake()
+        {
+            MatchIntentRegistry.Initialize();
+        }
+
+        protected virtual void OnEnable()
+        {
+            VoiceEvents.OnResponse.AddListener(OnResponse);
+        }
+
+        protected virtual void OnDisable()
+        {
+            VoiceEvents.OnResponse.RemoveListener(OnResponse);
+        }
+
+        protected virtual void OnResponse(WitResponseNode response)
+        {
+            var intents = response.GetIntents();
+            foreach (var intent in intents)
+            {
+                HandleIntent(intent, response);
+            }
+        }
+
+        private void HandleIntent(WitIntentData intent, WitResponseNode response)
+        {
+            var methods = MatchIntentRegistry.RegisteredMethods[intent.name];
+            foreach (var method in methods)
+            {
+                ExecuteRegisteredMatch(method, intent, response);
+            }
+        }
+
+        private void ExecuteRegisteredMatch(RegisteredMatchIntent registeredMethod,
+            WitIntentData intent, WitResponseNode response)
+        {
+            if (intent.confidence >= registeredMethod.matchIntent.MinConfidence &&
+                intent.confidence <= registeredMethod.matchIntent.MaxConfidence)
+            {
+                foreach (var obj in FindObjectsOfType(registeredMethod.type))
+                {
+                    var parameters = registeredMethod.method.GetParameters();
+                    if (parameters.Length == 1)
+                    {
+                        registeredMethod.method.Invoke(obj, new object[] {response});
+                    }
+                    else if (parameters.Length == 0)
+                    {
+                        registeredMethod.method.Invoke(obj, Array.Empty<object>());
+                    }
+                    else
+                    {
+                        throw new ArgumentException(
+                            "Too many parameters on method tagged with MatchIntent. Match intent only supports methods with no parameters or with a WitResponseNode parameter.");
+                    }
+                }
+            }
+        }
     }
 
-    public interface IVoiceService
+    public interface IVoiceService : IVoiceEventProvider
     {
         /// <summary>
         /// Returns true if this voice service is currently active and listening with the mic
@@ -105,7 +168,7 @@ namespace Facebook.WitAi
 
         bool MicActive { get; }
 
-        VoiceEvents VoiceEvents { get; set; }
+        new VoiceEvents VoiceEvents { get; set; }
 
         ITranscriptionProvider TranscriptionProvider { get; set; }
 

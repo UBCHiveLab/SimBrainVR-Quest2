@@ -47,6 +47,7 @@ public class EricNurse : MonoBehaviour
     private IEnumerator ToggleLightSequence(bool isOn)
     {
         _animator.SetBool("isWalking", true);
+        //transform.LookAt(new Vector3(lightSwitch.position.x, transform.position.y, lightSwitch.position.z));
         yield return new WaitForSeconds(0.2f);
 
         while (_agent.remainingDistance > 0.2f)

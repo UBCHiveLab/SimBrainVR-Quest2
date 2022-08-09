@@ -14,6 +14,7 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
     [SerializeField] Transform rightLegTargetPos;
     [SerializeField] Transform headPos;
 
+    [SerializeField] SwingingForce rightPendelumMotion, leftPendelumMotion;
     [SerializeField] Transform rightLegReflexPos, leftLegReflexPos;
 
     public bool isHoldingHandsUp;
@@ -236,6 +237,16 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
     {
         StartCoroutine(ReflexLeg(isRightLeg));
     }
+    public bool isItRightleg = true;
+    public float timeMax = 0.8f;
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            TendonReflexTest(isItRightleg);
+        }
+    }
+
     IEnumerator ReflexLeg(bool isRightLeg)
     {
         bool wasLegsUp = true;
@@ -251,18 +262,18 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
 
         if (isRightLeg)
         {
-            rightLegReflexPos.GetComponent<SwingingMotion>().enabled = true;
+            rightPendelumMotion.enabled = true;
             rightLegTargetPos.GetComponent<MotorTestTarget>().enabled = false;
             isReflexRightTest = true;
         }
         else
         {
-            leftLegReflexPos.GetComponent<SwingingMotion>().enabled = true;
+            leftPendelumMotion.enabled = true;
             leftLegTargetPos.GetComponent<MotorTestTarget>().enabled = false;
             isReflexLeftTest = true;
         }
 
-        while (timePassed < 0.9f)
+        while (timePassed < timeMax)
         {
             if (isRightLeg)
             {
@@ -278,13 +289,14 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
 
         rightLegTargetPos.position = rightLegOriginalPos;
         leftLegTargetPos.position = leftLegOriginalPos;
-        rightLegReflexPos.GetComponent<SwingingMotion>().enabled = false;
-        leftLegReflexPos.GetComponent<SwingingMotion>().enabled = false;
+        rightPendelumMotion.ResetPendelum();
+        leftPendelumMotion.ResetPendelum();
         rightLegTargetPos.GetComponent<MotorTestTarget>().enabled = true;
         leftLegTargetPos.GetComponent<MotorTestTarget>().enabled = true;
 
         if (!wasLegsUp)
         {
+            print("reached hereeee");
             isHoldingLegsUp = false;
         }
 
@@ -311,10 +323,12 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
         if (isHoldingLegsUp)
         {
             _animator.SetIKPositionWeight(AvatarIKGoal.LeftFoot, ikWeight);
-            if(!isReflexRightTest) _animator.SetIKPosition(AvatarIKGoal.LeftFoot, leftLegTargetPos.position);
+            if(!isReflexRightTest)
+                _animator.SetIKPosition(AvatarIKGoal.LeftFoot, leftLegTargetPos.position);
 
             _animator.SetIKPositionWeight(AvatarIKGoal.RightFoot, ikWeight);
-            if(!isReflexLeftTest) _animator.SetIKPosition(AvatarIKGoal.RightFoot, rightLegTargetPos.position);
+            if(!isReflexLeftTest) 
+                _animator.SetIKPosition(AvatarIKGoal.RightFoot, rightLegTargetPos.position);
         }
 
         if (isMovingHead)

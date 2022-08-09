@@ -1,34 +1,40 @@
-/************************************************************************************
-Copyright : Copyright (c) Facebook Technologies, LLC and its affiliates. All rights reserved.
+/*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ * All rights reserved.
+ *
+ * Licensed under the Oculus SDK License Agreement (the "License");
+ * you may not use the Oculus SDK except in compliance with the License,
+ * which is provided at the time of installation or download, or which
+ * otherwise accompanies this software in either electronic or hard copy form.
+ *
+ * You may obtain a copy of the License at
+ *
+ * https://developer.oculus.com/licenses/oculussdk/
+ *
+ * Unless required by applicable law or agreed to in writing, the Oculus SDK
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
-Your use of this SDK or tool is subject to the Oculus SDK License Agreement, available at
-https://developer.oculus.com/licenses/oculussdk/
-
-Unless required by applicable law or agreed to in writing, the Utilities SDK distributed
-under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
-ANY KIND, either express or implied. See the License for the specific language governing
-permissions and limitations under the License.
-************************************************************************************/
-
+using Oculus.Interaction.Editor;
 using UnityEditor;
 using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 
-namespace Oculus.Interaction.HandPosing.SnapSurfaces.Editor
+namespace Oculus.Interaction.HandGrab.SnapSurfaces.Editor
 {
     [CustomEditor(typeof(SphereSurface))]
     [CanEditMultipleObjects]
     public class SphereEditor : UnityEditor.Editor
     {
-        private static readonly Color NONINTERACTABLE_COLOR = new Color(0f, 1f, 1f, 0.1f);
-        private static readonly Color INTERACTABLE_COLOR = new Color(0f, 1f, 1f, 0.5f);
-
         private SphereBoundsHandle _sphereHandle = new SphereBoundsHandle();
         private SphereSurface _surface;
 
         private void OnEnable()
         {
-            _sphereHandle.SetColor(INTERACTABLE_COLOR);
+            _sphereHandle.SetColor(EditorConstants.PRIMARY_COLOR);
             _sphereHandle.midpointHandleDrawFunction = null;
 
             _surface = (target as SphereSurface);
@@ -60,7 +66,7 @@ namespace Oculus.Interaction.HandPosing.SnapSurfaces.Editor
 
         private void DrawSurfaceVolume(SphereSurface surface)
         {
-            Handles.color = INTERACTABLE_COLOR;
+            Handles.color = EditorConstants.PRIMARY_COLOR;
             Vector3 startLine = surface.Centre;
             Vector3 endLine = startLine + surface.Rotation * Vector3.forward * surface.Radius;
             Handles.DrawDottedLine(startLine, endLine, 5);

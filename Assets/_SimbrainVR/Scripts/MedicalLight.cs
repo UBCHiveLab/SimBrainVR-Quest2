@@ -8,6 +8,7 @@ public class MedicalLight : MonoBehaviour
 
     [SerializeField]
     GameObject spotLight;
+    public LayerMask layerToAvoidHitting;
     PatientController _patientRef;
 
     bool inputB, inputA;
@@ -34,7 +35,7 @@ public class MedicalLight : MonoBehaviour
 
         RaycastHit hit;
 
-        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
+        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerToAvoidHitting))
         {
 
             if (hit.collider.name == "PatientRightEye")

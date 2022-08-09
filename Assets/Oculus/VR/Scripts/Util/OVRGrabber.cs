@@ -1,14 +1,22 @@
-/************************************************************************************
-Copyright : Copyright (c) Facebook Technologies, LLC and its affiliates. All rights reserved.
-
-Your use of this SDK or tool is subject to the Oculus SDK License Agreement, available at
-https://developer.oculus.com/licenses/oculussdk/
-
-Unless required by applicable law or agreed to in writing, the Utilities SDK distributed
-under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
-ANY KIND, either express or implied. See the License for the specific language governing
-permissions and limitations under the License.
-************************************************************************************/
+/*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ * All rights reserved.
+ *
+ * Licensed under the Oculus SDK License Agreement (the "License");
+ * you may not use the Oculus SDK except in compliance with the License,
+ * which is provided at the time of installation or download, or which
+ * otherwise accompanies this software in either electronic or hard copy form.
+ *
+ * You may obtain a copy of the License at
+ *
+ * https://developer.oculus.com/licenses/oculussdk/
+ *
+ * Unless required by applicable law or agreed to in writing, the Oculus SDK
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 using System.Collections.Generic;
 using UnityEngine;
@@ -179,7 +187,7 @@ public class OVRGrabber : MonoBehaviour
     void OnTriggerEnter(Collider otherCollider)
     {
         // Get the grab trigger
-		OVRGrabbable grabbable = otherCollider.GetComponent<OVRGrabbable>() ?? otherCollider.GetComponentInParent<OVRGrabbable>() ?? otherCollider.GetComponentInChildren<OVRGrabbable>(); //CUSTOM CHANGE: NOW ALSO GETS COMPONENT IN CHILDREN
+		OVRGrabbable grabbable = otherCollider.GetComponent<OVRGrabbable>() ?? otherCollider.GetComponentInParent<OVRGrabbable>();
         if (grabbable == null) return;
 
         // Add the grabbable
@@ -190,7 +198,7 @@ public class OVRGrabber : MonoBehaviour
 
     void OnTriggerExit(Collider otherCollider)
     {
-		OVRGrabbable grabbable = otherCollider.GetComponent<OVRGrabbable>() ?? otherCollider.GetComponentInParent<OVRGrabbable>() ?? otherCollider.GetComponentInChildren<OVRGrabbable>(); //CUSTOM CHANGE: NOW ALSO GETS COMPONENT IN CHILDREN
+		OVRGrabbable grabbable = otherCollider.GetComponent<OVRGrabbable>() ?? otherCollider.GetComponentInParent<OVRGrabbable>();
         if (grabbable == null) return;
 
         // Remove the grabbable
@@ -401,18 +409,8 @@ public class OVRGrabber : MonoBehaviour
 			Collider[] playerColliders = m_player.GetComponentsInChildren<Collider>();
 			foreach (Collider pc in playerColliders)
 			{
-                //start CUSTOM CHANGES TO CODE
-				List<Collider> colliders = new List<Collider>(grabbable.GetComponentsInChildren<Collider>());
-                
-                OVRGrabbable ovrGrabbable = grabbable.GetComponent<OVRGrabbable>();
-                
-                if (ovrGrabbable != null && ovrGrabbable.optionalExternalCollider != null)
-                {
-                    colliders.Add(ovrGrabbable.optionalExternalCollider);
-                }
-                //end CUSTOM CHANGES
-
-                foreach (Collider c in colliders)
+				Collider[] colliders = grabbable.GetComponentsInChildren<Collider>();
+				foreach (Collider c in colliders)
 				{
                     if(!c.isTrigger && !pc.isTrigger)
 					    Physics.IgnoreCollision(c, pc, ignore);

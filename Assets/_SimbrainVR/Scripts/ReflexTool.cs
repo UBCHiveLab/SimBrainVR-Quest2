@@ -6,32 +6,33 @@ public class ReflexTool : MonoBehaviour
 {
 
     int rightKneeCounter, leftKneeCounter = 0;
-    public int hitLimit = 5;
+    public int hitLimit = 2;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        //print(collision.collider.name);
 
-        if(collision.collider.name == "rightKnee")
+        print("reflex tool hit: "  + other.name);
+        if(other.name == "rightKnee")
         {
             rightKneeCounter++;
         }
 
-        if (collision.collider.name == "leftKnee")
+        if (other.name == "leftKnee")
         {
             leftKneeCounter++;
         }
 
-        if(rightKneeCounter >= hitLimit)
+        if (rightKneeCounter >= hitLimit)
         {
             rightKneeCounter = 0;
             MotorTest.Instance.TendonReflexTest(true);
         }
 
-        if(leftKneeCounter >= hitLimit)
+        if (leftKneeCounter >= hitLimit)
         {
             leftKneeCounter = 0;
             MotorTest.Instance.TendonReflexTest(false);
         }
     }
+    
 }

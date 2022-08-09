@@ -1,15 +1,14 @@
 ﻿/*
- * Copyright (c) Facebook, Inc. and its affiliates.
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ * All rights reserved.
  *
  * This source code is licensed under the license found in the
  * LICENSE file in the root directory of this source tree.
  */
 
-using System;
 using UnityEngine;
-using UnityEngine.Events;
 using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 
 namespace Facebook.WitAi.Utilities
 {
@@ -26,7 +25,6 @@ namespace Facebook.WitAi.Utilities
         private static CoroutinePerformer GetPerformer()
         {
             CoroutinePerformer performer = new GameObject("Coroutine").AddComponent<CoroutinePerformer>();
-            //performer.gameObject.hideFlags = HideFlags.DontSave;
             performer.gameObject.hideFlags = HideFlags.HideAndDontSave;
             return performer;
         }
@@ -34,7 +32,7 @@ namespace Facebook.WitAi.Utilities
         public class CoroutinePerformer : MonoBehaviour
         {
             // Coroutine
-            public bool isRunning { get; private set; }
+            public bool IsRunning { get; private set; }
             private Coroutine _runtimeCoroutine;
 
             // Dont destroy
@@ -47,13 +45,13 @@ namespace Facebook.WitAi.Utilities
             public void CoroutineBegin(IEnumerator asyncMethod)
             {
                 // Cannot call twice
-                if (isRunning)
+                if (IsRunning)
                 {
                     return;
                 }
 
                 // Begin running
-                isRunning = true;
+                IsRunning = true;
 
 #if UNITY_EDITOR
                 // Editor mode
@@ -61,6 +59,7 @@ namespace Facebook.WitAi.Utilities
                 {
                     _editorMethod = asyncMethod;
                     UnityEditor.EditorApplication.update += EditorCoroutineIterate;
+                    EditorCoroutineIterate();
                     return;
                 }
 #endif
@@ -74,51 +73,74 @@ namespace Facebook.WitAi.Utilities
             private IEnumerator _editorMethod;
             private void EditorCoroutineIterate()
             {
-                if (_editorMethod != null)
+                // Destroyed
+                if (this == null || _editorMethod == null)
                 {
-                    if (!_editorMethod.MoveNext())
+                    CoroutineCancel();
+                }
+                // Continue
+                else if (!MoveNext(_editorMethod))
+                {
+                    CoroutineComplete();
+                }
+            }
+            // Move through methods
+            private bool MoveNext(IEnumerator method)
+            {
+                // Move sub coroutine
+                object current = method.Current;
+                if (current != null && current.GetType().GetInterfaces().Contains(typeof(IEnumerator)))
+                {
+                    if (MoveNext(current as IEnumerator))
                     {
-                        CoroutineComplete();
+                        return true;
                     }
                 }
+                // Move this
+                return method.MoveNext();
             }
 #endif
             // Runtime iterate
             private IEnumerator RuntimeCoroutineIterate(IEnumerator asyncMethod)
             {
                 // Wait for completion
-                yield return StartCoroutine(asyncMethod);
+                yield return asyncMethod;
                 // Complete
                 CoroutineComplete();
             }
-
             // Cancel on destroy
             private void OnDestroy()
             {
-                if (isRunning)
-                {
-                    CoroutineCancel();
-                }
+                CoroutineUnload();
             }
-            // Cancel coroutine
+            // Cancel current coroutine
             public void CoroutineCancel()
             {
-                if (isRunning)
-                {
-                    CoroutineComplete();
-                }
+                CoroutineComplete();
             }
             // Completed
             private void CoroutineComplete()
             {
                 // Ignore unless running
-                if (!isRunning)
+                if (!IsRunning)
                 {
                     return;
                 }
 
+                // Unload
+                CoroutineUnload();
+
+                // Destroy
+                if (this != null && gameObject != null)
+                {
+                    DestroyImmediate(gameObject);
+                }
+            }
+            // Unload
+            private void CoroutineUnload()
+            {
                 // Done
-                isRunning = false;
+                IsRunning = false;
 
 #if UNITY_EDITOR
                 // Complete
@@ -135,9 +157,6 @@ namespace Facebook.WitAi.Utilities
                     StopCoroutine(_runtimeCoroutine);
                     _runtimeCoroutine = null;
                 }
-
-                // Destroy
-                DestroyImmediate(gameObject);
             }
         }
     }
