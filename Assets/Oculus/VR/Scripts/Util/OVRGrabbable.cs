@@ -1,25 +1,18 @@
-/*
- * Copyright (c) Meta Platforms, Inc. and affiliates.
- * All rights reserved.
- *
- * Licensed under the Oculus SDK License Agreement (the "License");
- * you may not use the Oculus SDK except in compliance with the License,
- * which is provided at the time of installation or download, or which
- * otherwise accompanies this software in either electronic or hard copy form.
- *
- * You may obtain a copy of the License at
- *
- * https://developer.oculus.com/licenses/oculussdk/
- *
- * Unless required by applicable law or agreed to in writing, the Oculus SDK
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+/************************************************************************************
+Copyright : Copyright (c) Facebook Technologies, LLC and its affiliates. All rights reserved.
+
+Your use of this SDK or tool is subject to the Oculus SDK License Agreement, available at
+https://developer.oculus.com/licenses/oculussdk/
+
+Unless required by applicable law or agreed to in writing, the Utilities SDK distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+ANY KIND, either express or implied. See the License for the specific language governing
+permissions and limitations under the License.
+************************************************************************************/
 
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// An object that can be grabbed and thrown by OVRGrabber.
@@ -36,6 +29,13 @@ public class OVRGrabbable : MonoBehaviour
     protected Transform m_snapOffset;
     [SerializeField]
     protected Collider[] m_grabPoints = null;
+    [SerializeField]
+    protected Collider m_optionalExternalCollider = null;
+    [SerializeField]
+    protected Rigidbody m_optionalExternalRigidbody = null;
+
+    public UnityEvent<OVRGrabber> OnGrabStarted = default;
+    public UnityEvent OnGrabExit = default;
 
     protected bool m_grabbedKinematic = false;
     protected Collider m_grabbedCollider = null;
@@ -113,14 +113,49 @@ public class OVRGrabbable : MonoBehaviour
         get { return m_grabPoints; }
     }
 
-	/// <summary>
-	/// Notifies the object that it has been grabbed.
-	/// </summary>
-	virtual public void GrabBegin(OVRGrabber hand, Collider grabPoint)
+    //CUSTOM
+    public Collider optionalExternalCollider
+    {
+        get { return m_optionalExternalCollider; }
+        set 
+        {
+            if (m_grabPoints.Length == 0)
+                m_grabPoints = new Collider[1] { value };
+
+            m_optionalExternalCollider = value; 
+        }
+    }
+
+    //CUSTOM
+    public Rigidbody optionalExternalRigidbody
+    {
+        get { return m_optionalExternalRigidbody; }
+        set { m_optionalExternalRigidbody = value; }
+    }
+
+    /// <summary>
+    /// Notifies the object that it has been grabbed.
+    /// </summary>
+    virtual public void GrabBegin(OVRGrabber hand, Collider grabPoint)
     {
         m_grabbedBy = hand;
         m_grabbedCollider = grabPoint;
-        gameObject.GetComponent<Rigidbody>().isKinematic = true;
+
+        if (m_grabbedCollider == null)
+        {
+            m_grabbedCollider = m_optionalExternalCollider;
+        }
+        
+        Rigidbody rigidbodyToUse = GetComponent<Rigidbody>();
+
+        if (rigidbodyToUse == null)
+        {
+            rigidbodyToUse = m_optionalExternalRigidbody;
+        }
+
+        rigidbodyToUse.isKinematic = true;
+
+        OnGrabStarted?.Invoke(hand);
     }
 
 	/// <summary>
@@ -128,12 +163,20 @@ public class OVRGrabbable : MonoBehaviour
 	/// </summary>
 	virtual public void GrabEnd(Vector3 linearVelocity, Vector3 angularVelocity)
     {
-        Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+        Rigidbody rb = GetComponent<Rigidbody>();
+
+        if (rb == null)
+        {
+            rb = m_optionalExternalRigidbody;
+        }
+
         rb.isKinematic = m_grabbedKinematic;
         rb.velocity = linearVelocity;
         rb.angularVelocity = angularVelocity;
         m_grabbedBy = null;
         m_grabbedCollider = null;
+
+        OnGrabExit?.Invoke();
     }
 
     void Awake()
@@ -144,17 +187,33 @@ public class OVRGrabbable : MonoBehaviour
             Collider collider = this.GetComponent<Collider>();
             if (collider == null)
             {
-				throw new ArgumentException("Grabbables cannot have zero grab points and no collider -- please add a grab point or collider.");
+                collider = m_optionalExternalCollider;
+
+                if (collider == null)
+                {
+				    throw new ArgumentException("Grabbables cannot have zero grab points and no collider -- please add a grab point or collider.");
+
+                }
+
             }
 
             // Create a default grab point
-            m_grabPoints = new Collider[1] { collider };
+            if (collider != null)
+                m_grabPoints = new Collider[1] { collider };
         }
     }
 
     protected virtual void Start()
     {
-        m_grabbedKinematic = GetComponent<Rigidbody>().isKinematic;
+        Rigidbody rigidbodyToUse = GetComponent<Rigidbody>();
+
+        if (rigidbodyToUse == null)
+        {
+            rigidbodyToUse = m_optionalExternalRigidbody;
+        }
+
+        m_grabbedKinematic = rigidbodyToUse.isKinematic;
+
     }
 
     void OnDestroy()
