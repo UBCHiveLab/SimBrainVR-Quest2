@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Specimens List
   m_EditorClassIdentifier: 
   specimens:
-  - _id:
+  - localPrefab: {fileID: 2187646083324036811, guid: 82a12f120d9d29845b1dbd3a1e9700a1, type: 3}
+    _id:
       dummyId: 60d26979a709c215909e49ba
     id: l4lungswithtrachea
     name: Lungs with Bronchi and Trachea
@@ -221,7 +222,8 @@ MonoBehaviour:
         y: 2.109999656677246
         z: 7.179999828338623
         global: 0
-  - _id:
+  - localPrefab: {fileID: 5040669567350904056, guid: 5c63dd99809934d7fb78a7576550a735, type: 3}
+    _id:
       dummyId: 60d26979a709c215909e49bb
     id: Brain Optic
     name: Brain showing optic radiations
@@ -371,7 +373,8 @@ MonoBehaviour:
         y: -8.460959434509277
         z: -16.450401306152344
         global: 0
-  - _id:
+  - localPrefab: {fileID: 176324375181645931, guid: 231f85d841e244dba81c32fa02c26aef, type: 3}
+    _id:
       dummyId: 60d26979a709c215909e49bd
     id: brainstem_with_trochlear_nerve
     name: Brainstem with Trochlear Nerve
@@ -417,7 +420,8 @@ MonoBehaviour:
         y: -6.932758808135986
         z: -14.095842361450195
         global: 0
-  - _id:
+  - localPrefab: {fileID: 2453265607668957251, guid: f3ec637f5f67149ef9f976743dcfdde4, type: 3}
+    _id:
       dummyId: 60d26979a709c215909e49bf
     id: hand_bones
     name: Hand Bones
@@ -575,7 +579,8 @@ MonoBehaviour:
         y: 85.4000015258789
         z: -33.099998474121094
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49c2
     id: brainstem_with_circle_of_willis
     name: Brainstem with Circle of Willis
@@ -749,7 +754,8 @@ MonoBehaviour:
         y: -23.703968048095703
         z: 13.814043045043944
         global: 0
-  - _id:
+  - localPrefab: {fileID: 8141917236672102146, guid: 1b9086cde571a496f94f6d715e7bf392, type: 3}
+    _id:
       dummyId: 60d26979a709c215909e49c9
     id: Hand
     name: Hand
@@ -908,7 +914,8 @@ MonoBehaviour:
         y: 11.925776481628418
         z: -8.473529815673828
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49d9
     id: rightlung01
     name: Right Lung #1
@@ -1051,7 +1058,8 @@ MonoBehaviour:
         y: -5.028450012207031
         z: 4.814229488372803
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49db
     id: vertebraeribs01
     name: Thoracic vertebrae with ribs
@@ -1141,7 +1149,8 @@ MonoBehaviour:
         y: -41.69965744018555
         z: 56.635589599609375
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49ec
     id: ulna01
     name: Ulna
@@ -1228,7 +1237,8 @@ MonoBehaviour:
         y: -135.05999755859375
         z: 16.15999984741211
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49f2
     id: heart02
     name: Heart with Aorta
@@ -1406,7 +1416,8 @@ MonoBehaviour:
         y: -4.497408390045166
         z: 1.149999976158142
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a0e
     id: head_cranial_nerves
     name: Cranial Nerves in Skull
@@ -1420,7 +1431,8 @@ MonoBehaviour:
     scale: 0.002
     yPos: 0.06
     annotations: []
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49c0
     id: hand_and_forearm
     name: Hand and Forearm
@@ -1442,7 +1454,8 @@ MonoBehaviour:
         y: 195
         z: 4.165251731872559
         global: 1
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49cf
     id: brain01
     name: Brain #1
@@ -1489,7 +1502,8 @@ MonoBehaviour:
         y: 0
         z: 0.125
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49d7
     id: midsagitalhead02
     name: Midsagital Head
@@ -1689,7 +1703,8 @@ MonoBehaviour:
         y: -133.25
         z: 10.649999618530272
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a01
     id: foregutorgans
     name: Foregut organs
@@ -1919,7 +1934,8 @@ MonoBehaviour:
         y: -13.672633171081545
         z: -5.281394958496094
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49c5
     id: expandedSkull
     name: Expanded Skull
@@ -1943,7 +1959,8 @@ MonoBehaviour:
         y: 9.261672973632812
         z: -8.940842628479004
         global: 1
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49c6
     id: Infratemporal_Fossa
     name: Infratemporal Fossa
@@ -2045,7 +2062,8 @@ MonoBehaviour:
         y: 1.5107078552246094
         z: -38.4229736328125
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49ce
     id: pectoralGirdle2
     name: Pectoral Girdle
@@ -2059,7 +2077,8 @@ MonoBehaviour:
     scale: 1
     yPos: 0
     annotations: []
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49d6
     id: midsagitalhead01
     name: Midsagital Head #1
@@ -2073,7 +2092,8 @@ MonoBehaviour:
     scale: 0.25
     yPos: 0
     annotations: []
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49dd
     id: cervicalvertebra01
     name: C4 Vertebra
@@ -2202,7 +2222,8 @@ MonoBehaviour:
         y: 3.4506494998931885
         z: 0.050827980041503906
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49fd
     id: humanSkullWithMandible
     name: Human skull with mandible(calvarium cut)
@@ -2216,7 +2237,8 @@ MonoBehaviour:
     scale: 0.35
     yPos: 0
     annotations: []
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a05
     id: femalePelvis01
     name: Female Pelvis Sagittal
@@ -2398,7 +2420,8 @@ MonoBehaviour:
         y: -5.099999904632568
         z: -3.700000762939453
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49d1
     id: heart03
     name: Heart with Cardiomegaly
@@ -2583,7 +2606,8 @@ MonoBehaviour:
         y: -0.9544010162353516
         z: -8.527099609375
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49de
     id: posteriorthoracicwall01
     name: Posterior Thoracic Wall
@@ -2657,7 +2681,8 @@ MonoBehaviour:
         y: -27.32105255126953
         z: -126.49608612060548
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49e3
     id: femur01
     name: Femur
@@ -2791,7 +2816,8 @@ MonoBehaviour:
         y: -28.299999237060547
         z: 26.799999237060547
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49f7
     id: kidneyProsection1
     name: Kidney Prosection
@@ -2901,7 +2927,8 @@ MonoBehaviour:
         y: -143.6999969482422
         z: 94.1999969482422
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49d3
     id: brainstem_and_cranial_nerves
     name: Brainstem and Cranial Nerves
@@ -2915,7 +2942,8 @@ MonoBehaviour:
     scale: 0.004
     yPos: 0
     annotations: []
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49b9
     id: Infratemporalfossa4
     name: Infratemporal Fossa 4
@@ -2969,7 +2997,8 @@ MonoBehaviour:
         y: 11.878433227539062
         z: -3.8772144317626953
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49d8
     id: larynx
     name: Human Larynx
@@ -3095,7 +3124,8 @@ MonoBehaviour:
         y: -80.62001037597656
         z: 30.638580322265625
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49f0
     id: forearm01
     name: Forearm
@@ -3269,7 +3299,8 @@ MonoBehaviour:
         y: 71.99710083007812
         z: 12.11761474609375
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49fa
     id: deeplowerlimb
     name: Deep Lower Limb
@@ -3835,7 +3866,8 @@ MonoBehaviour:
         y: -9.692604064941406
         z: -0.9780864715576172
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a0b
     id: brainstem_and_cerebellum
     name: Brainstem and Cerebellum
@@ -3849,7 +3881,8 @@ MonoBehaviour:
     scale: 0.004
     yPos: 0.05
     annotations: []
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a0f
     id: brainsteamAndCranialNerves
     name: Brainstem and Cranial Nerves
@@ -3979,7 +4012,8 @@ MonoBehaviour:
         y: -69.64693450927734
         z: 2.8147997856140137
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49bc
     id: Brain Before Sections
     name: Brain Before Sections
@@ -4129,7 +4163,8 @@ MonoBehaviour:
         y: -40.858543395996094
         z: -4.537986755371094
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49cc
     id: pectoralGirdle1
     name: Rotator Cuff
@@ -4249,7 +4284,8 @@ MonoBehaviour:
         y: 24.55994033813477
         z: 21.214664459228516
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49ed
     id: liver_diaphragm
     name: Liver & Diaphragm
@@ -4391,7 +4427,8 @@ MonoBehaviour:
         y: 46.28346633911133
         z: 84.14115905761719
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49f6
     id: mediastinum and posterior thoracic wall(OSCE)
     name: Mediastinum and Posterior Thoracic Wall(OSCE)
@@ -4430,7 +4467,8 @@ MonoBehaviour:
         y: 3.737652063369751
         z: 1.6550099849700928
         global: 1
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a10
     id: superior_longitudinal_fasciculus
     name: Superior Longitudinal Fasciculus
@@ -4468,7 +4506,8 @@ MonoBehaviour:
         y: -20.40148544311523
         z: -14.907615661621094
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49d2
     id: skull01
     name: Skull #1
@@ -4482,7 +4521,8 @@ MonoBehaviour:
     scale: 0.4
     yPos: 0
     annotations: []
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49c1
     id: plastinated_hand
     name: Plastinated Hand
@@ -4665,7 +4705,8 @@ MonoBehaviour:
         y: -34.61299133300781
         z: 0.7529819011688232
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49df
     id: abdominalcavity01
     name: Abdominal Cavity
@@ -4889,7 +4930,8 @@ MonoBehaviour:
         y: 4.0722761154174805
         z: -1.5110000371932983
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49fe
     id: humanSkullWithoutcalvarium_highres
     name: High Resolution Human Skull (calvarium removed)
@@ -4903,7 +4945,8 @@ MonoBehaviour:
     scale: 0.35
     yPos: 0
     annotations: []
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a04
     id: malePelvis01
     name: Male Pelvis Sagittal
@@ -5117,7 +5160,8 @@ MonoBehaviour:
         y: -59.23309326171875
         z: -14.207698822021484
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a0a
     id: half_brain_with_brainstem
     name: Half brain With Brainstem
@@ -5278,7 +5322,8 @@ MonoBehaviour:
         y: -6.919999122619629
         z: 11.899999618530272
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49e4
     id: tibia01
     name: Tibia
@@ -5420,7 +5465,8 @@ MonoBehaviour:
         y: -83.33065032958984
         z: -0.4328346252441406
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49e7
     id: hipjoint01
     name: Hip Joint (superficial)
@@ -5562,7 +5608,8 @@ MonoBehaviour:
         y: -54.000831604003906
         z: 36.10902786254883
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49ea
     id: kneejoint02
     name: Knee Joint (patella removed)
@@ -5696,7 +5743,8 @@ MonoBehaviour:
         y: 0.22660000622272491
         z: -0.2818000018596649
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49ef
     id: radius01
     name: Radius
@@ -5785,7 +5833,8 @@ MonoBehaviour:
         y: -85.75
         z: 68
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49f4
     id: liverandgallbladder01
     name: Liver and Gallbladder
@@ -5967,7 +6016,8 @@ MonoBehaviour:
         y: -76.19999694824219
         z: 103.8000030517578
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49f5
     id: posterior_thoracic_wall_mediastinum_Oct13_2020
     name: Mediastinum and Posterior Thoracic Wall
@@ -6261,7 +6311,8 @@ MonoBehaviour:
         y: 0.7381324768066406
         z: -0.5313076376914978
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a08
     id: femalePelvisBroadLigament01
     name: Female Pelvis Broad Ligament
@@ -6491,7 +6542,8 @@ MonoBehaviour:
         y: -61.560001373291016
         z: 27.200000762939453
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a13
     id: visual_system_tracts
     name: Visual System Tracts (sketchfab)
@@ -6505,7 +6557,8 @@ MonoBehaviour:
     scale: 0.018
     yPos: 0.06
     annotations: []
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a16
     id: holobrain_limbic_system
     name: Holobrain Limbic System (Sketchfab)
@@ -6519,7 +6572,8 @@ MonoBehaviour:
     scale: 1
     yPos: 0
     annotations: []
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a17
     id: limbic_system
     name: Limbic System
@@ -6701,7 +6755,8 @@ MonoBehaviour:
         y: -11.870353698730469
         z: 23.72315788269043
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49dc
     id: thoracicvertebra01
     name: Thoracic Vertebra
@@ -6805,7 +6860,8 @@ MonoBehaviour:
         y: 10.76090145111084
         z: 3.289999485015869
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49fb
     id: superficial_lowerlimb
     name: Superficial Lower Limb
@@ -7131,7 +7187,8 @@ MonoBehaviour:
         y: 421.74560546875
         z: 54.88262939453125
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a00
     id: mandible
     name: Mandible
@@ -7225,7 +7282,8 @@ MonoBehaviour:
         y: 55.31999969482422
         z: 24.2500057220459
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a02
     id: posterior_abdominal_wall
     name: Posterior Abdominal Wall
@@ -7706,7 +7764,8 @@ MonoBehaviour:
         y: -0.8784244656562805
         z: -4.065796852111816
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a0c
     id: brainstem
     name: Brainstem
@@ -7720,7 +7779,8 @@ MonoBehaviour:
     scale: 0.005
     yPos: 0.06
     annotations: []
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a18
     id: deep_neck_and_pharynx
     name: Deep Neck and Pharynx (Sketchfab)
@@ -7734,7 +7794,8 @@ MonoBehaviour:
     scale: 1
     yPos: 0
     annotations: []
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49b7
     id: anteriorthoracicwall01
     name: Anterior Thoracic Wall
@@ -7901,7 +7962,8 @@ MonoBehaviour:
         y: -55.41516876220703
         z: -40.27163314819336
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49d4
     id: flexedknee01
     name: Flexed Knee #1
@@ -7915,7 +7977,8 @@ MonoBehaviour:
     scale: 2
     yPos: 0
     annotations: []
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49f1
     id: brain02
     name: Plastinated Brain
@@ -8104,7 +8167,8 @@ MonoBehaviour:
         y: -4.219971179962158
         z: -9.71027374267578
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49cb
     id: humerus1
     name: Humerus
@@ -8281,7 +8345,8 @@ MonoBehaviour:
         y: -125.98999786376952
         z: 5.8429951667785645
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49c7
     id: Infratemporalfossa3
     name: Infratemporal Fossa 3
@@ -8415,7 +8480,8 @@ MonoBehaviour:
         y: 33.71391296386719
         z: 32.64958190917969
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49d0
     id: heart01
     name: Heart
@@ -8703,7 +8769,8 @@ MonoBehaviour:
         y: 8.05525016784668
         z: -4.089606285095215
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49e1
     id: androidpelvis01
     name: Android Pelvis
@@ -8893,7 +8960,8 @@ MonoBehaviour:
         y: 8.758806228637695
         z: 3.8396902084350586
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49f8
     id: wholeHumanKidney1
     name: Whole Human Kidney
@@ -8947,7 +9015,8 @@ MonoBehaviour:
         y: 20.280000686645508
         z: 22.479999542236328
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a14
     id: circle_of_willis
     name: Circle of Willis (sketchfab)
@@ -8961,7 +9030,8 @@ MonoBehaviour:
     scale: 0.018
     yPos: 0.06
     annotations: []
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a19
     id: bisected_head_and_larynx
     name: Bisected Head and Larynx (Sketchfab)
@@ -8975,7 +9045,8 @@ MonoBehaviour:
     scale: 1
     yPos: 0
     annotations: []
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49b8
     id: Infratemporalfossa2
     name: Infratemporal Fossa 2
@@ -9101,7 +9172,8 @@ MonoBehaviour:
         y: 7.925205230712891
         z: -4.986575126647949
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49c4
     id: branchplex1
     name: Posterior Shoulder
@@ -9201,7 +9273,8 @@ MonoBehaviour:
         y: -31.955625534057617
         z: 2.269576072692871
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49be
     id: Cavernous Sinus
     name: Cavernous Sinus
@@ -9419,7 +9492,8 @@ MonoBehaviour:
         y: -20.796571731567383
         z: -25.10527801513672
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49c3
     id: leftlung01
     name: Left Lung
@@ -9554,7 +9628,8 @@ MonoBehaviour:
         y: -17.916526794433594
         z: -2.9685564041137695
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49c8
     id: Elbow
     name: Elbow
@@ -9720,7 +9795,8 @@ MonoBehaviour:
         y: 12.061863899230955
         z: 19.57408332824707
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49ca
     id: branchplex2
     name: Brachial Plexus
@@ -9924,7 +10000,8 @@ MonoBehaviour:
         y: -12.310022354125977
         z: -18.95049285888672
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49eb
     id: articulatedknee01
     name: Articulated Knee (IMP specimen)
@@ -9952,7 +10029,8 @@ MonoBehaviour:
         y: 0
         z: 0
         global: 1
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49ee
     id: foot01
     name: Ankle and Foot
@@ -10134,7 +10212,8 @@ MonoBehaviour:
         y: 32.72999954223633
         z: 28.290000915527344
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49ff
     id: calvarium
     name: Calvarium
@@ -10223,7 +10302,8 @@ MonoBehaviour:
         y: -12.796975135803224
         z: -9.421688079833984
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a15
     id: orbit_dissection
     name: Orbit Dissection
@@ -10253,7 +10333,8 @@ MonoBehaviour:
         y: 7.967353343963623
         z: -21.056089401245117
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49cd
     id: scapula1
     name: Scapula
@@ -10389,7 +10470,8 @@ MonoBehaviour:
         y: 87.2300033569336
         z: -18.90859603881836
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49e0
     id: rib01
     name: Rib
@@ -10492,7 +10574,8 @@ MonoBehaviour:
         y: -36.87321472167969
         z: 24.33841896057129
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49e2
     id: Sacrum
     name: Sacrum
@@ -10635,7 +10718,8 @@ MonoBehaviour:
         y: 19.73921585083008
         z: -3.5423402786254883
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49f3
     id: heart02(OSCE)
     name: Heart with Aorta(OSCE)
@@ -10673,7 +10757,8 @@ MonoBehaviour:
         y: 0
         z: 0
         global: 1
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a06
     id: femalePelvis02
     name: Female Pelvis & Perineum
@@ -10903,7 +10988,8 @@ MonoBehaviour:
         y: -50.56999969482422
         z: 59.13999938964844
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a07
     id: femalePelvisViscera01
     name: Female Pelvis Viscera
@@ -11179,7 +11265,8 @@ MonoBehaviour:
         y: 1.3076534271240234
         z: 4.009195327758789
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a09
     id: circle_of_Willis_in_situ
     name: Circle of Willis
@@ -11256,7 +11343,8 @@ MonoBehaviour:
         y: 0.22200000286102295
         z: -2.510000228881836
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a0d
     id: cerebellum
     name: Cerebellum
@@ -11270,7 +11358,8 @@ MonoBehaviour:
     scale: 0.005
     yPos: 0.05
     annotations: []
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a12
     id: brain_commissural_fibres
     name: Brain Commissural Fibres
@@ -11364,7 +11453,8 @@ MonoBehaviour:
         y: -28.72244644165039
         z: -18.37099838256836
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49e5
     id: fibula01
     name: Fibula
@@ -11426,7 +11516,8 @@ MonoBehaviour:
         y: -158.1999969482422
         z: -8.500003814697266
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49d5
     id: suspendedkidney01
     name: Kidney (Suspended) #1
@@ -11440,7 +11531,8 @@ MonoBehaviour:
     scale: 0.25
     yPos: 0
     annotations: []
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49e8
     id: hipjoint02
     name: Hip Joint (deep)
@@ -11558,7 +11650,8 @@ MonoBehaviour:
         y: -18.170000076293945
         z: -11.1400146484375
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49fc
     id: humanSkullWithoutcalvarium_lowres
     name: Human Skull (calvarium removed)
@@ -11572,7 +11665,8 @@ MonoBehaviour:
     scale: 0.35
     yPos: 0
     annotations: []
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a03
     id: abdominalcavity02
     name: Abdominal Cavity 2
@@ -11852,7 +11946,8 @@ MonoBehaviour:
         y: 4.092385292053223
         z: -2.8353967666625977
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49da
     id: lumbarvertbra01
     name: L3 Vertbra
@@ -11949,7 +12044,8 @@ MonoBehaviour:
         y: -11.311187744140623
         z: 3.2390642166137695
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49e6
     id: footbones01
     name: Foot Bones
@@ -12307,7 +12403,8 @@ MonoBehaviour:
         y: 32.94459533691406
         z: -140.39535522460938
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49e9
     id: kneejoint01
     name: Knee Joint
@@ -12441,7 +12538,8 @@ MonoBehaviour:
         y: -3.7300009727478023
         z: 0.7100000381469727
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e49f9
     id: intermediateLowerLimb01
     name: Intermediate Lower Limb
@@ -12887,7 +12985,8 @@ MonoBehaviour:
         y: -478.15631103515625
         z: 104.24169921875
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 60d26979a709c215909e4a11
     id: brain_optic_tracts
     name: Brain Subcortical Fibres
@@ -12941,7 +13040,8 @@ MonoBehaviour:
         y: 1.7500009536743164
         z: -5.840001106262207
         global: 0
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 621d63fb88b1700d7bb6e1ea
     id: intermediateLowerLimb01(OSCE)
     name: Intermediate Lower Limb (OSCE)
@@ -12997,7 +13097,8 @@ MonoBehaviour:
         y: 0
         z: 0
         global: 1
-  - _id:
+  - localPrefab: {fileID: 0}
+    _id:
       dummyId: 621d67d688b1700d7bb6e1f1
     id: posterior_abdominal_wall(OSCE)
     name: Posterior Abdominal Wall (OSCE)

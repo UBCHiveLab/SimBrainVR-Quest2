@@ -7,6 +7,7 @@ using UnityEngine.Events;
 [System.Serializable]
 public class SpecimenData_New
 {
+    public GameObject localPrefab = default;
     public SpecimenData_DummyIdString _id;
     public string id;
     public string name;

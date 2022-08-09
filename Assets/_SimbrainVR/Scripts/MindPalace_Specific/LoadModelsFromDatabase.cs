@@ -18,17 +18,18 @@ struct AnnotationData2
 
 public class LoadModelsFromDatabase : MonoBehaviour
 {
-    
+
     //public string assetUrl = "https://hivemodelstorage.blob.core.windows.net/win/handbones";
     //public string prefabPath = "Assets/Models/Specimens/AssetBundles/HandBones.prefab";
     //public string annotationID = "hand_bones"; //Infratemporalfossa2, l4lungswithtrachea, "Brain Optic", "Brain before Sections", hand_and_forearm
 
+    public SpecimensListSO specimensListSO = default;
     public Transform spawnLocation;
     public Vector3 randomAreaAroundSpawnLocation = Vector3.one;
     public float minYPositionAfterSpawning = 0f;
 
     public bool addRigidbodyAfterSpawning = true;
-    public bool addMeshColliderToParentAfterSpawning = true;
+    public bool addBoxColliderToParentAfterSpawning = true;
     public bool destroyMeshColliderOnChildAfterSpawning = true;
     public bool addGrabbableAsChild = true;
     public DistanceGrabbable_Expanded grabbablePrefab = default;
@@ -119,19 +120,19 @@ public class LoadModelsFromDatabase : MonoBehaviour
                             newRigidbody.useGravity = false;
                         }
 
-                        MeshCollider newMeshCollider = null;
+                        BoxCollider newBoxCollider = null;
 
-                        if (addMeshColliderToParentAfterSpawning)
+                        if (addBoxColliderToParentAfterSpawning)
                         {
-                            newMeshCollider = spawnedObject.AddComponent<MeshCollider>();
-
+                            newBoxCollider = spawnedObject.AddComponent<BoxCollider>();
+                            //newBoxCollider.transform.localScale *= 0.15f;
                         }
 
                         if (addGrabbableAsChild)
                         {
                             DistanceGrabbable_Expanded grabbable = Instantiate(grabbablePrefab, spawnedObject.transform);
 
-                            grabbable.optionalExternalCollider = newMeshCollider;
+                            grabbable.optionalExternalCollider = newBoxCollider;
                             grabbable.optionalExternalRigidbody = newRigidbody;
 
                             grabbable.enabled = true;
@@ -149,7 +150,112 @@ public class LoadModelsFromDatabase : MonoBehaviour
         }
 
     }
+    public IEnumerator SpawnLocalPrefabCoroutine(SpecimenData_New specimenData)
+    {
+        //used with local prefabs that don't need to be downloaded at runtime
 
+        yield return new WaitForSeconds(0.1f); // Allows animations to run without hiccuping
+
+        GameObject spawnedObject = Instantiate(specimenData.localPrefab, spawnLocation.position, spawnLocation.rotation);
+
+        Debug.Log("specimen spawned " + spawnedObject.name);
+
+        spawnedObject.transform.localScale = (float)specimenData.scale * Vector3.one;
+
+        Vector3 randomOffset = UnityEngine.Random.insideUnitSphere;
+
+        Vector3 newPosition = spawnLocation.position + new Vector3(randomOffset.x * randomAreaAroundSpawnLocation.x, randomOffset.y * randomAreaAroundSpawnLocation.y, randomOffset.z * randomAreaAroundSpawnLocation.z);
+
+        newPosition.y = Mathf.Max(minYPositionAfterSpawning, newPosition.y);
+
+        spawnedObject.transform.position = newPosition;
+        //spawnedObject.transform.position = new Vector3(2.055f, 1.7352f, -0.956f);
+
+
+        //adjust components structure:
+
+        if (destroyMeshColliderOnChildAfterSpawning)
+        {
+            MeshCollider meshCollider = spawnedObject.GetComponentInChildren<MeshCollider>();
+
+            Destroy(meshCollider);
+
+        }
+
+        Rigidbody newRigidbody = null;
+
+        if (addRigidbodyAfterSpawning)
+        {
+            newRigidbody = spawnedObject.AddComponent<Rigidbody>();
+            newRigidbody.isKinematic = true;
+            newRigidbody.useGravity = false;
+        }
+
+        BoxCollider newBoxCollider = null;
+
+        if (addBoxColliderToParentAfterSpawning)
+        {
+            newBoxCollider = spawnedObject.AddComponent<BoxCollider>();
+            newBoxCollider.size = new Vector3(
+                (0.15f / newBoxCollider.transform.lossyScale.x),
+                (0.15f / newBoxCollider.transform.lossyScale.y),
+                (0.15f / newBoxCollider.transform.lossyScale.z)
+                )
+                ;
+            //newBoxCollider.transform.localScale *= 0.15f;
+            //find current global scale and do math to set scale = 0.15f;
+        }
+
+        if (addGrabbableAsChild)
+        {
+            DistanceGrabbable_Expanded grabbable = Instantiate(grabbablePrefab, spawnedObject.transform);
+
+            grabbable.transform.localScale = new Vector3(
+                (0.15f / grabbable.transform.lossyScale.x),
+                (0.15f / grabbable.transform.lossyScale.y),
+                (0.15f / grabbable.transform.lossyScale.z)
+                )
+                ;
+
+            grabbable.optionalExternalCollider = newBoxCollider;
+            grabbable.optionalExternalRigidbody = newRigidbody;
+
+            grabbable.enabled = true;
+        }
+
+
+    }
+
+    public void SpawnModelByIndex(int index)
+    {
+        if (specimensListSO == null)
+            return;
+
+        if (specimensListSO.specimens.Count == 0)
+            return;
+
+
+        SpecimenData_New specimen = specimensListSO.specimens[index];
+
+        Debug.Log("requesting spawn for " + specimen.name);
+
+        StartCoroutine(SpawnLocalPrefabCoroutine(specimen));
+    }
+    public void SpawnFirstModelInList(SpecimensListSO specimensList)
+    {
+        if (specimensList == null)
+            return;
+
+        if (specimensList.specimens.Count == 0)
+            return;
+
+
+        SpecimenData_New specimen = specimensList.specimens[1];
+
+        Debug.Log("requesting spawn for " + specimen.name);
+
+        StartCoroutine(SpawnLocalPrefabCoroutine(specimen));
+    }
     public void SpawnRandomModel(SpecimensListSO specimensList)
     {
         if (specimensList == null)
