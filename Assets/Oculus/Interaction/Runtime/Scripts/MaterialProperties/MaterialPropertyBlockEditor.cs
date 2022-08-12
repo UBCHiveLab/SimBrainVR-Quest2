@@ -144,6 +144,9 @@ namespace Oculus.Interaction
 
         public void UpdateMaterialPropertyBlock()
         {
+            if (_renderers == null)
+                return;
+
             var materialPropertyBlock = MaterialPropertyBlock;
 
             if (_vectorProperties != null)
