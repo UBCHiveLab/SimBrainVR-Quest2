@@ -1237,7 +1237,7 @@ MonoBehaviour:
         y: -135.05999755859375
         z: 16.15999984741211
         global: 0
-  - localPrefab: {fileID: 0}
+  - localPrefab: {fileID: 8074400544167167357, guid: 11b9496dd6d61d64386f366b9ff207a6, type: 3}
     _id:
       dummyId: 60d26979a709c215909e49f2
     id: heart02
@@ -1416,7 +1416,7 @@ MonoBehaviour:
         y: -4.497408390045166
         z: 1.149999976158142
         global: 0
-  - localPrefab: {fileID: 0}
+  - localPrefab: {fileID: 1840883120668063319, guid: 44414a2a4a0174bfdba9e8abd952809d, type: 3}
     _id:
       dummyId: 60d26979a709c215909e4a0e
     id: head_cranial_nerves
