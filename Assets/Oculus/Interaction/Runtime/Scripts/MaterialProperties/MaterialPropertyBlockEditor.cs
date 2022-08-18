@@ -177,7 +177,8 @@ namespace Oculus.Interaction
             {
                 foreach (Renderer renderer in _renderers)
                 {
-                    renderer.SetPropertyBlock(materialPropertyBlock);
+                    if (renderer != null)
+                        renderer.SetPropertyBlock(materialPropertyBlock);
                 }
             }
         }
