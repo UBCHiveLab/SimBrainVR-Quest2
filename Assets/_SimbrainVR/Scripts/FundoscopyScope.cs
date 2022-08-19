@@ -18,7 +18,7 @@ public class FundoscopyScope : MonoBehaviour
     public LayerMask everything, onlyFundoscopy;
     public GameObject humanoidPatient, genericPatient;
 
-    bool inputB;
+    bool isScopeOn;
 
     public Vector3 humanoidEyePos = new Vector3(-4.5397f, 1.5806f, 0.8153f);
     public Vector3 genericPatientEyePos = new Vector3(0, 0, 0);
@@ -30,13 +30,8 @@ public class FundoscopyScope : MonoBehaviour
 
     void Update()
     {
-        if (OVRInput.GetDown(OVRInput.RawButton.B))
-        {
-            inputB = !inputB;
-            Display.SetActive(inputB);
-        }
 
-        if (inputB) //if it's turned on
+        if (isScopeOn) //if it's turned on
         {
             //retina images should only be visible to the camera layer.
             if (retinaTrigger.isLeft)
@@ -72,6 +67,12 @@ public class FundoscopyScope : MonoBehaviour
             retinaCamera.cullingMask = everything;
         }
         
+    }
+
+    public void ToggleScope(bool state)
+    {
+        isScopeOn = state;
+        Display.SetActive(state);
     }
 
     IEnumerator CheckHumanoidPos()
