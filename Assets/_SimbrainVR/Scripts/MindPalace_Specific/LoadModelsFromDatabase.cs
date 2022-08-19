@@ -28,11 +28,7 @@ public class LoadModelsFromDatabase : MonoBehaviour
     public Vector3 randomAreaAroundSpawnLocation = Vector3.one;
     public float minYPositionAfterSpawning = 0f;
 
-    public bool addRigidbodyAfterSpawning = true;
-    public bool addBoxColliderToParentAfterSpawning = true;
-    public bool destroyMeshColliderOnChildAfterSpawning = true;
-    public bool addGrabbableAsChild = true;
-    public DistanceGrabbable_Expanded grabbablePrefab = default;
+    public Oculus.Interaction.Grabbable handTrackingGrabbablePrefab = default;
 
     //public Vector3 scaleOnSpawn = new Vector3(0.0025f, 0.0025f, 0.0025f);
     //public GameObject annotationLabelPrefab;
@@ -85,7 +81,11 @@ public class LoadModelsFromDatabase : MonoBehaviour
                         }
                         */
 
-                        GameObject spawnedObject = Instantiate(remoteModelPrefab, spawnLocation.position, spawnLocation.rotation);
+                        GameObject spawnedHandGrabbable = Instantiate(handTrackingGrabbablePrefab.gameObject, spawnLocation.position, spawnLocation.rotation);
+
+                        Transform parentForVisuals = spawnedHandGrabbable.GetComponentInChildren<Transform_Reference>().TransformFromRef;
+
+                        GameObject spawnedObject = Instantiate(remoteModelPrefab, parentForVisuals.position, parentForVisuals.rotation, parentForVisuals);
 
                         Debug.Log("specimen spawned " + spawnedObject.name);
 
@@ -97,47 +97,13 @@ public class LoadModelsFromDatabase : MonoBehaviour
 
                         newPosition.y = Mathf.Max(minYPositionAfterSpawning, newPosition.y);
 
-                        spawnedObject.transform.position = newPosition;
+                        spawnedHandGrabbable.transform.position = newPosition;
+
+                        //spawnedObject.transform.position = newPosition;
                         //spawnedObject.transform.position = new Vector3(2.055f, 1.7352f, -0.956f);
 
 
-                        //adjust components structure:
-                                                
-                        if (destroyMeshColliderOnChildAfterSpawning)
-                        {
-                            MeshCollider meshCollider = spawnedObject.GetComponentInChildren<MeshCollider>();
-
-                            Destroy(meshCollider);
-
-                        }
-
-                        Rigidbody newRigidbody = null;
-
-                        if (addRigidbodyAfterSpawning)
-                        {
-                            newRigidbody = spawnedObject.AddComponent<Rigidbody>();
-                            newRigidbody.isKinematic = true;
-                            newRigidbody.useGravity = false;
-                        }
-
-                        BoxCollider newBoxCollider = null;
-
-                        if (addBoxColliderToParentAfterSpawning)
-                        {
-                            newBoxCollider = spawnedObject.AddComponent<BoxCollider>();
-                            //newBoxCollider.transform.localScale *= 0.15f;
-                        }
-
-                        if (addGrabbableAsChild)
-                        {
-                            DistanceGrabbable_Expanded grabbable = Instantiate(grabbablePrefab, spawnedObject.transform);
-
-                            grabbable.optionalExternalCollider = newBoxCollider;
-                            grabbable.optionalExternalRigidbody = newRigidbody;
-
-                            grabbable.enabled = true;
-                        }
-
+                        spawnedHandGrabbable.gameObject.SetActive(true);
                     }
 
                 }
@@ -156,7 +122,11 @@ public class LoadModelsFromDatabase : MonoBehaviour
 
         yield return new WaitForSeconds(0.1f); // Allows animations to run without hiccuping
 
-        GameObject spawnedObject = Instantiate(specimenData.localPrefab, spawnLocation.position, spawnLocation.rotation);
+        GameObject spawnedHandGrabbable = Instantiate(handTrackingGrabbablePrefab.gameObject, spawnLocation.position, spawnLocation.rotation);
+
+        Transform parentForVisuals = spawnedHandGrabbable.GetComponentInChildren<Transform_Reference>().TransformFromRef;
+
+        GameObject spawnedObject = Instantiate(specimenData.localPrefab, parentForVisuals.position, parentForVisuals.rotation, parentForVisuals);
 
         Debug.Log("specimen spawned " + spawnedObject.name);
 
@@ -168,61 +138,12 @@ public class LoadModelsFromDatabase : MonoBehaviour
 
         newPosition.y = Mathf.Max(minYPositionAfterSpawning, newPosition.y);
 
-        spawnedObject.transform.position = newPosition;
+        spawnedHandGrabbable.transform.position = newPosition;
+
+        //spawnedObject.transform.position = newPosition;
         //spawnedObject.transform.position = new Vector3(2.055f, 1.7352f, -0.956f);
 
-
-        //adjust components structure:
-
-        if (destroyMeshColliderOnChildAfterSpawning)
-        {
-            MeshCollider meshCollider = spawnedObject.GetComponentInChildren<MeshCollider>();
-
-            Destroy(meshCollider);
-
-        }
-
-        Rigidbody newRigidbody = null;
-
-        if (addRigidbodyAfterSpawning)
-        {
-            newRigidbody = spawnedObject.AddComponent<Rigidbody>();
-            newRigidbody.isKinematic = true;
-            newRigidbody.useGravity = false;
-        }
-
-        BoxCollider newBoxCollider = null;
-
-        if (addBoxColliderToParentAfterSpawning)
-        {
-            newBoxCollider = spawnedObject.AddComponent<BoxCollider>();
-            newBoxCollider.size = new Vector3(
-                (0.15f / newBoxCollider.transform.lossyScale.x),
-                (0.15f / newBoxCollider.transform.lossyScale.y),
-                (0.15f / newBoxCollider.transform.lossyScale.z)
-                )
-                ;
-            //newBoxCollider.transform.localScale *= 0.15f;
-            //find current global scale and do math to set scale = 0.15f;
-        }
-
-        if (addGrabbableAsChild)
-        {
-            DistanceGrabbable_Expanded grabbable = Instantiate(grabbablePrefab, spawnedObject.transform);
-
-            grabbable.transform.localScale = new Vector3(
-                (0.15f / grabbable.transform.lossyScale.x),
-                (0.15f / grabbable.transform.lossyScale.y),
-                (0.15f / grabbable.transform.lossyScale.z)
-                )
-                ;
-
-            grabbable.optionalExternalCollider = newBoxCollider;
-            grabbable.optionalExternalRigidbody = newRigidbody;
-
-            grabbable.enabled = true;
-        }
-
+        spawnedHandGrabbable.gameObject.SetActive(true);
 
     }
 
