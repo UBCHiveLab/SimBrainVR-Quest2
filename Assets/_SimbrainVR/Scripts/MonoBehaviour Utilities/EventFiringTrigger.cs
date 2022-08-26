@@ -117,4 +117,10 @@ public class EventFiringTrigger : MonoBehaviour
         return (validLayers == (validLayers | (1 << rigidbody.gameObject.layer)));
     }
 
+    public void SetOnTriggerStay(bool newValue)
+    {
+        useTriggerStay = newValue;
+
+    }
+
 }

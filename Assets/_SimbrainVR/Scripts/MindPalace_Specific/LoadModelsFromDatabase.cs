@@ -27,8 +27,11 @@ public class LoadModelsFromDatabase : MonoBehaviour
     public Transform spawnLocation;
     public Vector3 randomAreaAroundSpawnLocation = Vector3.one;
     public float minYPositionAfterSpawning = 0f;
-
+    
     public Oculus.Interaction.Grabbable handTrackingGrabbablePrefab = default;
+    
+    public bool forceNewPhysicsLayerForObjectSpawned = false;
+    public string newPhysicsLayerForObjectSpawned = "PinInteractible";
 
     //public Vector3 scaleOnSpawn = new Vector3(0.0025f, 0.0025f, 0.0025f);
     //public GameObject annotationLabelPrefab;
@@ -123,6 +126,9 @@ public class LoadModelsFromDatabase : MonoBehaviour
         yield return new WaitForSeconds(0.1f); // Allows animations to run without hiccuping
 
         GameObject spawnedHandGrabbable = Instantiate(handTrackingGrabbablePrefab.gameObject, spawnLocation.position, spawnLocation.rotation);
+
+        if (forceNewPhysicsLayerForObjectSpawned)
+            spawnedHandGrabbable.layer = LayerMask.NameToLayer(newPhysicsLayerForObjectSpawned);
 
         Transform parentForVisuals = spawnedHandGrabbable.GetComponentInChildren<Transform_Reference>().TransformFromRef;
 
