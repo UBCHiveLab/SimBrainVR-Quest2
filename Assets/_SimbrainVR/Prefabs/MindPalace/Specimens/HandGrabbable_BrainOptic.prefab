@@ -1366,7 +1366,7 @@ GameObject:
   - component: {fileID: 8580307722448229154}
   - component: {fileID: 1551646519691236562}
   - component: {fileID: 71988361970829675}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HandGrabbable_BrainOptic
   m_TagString: Untagged
   m_Icon: {fileID: 0}

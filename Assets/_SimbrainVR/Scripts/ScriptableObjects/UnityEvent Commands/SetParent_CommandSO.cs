@@ -23,10 +23,26 @@ public class SetParent_CommandSO : ScriptableObject
         {
             objectToChild.SetParent(nextParent, worldPositionStays);
 
-            objectToChild.localPosition = newLocalPosition;
+            if (forceNewLocalPosition)
+                objectToChild.localPosition = newLocalPosition;
 
         }
 
         nextParent = null;
     }
+    public void ParentFirstRigidbodyToSecondRigidbody(Collider collider1, Collider collider2)
+    {
+        if (collider1.attachedRigidbody == null)
+            return;
+
+        if (collider2.attachedRigidbody == null)
+            return;
+
+        Transform newChild = collider1.attachedRigidbody.transform;
+        Transform newParent = collider2.attachedRigidbody.transform;
+
+        SetParentParameterForNextCommand(newParent);
+        Activate(newChild);
+    }
+
 }
