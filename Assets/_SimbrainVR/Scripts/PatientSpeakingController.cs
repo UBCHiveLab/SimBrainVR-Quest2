@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PatientDialogueOption { WhatHappened, MedicalHistory, Medication, Allergies, DrinkSmokeDrugs, FamilyHistory, FamilyMember, GenericReply }
+
 //controls patient speech as well as walking beahviors
 public class PatientSpeakingController : MonoBehaviour
 {
@@ -36,7 +38,7 @@ public class PatientSpeakingController : MonoBehaviour
                 //SpeakAnimation(7.9f);
                 _animator.Play("PatientWhatHappened");
                 dialogueBox.SetActive(true);
-                dialogueBox.GetComponent<Dialogue>().TypeSpecificLine("I have double vision and can’t open my eye. My eye is stuck in this position. Also.... I have worst headache of my life. ");
+                dialogueBox.GetComponent<Dialogue>().TypeSpecificLine("I'm here as the volunteer patient. I heard that you'll be doing the motor reflex test, checking my eyes and pupils today. ");
                 break;
             case PatientDialogueOption.MedicalHistory:
                 SoundManager.Instance.PlaySound(SoundManager.Instance.patientMedicalHistory);
@@ -82,12 +84,25 @@ public class PatientSpeakingController : MonoBehaviour
                 dialogueBox.GetComponent<Dialogue>().TypeSpecificLine("I live with my husband.");
                 break;
 
-            case PatientDialogueOption.DontKnow:
-                SoundManager.Instance.PlaySound(SoundManager.Instance.patientDontKnow);
+            case PatientDialogueOption.GenericReply:
+                int randVal = Random.Range(1, 3);
+                print(randVal + " generated randomly");
+                if(randVal == 1)
+                {
+                    SoundManager.Instance.PlaySound(SoundManager.Instance.patientAlright);
+                }
+                else if(randVal == 2)
+                {
+                    SoundManager.Instance.PlaySound(SoundManager.Instance.patientOK);
+                }
+                else
+                {
+                    SoundManager.Instance.PlaySound(SoundManager.Instance.patientSureGoAhead);
+                }
+
                 if(_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name != "Idle") 
-                    SpeakAnimation(2.7f);
-                
-                
+                    SpeakAnimation(0.9f);
+
                 break;
 
             default:

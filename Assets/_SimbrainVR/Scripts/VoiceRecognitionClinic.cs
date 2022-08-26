@@ -230,12 +230,13 @@ public class VoiceRecognitionClinic : MonoBehaviour
 
                 if(message.Contains("mind palace"))
                 {
-                    //SceneManager.LoadScene(3);
+                    SceneManager.LoadScene(1);
+                    /*
                     var sceneLoading = GameObject.Find("SceneLoader").GetComponent<SceneLoading>();
                     if (sceneLoading != null)
                     {
                         sceneLoading.TransitionToMindPalace();
-                    }
+                    }*/
 
                 }else if (message.Contains("flashlight"))
                 {
@@ -266,12 +267,12 @@ public class VoiceRecognitionClinic : MonoBehaviour
                 else if (message.Contains("eric"))
                 {
 
-                    if(message.Contains("off") || message.Contains("light"))
+                    if(message.Contains("off"))
                     {
                         var eric = GameObject.Find("Eric_Nurse");
                         if (eric != null) eric.GetComponent<EricNurse>().ToggleLight(false);
                     }
-                    else if (message.Contains("on") || message.Contains("light"))
+                    else if (message.Contains("on"))
                     {
                         var eric = GameObject.Find("Eric_Nurse");
                         if (eric != null) eric.GetComponent<EricNurse>().ToggleLight(true);
@@ -322,11 +323,7 @@ public class VoiceRecognitionClinic : MonoBehaviour
                     patientHumanoid.SetActive(true);
                     patientExamMode.SetActive(false);
                 }
-                else if(message.Contains("start exam"))
-                {
-                    patientHumanoid.SetActive(false);
-                    patientExamMode.SetActive(true);
-                }
+                
 
                 if (patientSpeakingController.gameObject.activeSelf)
                 {
@@ -371,12 +368,15 @@ public class VoiceRecognitionClinic : MonoBehaviour
                         }
                         else if (hasSaidSomething)
                         {
-                            if (hasStartedAskingQuestions && (Time.time - talkingStartTime >= 10.5f))
+                            if (hasStartedAskingQuestions && (Time.time - talkingStartTime >= 5.5f))
                             {
                                 hasSaidSomething = false;
                                 talkingStartTime = Time.time;
                                 if (message.Length > 0)
-                                    patientSpeakingController.Speak(PatientDialogueOption.DontKnow);
+                                {
+                                    patientSpeakingController.Speak(PatientDialogueOption.GenericReply);
+
+                                }
                             }
 
                         }

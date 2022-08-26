@@ -186,7 +186,7 @@ public class MotorTest : MonoBehaviour  //perhaps rename handtest to something m
             0
         );
         _animator.SetBool("islyingDown", true);
-        transform.position = new Vector3(-4.668f, 0.946f, 1.378f);
+        transform.position = new Vector3(-1.376f, 0.925f, 0.457f);
     }
 
     public void SitUp()

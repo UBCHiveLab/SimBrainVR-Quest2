@@ -15,6 +15,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip doctorIntro, doctorWhatHaveYouFound, doctorDone;
     public AudioClip patientDontKnow, patientSureGoAhead;
     public AudioClip ericIntroClip, ericHello;
+    public AudioClip patientAlright, patientOK;
 
     private void Awake()
     {

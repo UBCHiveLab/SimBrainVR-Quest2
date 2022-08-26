@@ -45,9 +45,13 @@ public class ClinicSceneController : MonoBehaviour
         yield return new WaitForSeconds(15.75f);
         nurse.updateRot = true;
         nurse._animator.SetBool("isSpeaking", false);
-        //Nurse end
-        
 
+
+        VoiceRecognitionClinic.Instance.hasStartedAskingQuestions = true;
+
+        //Nurse end
+
+        /*
         //Doctor Start
         doctor._agent.SetDestination(doctor.starting.position);
         doctor._animator.SetBool("isWalking", true);
@@ -84,7 +88,8 @@ public class ClinicSceneController : MonoBehaviour
         doctor._agent.updateRotation = false;
         doctor.transform.LookAt(new Vector3(Camera.main.transform.position.x, transform.position.y, Camera.main.transform.position.z));
         //Doctor end
-    
+        */
+
     }
 
 

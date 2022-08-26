@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum PatientDialogueOption { WhatHappened, MedicalHistory, Medication, Allergies, DrinkSmokeDrugs, FamilyHistory, FamilyMember, DontKnow }
-
 //used for eye test (swinging light test)
 public class PatientController : MonoBehaviour
 {

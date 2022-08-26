@@ -9,6 +9,11 @@ public class MedicalLight : MonoBehaviour
     [SerializeField]
     GameObject spotLight;
     public LayerMask layerToAvoidHitting;
+    [SerializeField]
+    GameObject patientHumanoid;
+    [SerializeField]
+    GameObject patientExamMode;
+
     PatientController _patientRef;
 
     bool inputB, inputA;
@@ -17,6 +22,14 @@ public class MedicalLight : MonoBehaviour
     {
         if (_patientRef != null) _patientRef.Idle();
 
+    }
+
+    public void ToggleLight(bool state)
+    {
+        spotLight.SetActive(state);
+        patientHumanoid.SetActive(!state);
+        patientExamMode.SetActive(state);
+        
     }
 
     private void Update()

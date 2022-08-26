@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: bc232b8514107994f903bfa117b24f4d, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: dddd3b41ce633594499014574a595c7a, type: 2}
 --- !u!1 &1076343
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,7 +309,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5094456}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.5, y: 0.175, z: -0.612}
+  m_LocalPosition: {x: -3.64, y: 0.175, z: -1.48}
   m_LocalScale: {x: 0.30852, y: 0.30852, z: 0.30852}
   m_Children: []
   m_Father: {fileID: 1206173121496988992}
@@ -390,7 +390,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 10748474}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.43, y: 0.175, z: -1.491}
+  m_LocalPosition: {x: -2.88, y: 0.175, z: -1.06}
   m_LocalScale: {x: 0.30852, y: 0.30852, z: 0.30852}
   m_Children: []
   m_Father: {fileID: 1206173121496988992}
@@ -585,7 +585,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &74836179
 GameObject:
@@ -700,7 +700,7 @@ Transform:
   - {fileID: 1796230108}
   - {fileID: 809203440}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &94708426
 GameObject:
@@ -1280,7 +1280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 324022312}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.614, y: 0.302, z: -0.837}
+  m_LocalPosition: {x: -5.42, y: 0.302, z: -1.13}
   m_LocalScale: {x: 0.30852, y: 0.30852, z: 0.30852}
   m_Children: []
   m_Father: {fileID: 1206173121496988992}
@@ -1827,7 +1827,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396759011}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.03, y: 0.17, z: 0.39}
+  m_LocalPosition: {x: 2.77, y: 0.17, z: 0.03}
   m_LocalScale: {x: 0.30852, y: 0.30852, z: 0.30852}
   m_Children: []
   m_Father: {fileID: 1206173121496988992}
@@ -2822,27 +2822,20 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Hints:
 
-    1. Tell me what happened?
+    1. Ask what happened
 
-    2. Ask about medical history,
-    medication, allergies
+    2. Ask about medical history, medication,
+    allergies
 
     3. Does the patient smoke or drink?
 
-    4. Any family
-    live with you?
+    4. Any family live with
+    you?
 
     5. Ask about family history
 
     ---------------------------------------------------------------
 
-    To
-    exam patient say "Start Exam"
-
-    After completion, report to Doctor Gin by
-    saying "Done"
-
-    To complete the simulation, say "That is all".
 
 '
 --- !u!222 &600306962
@@ -3054,7 +3047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _voiceSource: {fileID: 1811633840}
   _musicSource: {fileID: 1382005827}
-  patientWhatHappened: {fileID: 8300000, guid: a3f20d5cecb88904baa86b4cfd7b6461, type: 3}
+  patientWhatHappened: {fileID: 8300000, guid: e5e481834c26db04caa0e69d29dda22a, type: 3}
   patientMedicalHistory: {fileID: 8300000, guid: f5bcfd8a77afef443aab47fed6339713, type: 3}
   patientMedication: {fileID: 8300000, guid: 9cc717d66467f674f8ec65d1722f9fb0, type: 3}
   patientAllergies: {fileID: 8300000, guid: de0dcaaa388bfda46a9b3b433a65555c, type: 3}
@@ -3066,8 +3059,10 @@ MonoBehaviour:
   doctorDone: {fileID: 8300000, guid: da4a1f379862a33419714e696d7e599a, type: 3}
   patientDontKnow: {fileID: 8300000, guid: 962426bb5ca11164092a8ed8f84596f6, type: 3}
   patientSureGoAhead: {fileID: 8300000, guid: 401bbe8aada671e4ba94289eb9cdc77d, type: 3}
-  ericIntroClip: {fileID: 8300000, guid: b54cdb04328c69441844756bfe57d8d9, type: 3}
+  ericIntroClip: {fileID: 8300000, guid: 8d6d8f49796a72c41b394c993b1e2d3e, type: 3}
   ericHello: {fileID: 8300000, guid: 208a3170812e63846877cb541cb17ea2, type: 3}
+  patientAlright: {fileID: 8300000, guid: 532c48b5a66584f4ca305c602086fcbb, type: 3}
+  patientOK: {fileID: 8300000, guid: ce83f392a8df1fb40979d9341ca0c537, type: 3}
 --- !u!1 &754462824
 GameObject:
   m_ObjectHideFlags: 0
@@ -3615,14 +3610,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1751139628690906197, guid: 8d11cf1e33ff64a47a4741590c3a95ea, type: 3}
       propertyPath: lines.Array.data[0]
-      value: Hi, my name is Eric. If you need any help from me, just call my name
-        and ask.
+      value: 'Hi, my name is Eric. I''m the nurse for today. Here we have '
       objectReference: {fileID: 0}
     - target: {fileID: 1751139628690906197, guid: 8d11cf1e33ff64a47a4741590c3a95ea, type: 3}
       propertyPath: lines.Array.data[1]
-      value: For the patient brief, we have 64 years old feamle, julia taylor, with
-        a history of hypertension, dyslipidemia, and type 2 diabetes, presenting
-        with severe headache and double vision.
+      value: Julia Taylor, who has volunteered to be today's mock patient. If you
+        have any questions, please let me know.
       objectReference: {fileID: 0}
     - target: {fileID: 1751139628690906198, guid: 8d11cf1e33ff64a47a4741590c3a95ea, type: 3}
       propertyPath: m_Name
@@ -7849,7 +7842,7 @@ MonoBehaviour:
     m_Bits: 128
   humanoidPatient: {fileID: 919132148487234102}
   genericPatient: {fileID: 4643878508387636297}
-  humanoidEyePos: {x: -1.2218, y: 1.5806, z: -0.0971}
+  humanoidEyePos: {x: -1.2189, y: 1.5806, z: -0.114}
   genericPatientEyePos: {x: -1.068, y: 1.5806, z: -0.101}
 --- !u!1 &1627189923
 GameObject:
@@ -8855,7 +8848,7 @@ Transform:
   - {fileID: 1759560215}
   - {fileID: 1319163201106648583}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1755539402
 GameObject:
@@ -9038,7 +9031,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1759560214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9053,7 +9046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _progressBar: {fileID: 1319163201188765873}
   startAuto: 0
-  sceneNameToLoad: MindPalaceTestApril5
+  sceneNameToLoad: MindPalace_HandTrackingAugust19
   delay: 1
   sceneloadingGO: {fileID: 1319163201106648579}
 --- !u!4 &1759560215
@@ -10367,7 +10360,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2141015381}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.471, y: 0.17, z: -0.253}
+  m_LocalPosition: {x: -0.63, y: 0.17, z: 0.01}
   m_LocalScale: {x: 0.30852, y: 0.30852, z: 0.30852}
   m_Children: []
   m_Father: {fileID: 1206173121496988992}
@@ -10452,7 +10445,7 @@ Transform:
   m_Children:
   - {fileID: 2189696857430469991}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2145634589
 MonoBehaviour:
@@ -16328,7 +16321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!195 &919132148461143721
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -17782,7 +17775,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319163201106648579}
   m_LocalRotation: {x: -0.36599812, y: -0.4531539, z: 0.2113091, w: 0.7848855}
-  m_LocalPosition: {x: 0, y: 0, z: 3.3897302}
+  m_LocalPosition: {x: 0, y: 0, z: 1.68}
   m_LocalScale: {x: 0.0019921812, y: 0.001992181, z: 0.0019921814}
   m_Children:
   - {fileID: 1319163200293701944}
@@ -17795,7 +17788,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -4.5513444, y: 1.746586}
+  m_AnchoredPosition: {x: -2.86, y: -0.29}
   m_SizeDelta: {x: 1920, y: 1019.1933}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1319163201188765839
@@ -28799,7 +28792,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &2190209398501357925
 GameObject:
   m_ObjectHideFlags: 0
@@ -28921,7 +28914,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &2190260607781812086
 GameObject:
   m_ObjectHideFlags: 0
@@ -29776,7 +29769,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &2190696181179767836
 GameObject:
   m_ObjectHideFlags: 0
@@ -29986,7 +29979,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &2190742642832748302
 GameObject:
   m_ObjectHideFlags: 0
@@ -30566,7 +30559,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2190260607804802207}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.676, y: 0, z: -1.4440002}
+  m_LocalPosition: {x: 3.569, y: 0, z: -0.721}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6369743146651086916}
@@ -36976,9 +36969,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6592656234202697526}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
+      - m_Target: {fileID: 6592158612083985003}
+        m_TargetAssemblyTypeName: MedicalLight, Assembly-CSharp
+        m_MethodName: ToggleLight
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -37015,9 +37008,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6592656234202697526}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
+      - m_Target: {fileID: 6592158612083985003}
+        m_TargetAssemblyTypeName: MedicalLight, Assembly-CSharp
+        m_MethodName: ToggleLight
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -54439,6 +54432,8 @@ MonoBehaviour:
   layerToAvoidHitting:
     serializedVersion: 2
     m_Bits: 127
+  patientHumanoid: {fileID: 919132148487234102}
+  patientExamMode: {fileID: 4643878508387636297}
 --- !u!65 &6592158612083985004
 BoxCollider:
   m_ObjectHideFlags: 0
