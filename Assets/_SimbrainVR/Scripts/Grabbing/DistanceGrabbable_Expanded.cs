@@ -112,18 +112,18 @@ public class DistanceGrabbable_Expanded : DistanceGrabbable
     {
         OnSelected?.Invoke();
 
-        mindPalaceWorldState.HandleGrabbableSelected(this);
+        //mindPalaceWorldState.HandleGrabbableSelected(this);
     }
 
     public void Deselect()
     {
         OnDeselected?.Invoke();
 
-        mindPalaceWorldState.HandleGrabbableDeselected(this);
+        //mindPalaceWorldState.HandleGrabbableDeselected(this);
     }
 
     public void DeleteAllLinesConnected()
     {
-        mindPalaceWorldState.DestroyAllLinesConnectingToGrabbable(this);
+        //mindPalaceWorldState.DestroyAllLinesConnectingToGrabbable(this);
     }
 }

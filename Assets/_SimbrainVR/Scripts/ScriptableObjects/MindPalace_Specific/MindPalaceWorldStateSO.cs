@@ -8,7 +8,7 @@ public class MindPalaceWorldStateSO : ScriptableObject
 {
     public UnityEvent OnSecondGrabbableSelected = default;
 
-    private List<DistanceGrabbable_Expanded> grabbablesSelected = new List<DistanceGrabbable_Expanded>();
+    private List<MindPalace_LinkableObject> grabbablesSelected = new List<MindPalace_LinkableObject>();
 
     private List<MindPalace_LineBetweenGrabbables> linesInScene = new List<MindPalace_LineBetweenGrabbables>();
 
@@ -17,7 +17,7 @@ public class MindPalaceWorldStateSO : ScriptableObject
         grabbablesSelected.Clear();
     }
 
-    public void HandleGrabbableSelected(DistanceGrabbable_Expanded grabbable)
+    public void HandleGrabbableSelected(MindPalace_LinkableObject grabbable)
     {
         if (grabbablesSelected.Contains(grabbable) == false)
             grabbablesSelected.Add(grabbable);
@@ -32,9 +32,9 @@ public class MindPalaceWorldStateSO : ScriptableObject
     {
         if (grabbablesSelected.Count >= 2)
         {
-            DistanceGrabbable_Expanded grabbable1 = grabbablesSelected[0];
+            MindPalace_LinkableObject grabbable1 = grabbablesSelected[0];
 
-            DistanceGrabbable_Expanded grabbable2 = grabbablesSelected[1];
+            MindPalace_LinkableObject grabbable2 = grabbablesSelected[1];
 
             MindPalace_LineBetweenGrabbables lineRenderer = Instantiate(linePrefabToClone, grabbable1.transform.position, Quaternion.identity);
 
@@ -76,7 +76,7 @@ public class MindPalaceWorldStateSO : ScriptableObject
 
     }
 
-    public void HandleGrabbableDeselected(DistanceGrabbable_Expanded grabbable)
+    public void HandleGrabbableDeselected(MindPalace_LinkableObject grabbable)
     {
         grabbablesSelected.Remove(grabbable);
     }
@@ -86,7 +86,7 @@ public class MindPalaceWorldStateSO : ScriptableObject
         linesInScene.Remove(line);
     }
 
-    public void DestroyAllLinesConnectingToGrabbable(DistanceGrabbable_Expanded grabbable)
+    public void DestroyAllLinesConnectingToGrabbable(MindPalace_LinkableObject grabbable)
     {
         List<MindPalace_LineBetweenGrabbables> linesWithGrabbable = new List<MindPalace_LineBetweenGrabbables>();
 
