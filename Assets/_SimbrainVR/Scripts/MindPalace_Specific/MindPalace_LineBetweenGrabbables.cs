@@ -100,4 +100,14 @@ public class MindPalace_LineBetweenGrabbables : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public MindPalace_LinkableObject GetRemainingNonDestroyedLinkable()
+    {
+        if (!grabbable1.WasDestroyed)
+            return grabbable1;
+
+        if (!grabbable2.WasDestroyed)
+            return grabbable2;
+
+        return null;
+    }
 }

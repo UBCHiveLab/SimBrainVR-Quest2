@@ -10460,7 +10460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
       propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
       propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -10472,7 +10472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
       propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SpawnModelByIndex
+      value: SpawnModelBySpecimenId
       objectReference: {fileID: 0}
     - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
       propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -10481,6 +10481,10 @@ PrefabInstance:
     - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
       propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
+      propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: hand_bones
       objectReference: {fileID: 0}
     - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
       propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -39367,7 +39371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
       propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
       propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -39379,7 +39383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
       propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SpawnModelByIndex
+      value: SpawnModelBySpecimenId
       objectReference: {fileID: 0}
     - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
       propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -39388,6 +39392,10 @@ PrefabInstance:
     - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
       propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
+      propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Brain Optic
       objectReference: {fileID: 0}
     - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
       propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -39689,7 +39697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
       propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
       propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -39701,7 +39709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
       propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SpawnModelByIndex
+      value: SpawnModelBySpecimenId
       objectReference: {fileID: 0}
     - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
       propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -39710,6 +39718,10 @@ PrefabInstance:
     - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
       propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
+      propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: heart02
       objectReference: {fileID: 0}
     - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
       propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -69911,7 +69923,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
       propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
       propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -69923,11 +69935,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
       propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SpawnModelByIndex
+      value: SpawnModelBySpecimenId
       objectReference: {fileID: 0}
     - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
       propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: LoadModelsFromDatabase, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
+      propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: l4lungswithtrachea
       objectReference: {fileID: 0}
     - target: {fileID: 4007972601660022943, guid: 5b19c7c4851698f46ac5307b18c936e4, type: 3}
       propertyPath: _whenRelease.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName

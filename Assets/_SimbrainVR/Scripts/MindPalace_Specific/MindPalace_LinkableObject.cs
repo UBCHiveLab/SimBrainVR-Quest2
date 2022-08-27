@@ -8,6 +8,12 @@ public class MindPalace_LinkableObject : MonoBehaviour
 
     [SerializeField] private Transform referencePosition = default;
 
+    public bool WasDestroyed
+    {
+        get;
+        private set;
+    }
+
     public virtual Transform ReferencePosition
     {
         get
@@ -24,4 +30,10 @@ public class MindPalace_LinkableObject : MonoBehaviour
         mindPalaceWorldState.HandleGrabbableSelected(this);
     }
 
+    private void OnDestroy()
+    {
+        WasDestroyed = true;
+
+        mindPalaceWorldState.HandleLinkableObjectDestroyed(this);
+    }
 }

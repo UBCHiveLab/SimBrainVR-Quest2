@@ -32,9 +32,9 @@ public class MindPalaceWorldStateSO : ScriptableObject
     {
         if (grabbablesSelected.Count >= 2)
         {
-            MindPalace_LinkableObject grabbable1 = grabbablesSelected[0];
+            MindPalace_LinkableObject grabbable1 = grabbablesSelected[grabbablesSelected.Count - 2];
 
-            MindPalace_LinkableObject grabbable2 = grabbablesSelected[1];
+            MindPalace_LinkableObject grabbable2 = grabbablesSelected[grabbablesSelected.Count - 1];
 
             MindPalace_LineBetweenGrabbables lineRenderer = Instantiate(linePrefabToClone, grabbable1.transform.position, Quaternion.identity);
 
@@ -44,34 +44,7 @@ public class MindPalaceWorldStateSO : ScriptableObject
 
             linesInScene.Add(lineRenderer);
 
-            //lineRenderer.SetPosition(0, grabbable1.transform.position);
-            //lineRenderer.SetPosition(1, grabbable2.transform.position);
-
-            //grabbable1.Deselect();
-            //grabbable2.Deselect();
-
-            /*
-            try
-            {
-                DistanceGrabbable_Expanded expandedGrabbable1 = (DistanceGrabbable_Expanded)grabbable1;
-                expandedGrabbable1.Deselect();
-
-            }
-            catch (System.InvalidCastException)
-            {
-            }
-
-            try
-            {
-                DistanceGrabbable_Expanded expandedGrabbable2 = (DistanceGrabbable_Expanded)grabbable2;
-                expandedGrabbable2.Deselect();
-            }
-            catch (System.InvalidCastException)
-            {
-            }
-            */
-            //grabbablesSelected.Remove(grabbable1);
-            //grabbablesSelected.Remove(grabbable2);
+            grabbablesSelected.Clear();
         }
 
     }
@@ -84,6 +57,12 @@ public class MindPalaceWorldStateSO : ScriptableObject
     private void HandleLineDestroyed(MindPalace_LineBetweenGrabbables line)
     {
         linesInScene.Remove(line);
+
+        MindPalace_LinkableObject remainingLinkableObject = line.GetRemainingNonDestroyedLinkable();
+
+        if (grabbablesSelected.Contains(remainingLinkableObject) == false)
+            grabbablesSelected.Add(remainingLinkableObject);
+
     }
 
     public void DestroyAllLinesConnectingToGrabbable(MindPalace_LinkableObject grabbable)
@@ -101,6 +80,32 @@ public class MindPalaceWorldStateSO : ScriptableObject
         for (int i = 0; i < linesWithGrabbable.Count; i++)
         {
             linesWithGrabbable[i].DestroyLine();
+        }
+    }
+    /*
+    public void HandleLinkableObjectDestroyed(GameObject objectDestroyed)
+    {
+        MindPalace_LinkableObject objectToClearFromList = null;
+
+        foreach (MindPalace_LinkableObject objectFromList in grabbablesSelected)
+        {
+            if (objectFromList == objectDestroyed.gameObject)
+            {
+                objectToClearFromList = objectFromList;
+                break;
+            }
+        }
+
+        if (objectToClearFromList != null)
+            grabbablesSelected.Remove(objectToClearFromList);
+    }*/
+    public void HandleLinkableObjectDestroyed(MindPalace_LinkableObject objectDestroyed)
+    {
+        if (objectDestroyed != null)
+        {
+            grabbablesSelected.Remove(objectDestroyed);
+
+            DestroyAllLinesConnectingToGrabbable(objectDestroyed);
         }
     }
 }

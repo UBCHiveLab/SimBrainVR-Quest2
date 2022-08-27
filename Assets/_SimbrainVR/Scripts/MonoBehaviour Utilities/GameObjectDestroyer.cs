@@ -8,6 +8,7 @@ public class GameObjectDestroyer : MonoBehaviour
     public delegate void OnDestroyedHandler(GameObjectDestroyer objectDestroyed);
     public event OnDestroyedHandler OnDestroyed;
 
+    public UnityEvent<GameObject> OnDestroyedUnityEvent_Simple = default;
     public UnityEvent<GameObjectDestroyer> OnDestroyedUnityEvent = default;
 
     public void DestroyThisObject()
