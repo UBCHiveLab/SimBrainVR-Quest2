@@ -230,7 +230,7 @@ public class VoiceRecognitionClinic : MonoBehaviour
 
                 if(message.Contains("mind palace"))
                 {
-                    SceneManager.LoadScene(1);
+                    SceneManager.LoadScene(2);
                     /*
                     var sceneLoading = GameObject.Find("SceneLoader").GetComponent<SceneLoading>();
                     if (sceneLoading != null)

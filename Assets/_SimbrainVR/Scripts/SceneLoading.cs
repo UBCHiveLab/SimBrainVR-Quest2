@@ -78,7 +78,7 @@ public class SceneLoading : MonoBehaviour
     public void TransitionToClinic()
     {
         var player = GameObject.Find("PlayerControllerDistanceGrab");
-        player.GetComponent<Rigidbody>().useGravity = false;
+        //player.GetComponent<Rigidbody>().useGravity = false;
 
         Camera camera = Camera.main;
         camera.clearFlags = CameraClearFlags.SolidColor;
