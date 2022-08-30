@@ -168,6 +168,35 @@ public class LoadModelsFromDatabase : MonoBehaviour
 
         StartCoroutine(SpawnLocalPrefabCoroutine(specimen));
     }
+    public void SpawnModelBySpecimenId(string id)
+    {
+        if (specimensListSO == null)
+            return;
+
+        if (specimensListSO.specimens.Count == 0)
+            return;
+
+        SpecimenData_New specimen = null;
+
+        //find specimen with the right ID:
+        foreach (SpecimenData_New specimenFromList in specimensListSO.specimens)
+        {
+            if (specimenFromList.id.Equals(id))
+            {
+                specimen = specimenFromList;
+                break;
+            }
+        }
+
+        //request specimen spawn:
+        if (specimen != null)
+        {
+            Debug.Log("requesting spawn for " + specimen.name);
+
+            StartCoroutine(SpawnLocalPrefabCoroutine(specimen));
+
+        }
+    }
     public void SpawnFirstModelInList(SpecimensListSO specimensList)
     {
         if (specimensList == null)

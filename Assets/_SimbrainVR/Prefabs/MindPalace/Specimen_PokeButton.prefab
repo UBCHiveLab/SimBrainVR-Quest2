@@ -462,6 +462,8 @@ MonoBehaviour:
   randomAreaAroundSpawnLocation: {x: 0.5, y: 0.5, z: 0.25}
   minYPositionAfterSpawning: 1.2
   handTrackingGrabbablePrefab: {fileID: 1551646519691236562, guid: 6b0a6b93cc52eb74fab240997d020a9b, type: 3}
+  forceNewPhysicsLayerForObjectSpawned: 1
+  newPhysicsLayerForObjectSpawned: PinInteractible
 --- !u!1 &5834703517191068585
 GameObject:
   m_ObjectHideFlags: 0

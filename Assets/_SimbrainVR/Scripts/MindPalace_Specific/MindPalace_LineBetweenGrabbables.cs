@@ -12,10 +12,10 @@ public class MindPalace_LineBetweenGrabbables : MonoBehaviour
 
     public UnityEvent<MindPalace_LineBetweenGrabbables> OnDestroyed = default;
 
-    private DistanceGrabbable_Expanded grabbable1 = default;
-    private DistanceGrabbable_Expanded grabbable2 = default;
+    private MindPalace_LinkableObject grabbable1 = default;
+    private MindPalace_LinkableObject grabbable2 = default;
 
-    public void Initialize(DistanceGrabbable_Expanded _grabbable1, DistanceGrabbable_Expanded _grabbable2)
+    public void Initialize(MindPalace_LinkableObject _grabbable1, MindPalace_LinkableObject _grabbable2)
     {
         grabbable1 = _grabbable1;
         grabbable2 = _grabbable2;
@@ -23,7 +23,7 @@ public class MindPalace_LineBetweenGrabbables : MonoBehaviour
         lineRenderer.SetPosition(0, grabbable1.ReferencePosition.position);
         lineRenderer.SetPosition(1, grabbable2.ReferencePosition.position);
 
-        StartCoroutine(SubscribeNextFrame());
+        //StartCoroutine(SubscribeNextFrame());
 
         OnInitialized?.Invoke();
     }
@@ -32,16 +32,16 @@ public class MindPalace_LineBetweenGrabbables : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
 
-        grabbable1.OnSelected.AddListener(HandlePointSelected);
+        //grabbable1.OnSelected.AddListener(HandlePointSelected);
 
-        grabbable2.OnSelected.AddListener(HandlePointSelected);
+        //grabbable2.OnSelected.AddListener(HandlePointSelected);
     }
 
     private void OnDestroy()
     {
-        grabbable1.OnSelected.RemoveListener(HandlePointSelected);
+        //grabbable1.OnSelected.RemoveListener(HandlePointSelected);
 
-        grabbable2.OnSelected.RemoveListener(HandlePointSelected);
+        //grabbable2.OnSelected.RemoveListener(HandlePointSelected);
 
         OnDestroyed?.Invoke(this);
     }
@@ -53,11 +53,13 @@ public class MindPalace_LineBetweenGrabbables : MonoBehaviour
 
     public void DeselectBothPoints()
     {
+        /*
         if (grabbable1 != null)
             grabbable1.Deselect();
 
         if (grabbable2 != null)
             grabbable2.Deselect();
+        */
     }
     public void DeselectBothPointsAfterFrame()
     {
@@ -67,11 +69,7 @@ public class MindPalace_LineBetweenGrabbables : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
 
-        if (grabbable1 != null)
-            grabbable1.Deselect();
-
-        if (grabbable2 != null)
-            grabbable2.Deselect();
+        DeselectBothPoints();
     }
 
 
@@ -86,7 +84,7 @@ public class MindPalace_LineBetweenGrabbables : MonoBehaviour
 
     }
 
-    public bool IsLinkedToGrabbable(DistanceGrabbable_Expanded grabbable)
+    public bool IsLinkedToGrabbable(MindPalace_LinkableObject grabbable)
     {
         if (grabbable1 == grabbable)
             return true;
@@ -102,4 +100,14 @@ public class MindPalace_LineBetweenGrabbables : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public MindPalace_LinkableObject GetRemainingNonDestroyedLinkable()
+    {
+        if (!grabbable1.WasDestroyed)
+            return grabbable1;
+
+        if (!grabbable2.WasDestroyed)
+            return grabbable2;
+
+        return null;
+    }
 }

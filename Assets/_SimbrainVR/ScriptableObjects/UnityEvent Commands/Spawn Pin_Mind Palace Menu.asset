@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb345360cf7ccd34dbbb8181b7f2b488, type: 3}
+  m_Name: Spawn Pin_Mind Palace Menu
+  m_EditorClassIdentifier: 
+  randomPrefabsToSpawn:
+  - weight: 1
+    thisObject: {fileID: 5895625890890509853, guid: d93ebe4954c932b439b2ad7f79037ee1, type: 3}
+  randomizePositionAfterSpawn: 1
+  randomAreaAroundSpawnLocation: {x: 0.25, y: 0.5, z: 0.25}
